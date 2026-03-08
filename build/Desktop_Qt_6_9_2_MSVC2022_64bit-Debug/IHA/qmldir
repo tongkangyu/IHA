@@ -1,0 +1,21 @@
+module IHA
+typeinfo appIHA.qmltypes
+prefer :/qt/qml/IHA/
+Main 1.0 Main.qml
+Theme 1.0 qml/Theme.qml
+Card 1.0 qml/components/Card.qml
+Button 1.0 qml/components/Button.qml
+AnimatedProgressBar 1.0 qml/components/AnimatedProgressBar.qml
+AnimatedListItem 1.0 qml/components/AnimatedListItem.qml
+HealthPage 1.0 qml/pages/HealthPage.qml
+AssistantPage 1.0 qml/pages/AssistantPage.qml
+DevicePage 1.0 qml/pages/DevicePage.qml
+ProfilePage 1.0 qml/pages/ProfilePage.qml
+StepsDetailPage 1.0 qml/pages/details/StepsDetailPage.qml
+SleepDetailPage 1.0 qml/pages/details/SleepDetailPage.qml
+HeartRateDetailPage 1.0 qml/pages/details/HeartRateDetailPage.qml
+CaloriesDetailPage 1.0 qml/pages/details/CaloriesDetailPage.qml
+ActivityDetailPage 1.0 qml/pages/details/ActivityDetailPage.qml
+ActivityCountDetailPage 1.0 qml/pages/details/ActivityCountDetailPage.qml
+depends QtQuick
+

@@ -1,0 +1,362 @@
+import QtQuick
+import QtQuick.Controls
+
+Item {
+    id: root
+    
+    property var navigationStack: null
+    
+    // 模拟数据
+    property int todaySteps: 9580
+    property int stepsGoal: 10000
+    property var weeklyData: [8500, 9200, 7800, 10500, 6800, 9580, 8900]
+    property var weekDays: ["周一", "周二", "周三", "周四", "周五", "周六", "周日"]
+    
+    Column {
+        anchors.fill: parent
+        
+        // 顶部导航栏
+        Rectangle {
+            width: parent.width
+            height: 56
+            color: "#121214"
+            
+            // 返回按钮
+            Rectangle {
+                x: 8
+                y: 10
+                width: 36
+                height: 36
+                radius: 18
+                color: backMouseArea.pressed ? "#2A2A2C" : "transparent"
+                
+                Text {
+                    anchors.centerIn: parent
+                    text: "‹"
+                    font.pixelSize: 28
+                    font.weight: Font.Bold
+                    color: "#FFFFFF"
+                }
+                
+                MouseArea {
+                    id: backMouseArea
+                    anchors.fill: parent
+                    cursorShape: Qt.PointingHandCursor
+                    onClicked: {
+                        if (navigationStack) {
+                            navigationStack.pop()
+                        }
+                    }
+                }
+            }
+            
+            // 标题
+            Text {
+                text: "步数"
+                font.pixelSize: 20
+                font.weight: Font.Bold
+                color: "#FFFFFF"
+                anchors.centerIn: parent
+            }
+        }
+        
+        ScrollView {
+            width: parent.width
+            height: parent.height - 56
+            clip: true
+            
+            ScrollBar.vertical: ScrollBar { policy: ScrollBar.AlwaysOff }
+            
+            Column {
+                width: root.width
+                spacing: 16
+                
+                // 今日步数卡片
+                Rectangle {
+                    width: parent.width - 32
+                    height: 180
+                    radius: 16
+                    color: "#1E1E20"
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    
+                    Column {
+                        anchors.centerIn: parent
+                        spacing: 8
+                        
+                        Text {
+                            text: todaySteps.toLocaleString()
+                            font.pixelSize: 48
+                            font.weight: Font.Bold
+                            color: "#FBBF24"
+                            anchors.horizontalCenter: parent.horizontalCenter
+                        }
+                        
+                        Text {
+                            text: "今日步数"
+                            font.pixelSize: 16
+                            color: "#A1A1AA"
+                            anchors.horizontalCenter: parent.horizontalCenter
+                        }
+                        
+                        // 进度条
+                        Rectangle {
+                            width: 200
+                            height: 8
+                            radius: 4
+                            color: "#27272A"
+                            anchors.horizontalCenter: parent.horizontalCenter
+                            
+                            Rectangle {
+                                width: parent.width * Math.min(todaySteps / stepsGoal, 1)
+                                height: parent.height
+                                radius: 4
+                                color: "#FBBF24"
+                            }
+                        }
+                        
+                        Text {
+                            text: "目标: " + stepsGoal.toLocaleString() + " 步"
+                            font.pixelSize: 14
+                            color: "#71717A"
+                            anchors.horizontalCenter: parent.horizontalCenter
+                        }
+                    }
+                }
+                
+                // 周数据统计
+                Rectangle {
+                    width: parent.width - 32
+                    height: 200
+                    radius: 16
+                    color: "#1E1E20"
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    
+                    Column {
+                        anchors.fill: parent
+                        anchors.margins: 16
+                        spacing: 12
+                        
+                        Text {
+                            text: "本周统计"
+                            font.pixelSize: 16
+                            font.weight: Font.DemiBold
+                            color: "#FFFFFF"
+                        }
+                        
+                        // 柱状图
+                        Row {
+                            width: parent.width
+                            height: 120
+                            spacing: 8
+                            
+                            Repeater {
+                                model: 7
+                                
+                                Column {
+                                    width: (parent.width - 48) / 7
+                                    height: parent.height
+                                    spacing: 4
+                                    
+                                    Rectangle {
+                                        width: parent.width - 8
+                                        height: parent.height - 30
+                                        radius: 4
+                                        color: "#27272A"
+                                        anchors.horizontalCenter: parent.horizontalCenter
+                                        
+                                        Rectangle {
+                                            width: parent.width
+                                            height: parent.height * (weeklyData[index] / 12000)
+                                            radius: 4
+                                            color: index === 5 ? "#FBBF24" : "#3B82F6"
+                                            anchors.bottom: parent.bottom
+                                        }
+                                    }
+                                    
+                                    Text {
+                                        text: weekDays[index]
+                                        font.pixelSize: 12
+                                        color: index === 5 ? "#FBBF24" : "#71717A"
+                                        anchors.horizontalCenter: parent.horizontalCenter
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                // 数据详情
+                Rectangle {
+                    width: parent.width - 32
+                    radius: 16
+                    color: "#1E1E20"
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    
+                    Column {
+                        width: parent.width
+                        
+                        // 距离
+                        Rectangle {
+                            width: parent.width
+                            height: 56
+                            color: "transparent"
+                            
+                            Row {
+                                anchors.fill: parent
+                                anchors.margins: 16
+                                
+                                Rectangle {
+                                    width: 40
+                                    height: 40
+                                    radius: 8
+                                    color: "#22C55E"
+                                    anchors.verticalCenter: parent.verticalCenter
+                                    
+                                    Text {
+                                        anchors.centerIn: parent
+                                        text: "D"
+                                        font.pixelSize: 16
+                                        font.weight: Font.Bold
+                                        color: "#FFFFFF"
+                                    }
+                                }
+                                
+                                Column {
+                                    spacing: 2
+                                    anchors.verticalCenter: parent.verticalCenter
+                                    anchors.left: parent.left
+                                    anchors.leftMargin: 64
+                                    
+                                    Text {
+                                        text: "距离"
+                                        font.pixelSize: 14
+                                        color: "#A1A1AA"
+                                    }
+                                    
+                                    Text {
+                                        text: "6.8 公里"
+                                        font.pixelSize: 16
+                                        font.weight: Font.DemiBold
+                                        color: "#FFFFFF"
+                                    }
+                                }
+                            }
+                        }
+                        
+                        Rectangle {
+                            width: parent.width - 32
+                            height: 1
+                            color: "#27272A"
+                            anchors.horizontalCenter: parent.horizontalCenter
+                        }
+                        
+                        // 消耗
+                        Rectangle {
+                            width: parent.width
+                            height: 56
+                            color: "transparent"
+                            
+                            Row {
+                                anchors.fill: parent
+                                anchors.margins: 16
+                                
+                                Rectangle {
+                                    width: 40
+                                    height: 40
+                                    radius: 8
+                                    color: "#FF6B35"
+                                    anchors.verticalCenter: parent.verticalCenter
+                                    
+                                    Text {
+                                        anchors.centerIn: parent
+                                        text: "C"
+                                        font.pixelSize: 16
+                                        font.weight: Font.Bold
+                                        color: "#FFFFFF"
+                                    }
+                                }
+                                
+                                Column {
+                                    spacing: 2
+                                    anchors.verticalCenter: parent.verticalCenter
+                                    anchors.left: parent.left
+                                    anchors.leftMargin: 64
+                                    
+                                    Text {
+                                        text: "消耗"
+                                        font.pixelSize: 14
+                                        color: "#A1A1AA"
+                                    }
+                                    
+                                    Text {
+                                        text: "568 千卡"
+                                        font.pixelSize: 16
+                                        font.weight: Font.DemiBold
+                                        color: "#FFFFFF"
+                                    }
+                                }
+                            }
+                        }
+                        
+                        Rectangle {
+                            width: parent.width - 32
+                            height: 1
+                            color: "#27272A"
+                            anchors.horizontalCenter: parent.horizontalCenter
+                        }
+                        
+                        // 活动时长
+                        Rectangle {
+                            width: parent.width
+                            height: 56
+                            color: "transparent"
+                            
+                            Row {
+                                anchors.fill: parent
+                                anchors.margins: 16
+                                
+                                Rectangle {
+                                    width: 40
+                                    height: 40
+                                    radius: 8
+                                    color: "#3B82F6"
+                                    anchors.verticalCenter: parent.verticalCenter
+                                    
+                                    Text {
+                                        anchors.centerIn: parent
+                                        text: "T"
+                                        font.pixelSize: 16
+                                        font.weight: Font.Bold
+                                        color: "#FFFFFF"
+                                    }
+                                }
+                                
+                                Column {
+                                    spacing: 2
+                                    anchors.verticalCenter: parent.verticalCenter
+                                    anchors.left: parent.left
+                                    anchors.leftMargin: 64
+                                    
+                                    Text {
+                                        text: "活动时长"
+                                        font.pixelSize: 14
+                                        color: "#A1A1AA"
+                                    }
+                                    
+                                    Text {
+                                        text: "85 分钟"
+                                        font.pixelSize: 16
+                                        font.weight: Font.DemiBold
+                                        color: "#FFFFFF"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                Item { width: 1; height: 24 }
+            }
+        }
+    }
+}

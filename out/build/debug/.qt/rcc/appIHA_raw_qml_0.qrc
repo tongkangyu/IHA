@@ -1,0 +1,21 @@
+<RCC>
+  <qresource prefix="/qt/qml/IHA/">
+    <file alias="Main.qml">C:/personal/code/IHA/Main.qml</file>
+    <file alias="qml/Theme.qml">C:/personal/code/IHA/qml/Theme.qml</file>
+    <file alias="qml/components/Card.qml">C:/personal/code/IHA/qml/components/Card.qml</file>
+    <file alias="qml/components/Button.qml">C:/personal/code/IHA/qml/components/Button.qml</file>
+    <file alias="qml/components/AnimatedProgressBar.qml">C:/personal/code/IHA/qml/components/AnimatedProgressBar.qml</file>
+    <file alias="qml/components/AnimatedListItem.qml">C:/personal/code/IHA/qml/components/AnimatedListItem.qml</file>
+    <file alias="qml/pages/HealthPage.qml">C:/personal/code/IHA/qml/pages/HealthPage.qml</file>
+    <file alias="qml/pages/AssistantPage.qml">C:/personal/code/IHA/qml/pages/AssistantPage.qml</file>
+    <file alias="qml/pages/DevicePage.qml">C:/personal/code/IHA/qml/pages/DevicePage.qml</file>
+    <file alias="qml/pages/ProfilePage.qml">C:/personal/code/IHA/qml/pages/ProfilePage.qml</file>
+    <file alias="qml/pages/details/StepsDetailPage.qml">C:/personal/code/IHA/qml/pages/details/StepsDetailPage.qml</file>
+    <file alias="qml/pages/details/SleepDetailPage.qml">C:/personal/code/IHA/qml/pages/details/SleepDetailPage.qml</file>
+    <file alias="qml/pages/details/HeartRateDetailPage.qml">C:/personal/code/IHA/qml/pages/details/HeartRateDetailPage.qml</file>
+    <file alias="qml/pages/details/CaloriesDetailPage.qml">C:/personal/code/IHA/qml/pages/details/CaloriesDetailPage.qml</file>
+    <file alias="qml/pages/details/ActivityDetailPage.qml">C:/personal/code/IHA/qml/pages/details/ActivityDetailPage.qml</file>
+    <file alias="qml/pages/details/ActivityCountDetailPage.qml">C:/personal/code/IHA/qml/pages/details/ActivityCountDetailPage.qml</file>
+  </qresource>
+</RCC>
+

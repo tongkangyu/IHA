@@ -1,0 +1,60 @@
+[
+    {
+        "moduleFiles": [
+            {
+                "entries": [
+                    {
+                        "codegenSuccessful": false,
+                        "column": 34,
+                        "durationMicroseconds": 502,
+                        "errorMessage": "Cannot access value for name index",
+                        "functionName": "animationDelay",
+                        "line": 8
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 21,
+                        "durationMicroseconds": 203,
+                        "errorMessage": "",
+                        "functionName": "target",
+                        "line": 19
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 26,
+                        "durationMicroseconds": 143,
+                        "errorMessage": "",
+                        "functionName": "type",
+                        "line": 24
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 21,
+                        "durationMicroseconds": 77,
+                        "errorMessage": "",
+                        "functionName": "target",
+                        "line": 28
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 26,
+                        "durationMicroseconds": 153,
+                        "errorMessage": "",
+                        "functionName": "type",
+                        "line": 33
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 23,
+                        "durationMicroseconds": 90,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 40
+                    }
+                ],
+                "filePath": "C:/personal/code/IHA/qml/components/AnimatedListItem.qml"
+            }
+        ],
+        "moduleId": "IHA(appIHA)"
+    }
+]

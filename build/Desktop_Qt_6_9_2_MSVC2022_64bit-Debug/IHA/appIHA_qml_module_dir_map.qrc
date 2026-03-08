@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/">
+    <file alias="/qt/qml/IHA">C:/personal/code/IHA/build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/IHA</file>
+
+  </qresource>
+</RCC>

@@ -1,0 +1,14 @@
+-rootPath
+C:/personal/code/IHA
+-cmake-output
+-output-file
+C:/personal/code/IHA/out/build/debug/.qt/qml_imports/appIHA_build.cmake
+-importPath
+C:/personal/code/IHA/out/build/debug/IHA
+-importPath
+C:/personal/code/IHA/out/build/debug
+-importPath
+C:/Qt/6.9.2/msvc2022_64/qml
+-qrcFiles
+C:/personal/code/IHA/out/build/debug/.qt/rcc/qmake_IHA.qrc
+C:/personal/code/IHA/out/build/debug/.qt/rcc/appIHA_raw_qml_0.qrc
