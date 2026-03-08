@@ -34,6 +34,12 @@ set(src_and_dest_list
     "C:/personal/code/IHA/build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/IHA/qml/pages/details/ActivityDetailPage.qml"
     "C:/personal/code/IHA/qml/pages/details/ActivityCountDetailPage.qml"
     "C:/personal/code/IHA/build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/IHA/qml/pages/details/ActivityCountDetailPage.qml"
+    "C:/personal/code/IHA/qml/pages/settings/AppSettingsPage.qml"
+    "C:/personal/code/IHA/build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/IHA/qml/pages/settings/AppSettingsPage.qml"
+    "C:/personal/code/IHA/qml/pages/settings/AboutPage.qml"
+    "C:/personal/code/IHA/build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/IHA/qml/pages/settings/AboutPage.qml"
+    "C:/personal/code/IHA/qml/pages/settings/ProfileInfoPage.qml"
+    "C:/personal/code/IHA/build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/IHA/qml/pages/settings/ProfileInfoPage.qml"
 
 )
 set(timestamp_file "C:/personal/code/IHA/build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/.qt/appIHA_qml.txt")

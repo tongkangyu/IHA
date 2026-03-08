@@ -4,6 +4,14 @@ import QtQuick.Controls
 Item {
     id: assistantPage
     
+    // 使用全局主题
+    readonly property bool isDarkMode: typeof window !== 'undefined' ? window.darkMode : true
+    readonly property color bgColor: isDarkMode ? "#0D0D0F" : "#F5F5F7"
+    readonly property color cardColor: isDarkMode ? "#1E1E20" : "#FFFFFF"
+    readonly property color textPrimary: isDarkMode ? "#FFFFFF" : "#1A1A1A"
+    readonly property color textSecondary: isDarkMode ? "#A1A1AA" : "#8E8E93"
+    readonly property color headerColor: isDarkMode ? "#121214" : "#F5F5F7"
+    
     Column {
         anchors.fill: parent
         
@@ -11,7 +19,7 @@ Item {
         Rectangle {
             width: parent.width
             height: 56
-            color: "#121214"
+            color: headerColor
             
             Text {
                 anchors.left: parent.left
@@ -20,7 +28,7 @@ Item {
                 text: "助理"
                 font.pixelSize: 32
                 font.weight: Font.Bold
-                color: "#FFFFFF"
+                color: textPrimary
             }
         }
         
@@ -52,7 +60,7 @@ Item {
                     
                     anchors.left: type === "ai" ? parent.left : undefined
                     anchors.right: type === "user" ? parent.right : undefined
-                    color: type === "ai" ? "#1E1E20" : "#FF6B35"
+                    color: type === "ai" ? cardColor : "#FF6B35"
                     
                     Text {
                         id: contentText
@@ -71,7 +79,7 @@ Item {
         Rectangle {
             width: parent.width
             height: 60
-            color: "#121214"
+            color: headerColor
             
             Row {
                 anchors.fill: parent
@@ -82,16 +90,16 @@ Item {
                     width: parent.width - 60
                     height: 40
                     radius: 20
-                    color: "#1E1E20"
+                    color: cardColor
                     anchors.verticalCenter: parent.verticalCenter
                     
                     TextInput {
                         anchors.fill: parent
                         anchors.margins: 16
                         font.pixelSize: 14
-                        color: "#FFFFFF"
+                        color: textPrimary
                         placeholderText: "输入您的问题..."
-                        placeholderTextColor: "#71717A"
+                        placeholderTextColor: textSecondary
                     }
                 }
                 

@@ -34,6 +34,8 @@ set(src_and_dest_list
     "C:/personal/code/IHA/out/build/debug/IHA/qml/pages/details/ActivityDetailPage.qml"
     "C:/personal/code/IHA/qml/pages/details/ActivityCountDetailPage.qml"
     "C:/personal/code/IHA/out/build/debug/IHA/qml/pages/details/ActivityCountDetailPage.qml"
+    "C:/personal/code/IHA/qml/pages/settings/AppSettingsPage.qml"
+    "C:/personal/code/IHA/out/build/debug/IHA/qml/pages/settings/AppSettingsPage.qml"
 
 )
 set(timestamp_file "C:/personal/code/IHA/out/build/debug/.qt/appIHA_qml.txt")

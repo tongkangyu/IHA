@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 13,
-                        "durationMicroseconds": 434,
+                        "durationMicroseconds": 391,
                         "errorMessage": "",
                         "functionName": "radius",
                         "line": 14
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 12,
-                        "durationMicroseconds": 131,
+                        "durationMicroseconds": 110,
                         "errorMessage": "",
                         "functionName": "color",
                         "line": 15
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 21,
-                        "durationMicroseconds": 415,
+                        "durationMicroseconds": 329,
                         "errorMessage": "",
                         "functionName": "onValueChanged",
                         "line": 62
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 168,
+                        "durationMicroseconds": 158,
                         "errorMessage": "Cannot load property radius from (component in C:/personal/code/IHA/qml/components/AnimatedProgressBar.qml)::parent with type QQuickItem.",
                         "functionName": "radius",
                         "line": 22
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 16,
-                        "durationMicroseconds": 139,
+                        "durationMicroseconds": 133,
                         "errorMessage": "",
                         "functionName": "color",
                         "line": 23
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 21,
-                        "durationMicroseconds": 102,
+                        "durationMicroseconds": 90,
                         "errorMessage": "",
                         "functionName": "target",
                         "line": 28
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 17,
-                        "durationMicroseconds": 223,
+                        "durationMicroseconds": 263,
                         "errorMessage": "",
                         "functionName": "to",
                         "line": 31
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 99,
+                        "durationMicroseconds": 129,
                         "errorMessage": "",
                         "functionName": "duration",
                         "line": 32
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 22,
-                        "durationMicroseconds": 100,
+                        "durationMicroseconds": 90,
                         "errorMessage": "",
                         "functionName": "running",
                         "line": 34
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 26,
-                        "durationMicroseconds": 125,
+                        "durationMicroseconds": 149,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 33
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 230,
+                        "durationMicroseconds": 207,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 39
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 21,
-                        "durationMicroseconds": 91,
+                        "durationMicroseconds": 114,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 40
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 21,
-                        "durationMicroseconds": 152,
+                        "durationMicroseconds": 119,
                         "errorMessage": "Cannot load property radius from (component in C:/personal/code/IHA/qml/components/AnimatedProgressBar.qml)::parent with type QQuickItem.",
                         "functionName": "radius",
                         "line": 41
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 30,
-                        "durationMicroseconds": 105,
+                        "durationMicroseconds": 139,
                         "errorMessage": "",
                         "functionName": "orientation",
                         "line": 43
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 21,
-                        "durationMicroseconds": 36,
+                        "durationMicroseconds": 32,
                         "errorMessage": "Cannot access value for name parent",
                         "functionName": "to",
                         "line": 52
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 26,
-                        "durationMicroseconds": 126,
+                        "durationMicroseconds": 121,
                         "errorMessage": "",
                         "functionName": "running",
                         "line": 54
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 24,
-                        "durationMicroseconds": 89,
+                        "durationMicroseconds": 102,
                         "errorMessage": "",
                         "functionName": "loops",
                         "line": 55
@@ -158,7 +158,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 30,
-                        "durationMicroseconds": 152,
+                        "durationMicroseconds": 114,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 56
@@ -166,7 +166,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 28,
-                        "durationMicroseconds": 154,
+                        "durationMicroseconds": 150,
                         "errorMessage": "",
                         "functionName": "onCompleted",
                         "line": 66

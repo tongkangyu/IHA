@@ -117,6 +117,27 @@ namespace _qt_qml_IHA_qml_pages_details_ActivityCountDetailPage_qml {
         reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
     };
 }
+namespace _qt_qml_IHA_qml_pages_settings_AppSettingsPage_qml { 
+    extern const unsigned char qmlData[];
+    extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
+    const QQmlPrivate::CachedQmlUnit unit = {
+        reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
+    };
+}
+namespace _qt_qml_IHA_qml_pages_settings_AboutPage_qml { 
+    extern const unsigned char qmlData[];
+    extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
+    const QQmlPrivate::CachedQmlUnit unit = {
+        reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
+    };
+}
+namespace _qt_qml_IHA_qml_pages_settings_ProfileInfoPage_qml { 
+    extern const unsigned char qmlData[];
+    extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
+    const QQmlPrivate::CachedQmlUnit unit = {
+        reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
+    };
+}
 
 }
 namespace {
@@ -147,6 +168,9 @@ Registry::Registry() {
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/IHA/qml/pages/details/CaloriesDetailPage.qml"), &QmlCacheGeneratedCode::_qt_qml_IHA_qml_pages_details_CaloriesDetailPage_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/IHA/qml/pages/details/ActivityDetailPage.qml"), &QmlCacheGeneratedCode::_qt_qml_IHA_qml_pages_details_ActivityDetailPage_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/IHA/qml/pages/details/ActivityCountDetailPage.qml"), &QmlCacheGeneratedCode::_qt_qml_IHA_qml_pages_details_ActivityCountDetailPage_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/IHA/qml/pages/settings/AppSettingsPage.qml"), &QmlCacheGeneratedCode::_qt_qml_IHA_qml_pages_settings_AppSettingsPage_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/IHA/qml/pages/settings/AboutPage.qml"), &QmlCacheGeneratedCode::_qt_qml_IHA_qml_pages_settings_AboutPage_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/IHA/qml/pages/settings/ProfileInfoPage.qml"), &QmlCacheGeneratedCode::_qt_qml_IHA_qml_pages_settings_ProfileInfoPage_qml::unit);
     QQmlPrivate::RegisterQmlUnitCacheHook registration;
     registration.structVersion = 0;
     registration.lookupCachedQmlUnit = &lookupCachedUnit;

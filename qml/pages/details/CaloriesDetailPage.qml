@@ -6,6 +6,17 @@ Item {
     
     property var navigationStack: null
     
+    // 使用全局主题
+    readonly property bool isDarkMode: typeof window !== 'undefined' ? window.darkMode : true
+    readonly property color bgColor: isDarkMode ? "#0D0D0F" : "#F5F5F7"
+    readonly property color cardColor: isDarkMode ? "#1E1E20" : "#FFFFFF"
+    readonly property color textPrimary: isDarkMode ? "#FFFFFF" : "#1A1A1A"
+    readonly property color textSecondary: isDarkMode ? "#A1A1AA" : "#8E8E93"
+    readonly property color headerColor: isDarkMode ? "#121214" : "#F5F5F7"
+    readonly property color pressedColor: isDarkMode ? "#2A2A2C" : "#E5E5EA"
+    readonly property color dividerColor: isDarkMode ? "#27272A" : "#E5E5EA"
+    readonly property color progressBg: isDarkMode ? "#27272A" : "#E5E5EA"
+    
     // 模拟数据
     property int todayCalories: 568
     property int caloriesGoal: 600
@@ -20,7 +31,7 @@ Item {
         Rectangle {
             width: parent.width
             height: 56
-            color: "#121214"
+            color: headerColor
             
             // 返回按钮
             Rectangle {
@@ -29,14 +40,14 @@ Item {
                 width: 36
                 height: 36
                 radius: 18
-                color: backMouseArea.pressed ? "#2A2A2C" : "transparent"
+                color: backMouseArea.pressed ? pressedColor : "transparent"
                 
                 Text {
                     anchors.centerIn: parent
                     text: "‹"
                     font.pixelSize: 28
                     font.weight: Font.Bold
-                    color: "#FFFFFF"
+                    color: textPrimary
                 }
                 
                 MouseArea {
@@ -56,7 +67,7 @@ Item {
                 text: "卡路里"
                 font.pixelSize: 20
                 font.weight: Font.Bold
-                color: "#FFFFFF"
+                color: textPrimary
                 anchors.centerIn: parent
             }
         }
@@ -77,7 +88,7 @@ Item {
                     width: parent.width - 32
                     height: 180
                     radius: 16
-                    color: "#1E1E20"
+                    color: cardColor
                     anchors.horizontalCenter: parent.horizontalCenter
                     
                     Column {
@@ -100,13 +111,13 @@ Item {
                                 text: todayCalories.toLocaleString()
                                 font.pixelSize: 48
                                 font.weight: Font.Bold
-                                color: "#FFFFFF"
+                                color: textPrimary
                             }
                             
                             Text {
                                 text: "千卡"
                                 font.pixelSize: 16
-                                color: "#A1A1AA"
+                                color: textSecondary
                                 anchors.baseline: parent.children[1].baseline
                             }
                         }
@@ -114,7 +125,7 @@ Item {
                         Text {
                             text: "今日消耗"
                             font.pixelSize: 16
-                            color: "#A1A1AA"
+                            color: textSecondary
                             anchors.horizontalCenter: parent.horizontalCenter
                         }
                         
@@ -123,7 +134,7 @@ Item {
                             width: 200
                             height: 8
                             radius: 4
-                            color: "#27272A"
+                            color: progressBg
                             anchors.horizontalCenter: parent.horizontalCenter
                             
                             Rectangle {
@@ -137,7 +148,7 @@ Item {
                         Text {
                             text: "目标: " + caloriesGoal.toLocaleString() + " 千卡"
                             font.pixelSize: 14
-                            color: "#71717A"
+                            color: textSecondary
                             anchors.horizontalCenter: parent.horizontalCenter
                         }
                     }
@@ -148,7 +159,7 @@ Item {
                     width: parent.width - 32
                     height: 200
                     radius: 16
-                    color: "#1E1E20"
+                    color: cardColor
                     anchors.horizontalCenter: parent.horizontalCenter
                     
                     Column {
@@ -160,7 +171,7 @@ Item {
                             text: "今日消耗趋势"
                             font.pixelSize: 16
                             font.weight: Font.DemiBold
-                            color: "#FFFFFF"
+                            color: textPrimary
                         }
                         
                         // 柱状图
@@ -193,9 +204,9 @@ Item {
                         
                         Row {
                             width: parent.width
-                            Text { text: "0时"; font.pixelSize: 10; color: "#71717A" }
+                            Text { text: "0时"; font.pixelSize: 10; color: textSecondary }
                             Item { width: parent.width - 80; height: 1 }
-                            Text { text: "24时"; font.pixelSize: 10; color: "#71717A" }
+                            Text { text: "24时"; font.pixelSize: 10; color: textSecondary }
                         }
                     }
                 }
@@ -205,7 +216,7 @@ Item {
                     width: parent.width - 32
                     height: 200
                     radius: 16
-                    color: "#1E1E20"
+                    color: cardColor
                     anchors.horizontalCenter: parent.horizontalCenter
                     
                     Column {
@@ -217,7 +228,7 @@ Item {
                             text: "本周统计"
                             font.pixelSize: 16
                             font.weight: Font.DemiBold
-                            color: "#FFFFFF"
+                            color: textPrimary
                         }
                         
                         // 柱状图
@@ -238,7 +249,7 @@ Item {
                                         width: parent.width - 8
                                         height: parent.height - 30
                                         radius: 4
-                                        color: "#27272A"
+                                        color: progressBg
                                         anchors.horizontalCenter: parent.horizontalCenter
                                         
                                         Rectangle {
@@ -253,7 +264,7 @@ Item {
                                     Text {
                                         text: weekDays[index]
                                         font.pixelSize: 12
-                                        color: index === 5 ? "#FF6B35" : "#71717A"
+                                        color: index === 5 ? "#FF6B35" : textSecondary
                                         anchors.horizontalCenter: parent.horizontalCenter
                                     }
                                 }
@@ -266,7 +277,7 @@ Item {
                 Rectangle {
                     width: parent.width - 32
                     radius: 16
-                    color: "#1E1E20"
+                    color: cardColor
                     anchors.horizontalCenter: parent.horizontalCenter
                     
                     Column {
@@ -307,14 +318,14 @@ Item {
                                     Text {
                                         text: "活动消耗"
                                         font.pixelSize: 14
-                                        color: "#A1A1AA"
+                                        color: textSecondary
                                     }
                                     
                                     Text {
                                         text: "420 千卡"
                                         font.pixelSize: 16
                                         font.weight: Font.DemiBold
-                                        color: "#FFFFFF"
+                                        color: textPrimary
                                     }
                                 }
                             }
@@ -323,7 +334,7 @@ Item {
                         Rectangle {
                             width: parent.width - 32
                             height: 1
-                            color: "#27272A"
+                            color: dividerColor
                             anchors.horizontalCenter: parent.horizontalCenter
                         }
                         
@@ -362,14 +373,14 @@ Item {
                                     Text {
                                         text: "静息消耗"
                                         font.pixelSize: 14
-                                        color: "#A1A1AA"
+                                        color: textSecondary
                                     }
                                     
                                     Text {
                                         text: "148 千卡"
                                         font.pixelSize: 16
                                         font.weight: Font.DemiBold
-                                        color: "#FFFFFF"
+                                        color: textPrimary
                                     }
                                 }
                             }

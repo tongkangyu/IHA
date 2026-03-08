@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 44,
-                        "durationMicroseconds": 314,
+                        "durationMicroseconds": 343,
                         "errorMessage": "",
                         "functionName": "weightLight",
                         "line": 58
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 46,
-                        "durationMicroseconds": 100,
+                        "durationMicroseconds": 96,
                         "errorMessage": "",
                         "functionName": "weightRegular",
                         "line": 59
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 45,
-                        "durationMicroseconds": 80,
+                        "durationMicroseconds": 86,
                         "errorMessage": "",
                         "functionName": "weightMedium",
                         "line": 60
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 47,
-                        "durationMicroseconds": 81,
+                        "durationMicroseconds": 125,
                         "errorMessage": "",
                         "functionName": "weightSemibold",
                         "line": 61
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 43,
-                        "durationMicroseconds": 81,
+                        "durationMicroseconds": 123,
                         "errorMessage": "",
                         "functionName": "weightBold",
                         "line": 62
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 46,
-                        "durationMicroseconds": 118,
+                        "durationMicroseconds": 125,
                         "errorMessage": "",
                         "functionName": "easingOutQuad",
                         "line": 95
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 47,
-                        "durationMicroseconds": 118,
+                        "durationMicroseconds": 115,
                         "errorMessage": "",
                         "functionName": "easingOutCubic",
                         "line": 96
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 48,
-                        "durationMicroseconds": 99,
+                        "durationMicroseconds": 118,
                         "errorMessage": "",
                         "functionName": "easingInOutQuad",
                         "line": 97

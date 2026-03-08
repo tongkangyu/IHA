@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 279,
+                        "durationMicroseconds": 389,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 31
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 24,
-                        "durationMicroseconds": 68,
+                        "durationMicroseconds": 98,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 36
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 34,
-                        "durationMicroseconds": 77,
+                        "durationMicroseconds": 121,
                         "errorMessage": "",
                         "functionName": "weight",
                         "line": 41
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 113,
+                        "durationMicroseconds": 148,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 45
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 28,
-                        "durationMicroseconds": 256,
+                        "durationMicroseconds": 367,
                         "errorMessage": "",
                         "functionName": "color",
                         "line": 52
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 28,
-                        "durationMicroseconds": 119,
+                        "durationMicroseconds": 193,
                         "errorMessage": "",
                         "functionName": "scale",
                         "line": 55
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 45,
-                        "durationMicroseconds": 97,
+                        "durationMicroseconds": 133,
                         "errorMessage": "",
                         "functionName": "verticalCenter",
                         "line": 53
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 43,
-                        "durationMicroseconds": 61,
+                        "durationMicroseconds": 88,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 60
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 38,
+                        "durationMicroseconds": 78,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 68
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 24,
-                        "durationMicroseconds": 52,
+                        "durationMicroseconds": 88,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 77
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 45,
-                        "durationMicroseconds": 58,
+                        "durationMicroseconds": 93,
                         "errorMessage": "Cannot access value for name todaySteps",
                         "functionName": "progress",
                         "line": 89
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 47,
-                        "durationMicroseconds": 136,
+                        "durationMicroseconds": 234,
                         "errorMessage": "",
                         "functionName": "ringRadius",
                         "line": 91
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 41,
+                        "durationMicroseconds": 82,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 85
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 32,
-                        "durationMicroseconds": 133,
+                        "durationMicroseconds": 237,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 96
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 33,
-                        "durationMicroseconds": 35,
+                        "durationMicroseconds": 63,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 97
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 33,
-                        "durationMicroseconds": 59,
+                        "durationMicroseconds": 128,
                         "errorMessage": "",
                         "functionName": "radius",
                         "line": 98
@@ -158,7 +158,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 43,
-                        "durationMicroseconds": 51,
+                        "durationMicroseconds": 95,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 95
@@ -166,7 +166,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 55,
+                        "durationMicroseconds": 118,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 100
@@ -174,7 +174,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 54,
-                        "durationMicroseconds": 64,
+                        "durationMicroseconds": 110,
                         "errorMessage": "",
                         "functionName": "progressValue",
                         "line": 109
@@ -182,7 +182,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 49,
-                        "durationMicroseconds": 83,
+                        "durationMicroseconds": 130,
                         "errorMessage": "",
                         "functionName": "onProgressValueChanged",
                         "line": 111
@@ -190,7 +190,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 34,
-                        "durationMicroseconds": 1231,
+                        "durationMicroseconds": 2124,
                         "errorMessage": "Cannot generate efficient code for call to untyped JavaScript function",
                         "functionName": "onPaint",
                         "line": 113
@@ -198,7 +198,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 50,
+                        "durationMicroseconds": 97,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 107
@@ -206,7 +206,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 48,
-                        "durationMicroseconds": 44,
+                        "durationMicroseconds": 84,
                         "errorMessage": "",
                         "functionName": "onCompleted",
                         "line": 139
@@ -214,7 +214,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 43,
-                        "durationMicroseconds": 41,
+                        "durationMicroseconds": 67,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 144
@@ -222,7 +222,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 35,
-                        "durationMicroseconds": 68,
+                        "durationMicroseconds": 118,
                         "errorMessage": "Cannot access value for name todaySteps",
                         "functionName": "text",
                         "line": 152
@@ -230,7 +230,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 42,
-                        "durationMicroseconds": 63,
+                        "durationMicroseconds": 93,
                         "errorMessage": "",
                         "functionName": "weight",
                         "line": 149
@@ -238,7 +238,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 55,
-                        "durationMicroseconds": 67,
+                        "durationMicroseconds": 105,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
                         "line": 151
@@ -246,7 +246,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 55,
-                        "durationMicroseconds": 73,
+                        "durationMicroseconds": 98,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
                         "line": 159
@@ -254,7 +254,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 24,
-                        "durationMicroseconds": 53,
+                        "durationMicroseconds": 82,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 167
@@ -262,7 +262,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 28,
-                        "durationMicroseconds": 117,
+                        "durationMicroseconds": 218,
                         "errorMessage": "Cannot access value for name todayCalories",
                         "functionName": "model",
                         "line": 171
@@ -270,7 +270,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 32,
-                        "durationMicroseconds": 112,
+                        "durationMicroseconds": 174,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 178
@@ -278,7 +278,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 32,
-                        "durationMicroseconds": 174,
+                        "durationMicroseconds": 350,
                         "errorMessage": "",
                         "functionName": "color",
                         "line": 181
@@ -286,7 +286,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 32,
-                        "durationMicroseconds": 91,
+                        "durationMicroseconds": 165,
                         "errorMessage": "",
                         "functionName": "scale",
                         "line": 183
@@ -294,7 +294,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 45,
-                        "durationMicroseconds": 72,
+                        "durationMicroseconds": 110,
                         "errorMessage": "",
                         "functionName": "bottom",
                         "line": 189
@@ -302,7 +302,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 43,
-                        "durationMicroseconds": 56,
+                        "durationMicroseconds": 96,
                         "errorMessage": "",
                         "functionName": "left",
                         "line": 190
@@ -310,7 +310,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 44,
-                        "durationMicroseconds": 54,
+                        "durationMicroseconds": 108,
                         "errorMessage": "",
                         "functionName": "right",
                         "line": 191
@@ -318,7 +318,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 40,
-                        "durationMicroseconds": 543,
+                        "durationMicroseconds": 857,
                         "errorMessage": "Cannot access value for name modelData",
                         "functionName": "width",
                         "line": 198
@@ -326,7 +326,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 41,
-                        "durationMicroseconds": 60,
+                        "durationMicroseconds": 116,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 199
@@ -334,7 +334,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 40,
-                        "durationMicroseconds": 235,
+                        "durationMicroseconds": 281,
                         "errorMessage": "Cannot access value for name modelData",
                         "functionName": "color",
                         "line": 201
@@ -342,7 +342,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 43,
-                        "durationMicroseconds": 59,
+                        "durationMicroseconds": 73,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 206
@@ -350,7 +350,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 44,
-                        "durationMicroseconds": 248,
+                        "durationMicroseconds": 240,
                         "errorMessage": "Cannot access value for name modelData",
                         "functionName": "color",
                         "line": 218
@@ -358,7 +358,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 47,
-                        "durationMicroseconds": 401,
+                        "durationMicroseconds": 605,
                         "errorMessage": "Cannot access value for name modelData",
                         "functionName": "text",
                         "line": 222
@@ -366,7 +366,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 59,
-                        "durationMicroseconds": 50,
+                        "durationMicroseconds": 83,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 221
@@ -374,7 +374,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 54,
-                        "durationMicroseconds": 59,
+                        "durationMicroseconds": 104,
                         "errorMessage": "",
                         "functionName": "weight",
                         "line": 224
@@ -382,7 +382,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 43,
-                        "durationMicroseconds": 380,
+                        "durationMicroseconds": 613,
                         "errorMessage": "Cannot access value for name modelData",
                         "functionName": "text",
                         "line": 230
@@ -390,7 +390,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 61,
-                        "durationMicroseconds": 116,
+                        "durationMicroseconds": 136,
                         "errorMessage": "",
                         "functionName": "verticalCenter",
                         "line": 233
@@ -398,7 +398,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 39,
-                        "durationMicroseconds": 434,
+                        "durationMicroseconds": 603,
                         "errorMessage": "Cannot access value for name modelData",
                         "functionName": "text",
                         "line": 238
@@ -406,7 +406,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 46,
-                        "durationMicroseconds": 73,
+                        "durationMicroseconds": 106,
                         "errorMessage": "",
                         "functionName": "weight",
                         "line": 240
@@ -414,7 +414,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 39,
-                        "durationMicroseconds": 394,
+                        "durationMicroseconds": 671,
                         "errorMessage": "Cannot access value for name modelData",
                         "functionName": "text",
                         "line": 245
@@ -422,7 +422,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 40,
-                        "durationMicroseconds": 596,
+                        "durationMicroseconds": 921,
                         "errorMessage": "Cannot access value for name navigationStack",
                         "functionName": "onClicked",
                         "line": 255
@@ -430,7 +430,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 43,
-                        "durationMicroseconds": 55,
+                        "durationMicroseconds": 68,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 253
@@ -438,7 +438,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 24,
-                        "durationMicroseconds": 139,
+                        "durationMicroseconds": 200,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 272
@@ -446,7 +446,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 24,
-                        "durationMicroseconds": 180,
+                        "durationMicroseconds": 301,
                         "errorMessage": "",
                         "functionName": "color",
                         "line": 275
@@ -454,7 +454,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 24,
-                        "durationMicroseconds": 102,
+                        "durationMicroseconds": 169,
                         "errorMessage": "",
                         "functionName": "scale",
                         "line": 277
@@ -462,7 +462,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 49,
+                        "durationMicroseconds": 68,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 281
@@ -470,7 +470,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 49,
-                        "durationMicroseconds": 70,
+                        "durationMicroseconds": 105,
                         "errorMessage": "",
                         "functionName": "verticalCenter",
                         "line": 290
@@ -478,7 +478,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 47,
-                        "durationMicroseconds": 41,
+                        "durationMicroseconds": 64,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 293
@@ -486,7 +486,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 42,
-                        "durationMicroseconds": 58,
+                        "durationMicroseconds": 87,
                         "errorMessage": "",
                         "functionName": "weight",
                         "line": 296
@@ -502,7 +502,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 42,
-                        "durationMicroseconds": 55,
+                        "durationMicroseconds": 80,
                         "errorMessage": "",
                         "functionName": "weight",
                         "line": 308
@@ -510,7 +510,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 46,
-                        "durationMicroseconds": 51,
+                        "durationMicroseconds": 79,
                         "errorMessage": "",
                         "functionName": "weight",
                         "line": 317
@@ -518,7 +518,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 51,
-                        "durationMicroseconds": 186,
+                        "durationMicroseconds": 333,
                         "errorMessage": "Cannot generate efficient code for internal conversion into unsupported wrapper type.",
                         "functionName": "baseline",
                         "line": 324
@@ -526,7 +526,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 104,
+                        "durationMicroseconds": 148,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 329
@@ -534,7 +534,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 49,
-                        "durationMicroseconds": 63,
+                        "durationMicroseconds": 103,
                         "errorMessage": "",
                         "functionName": "verticalCenter",
                         "line": 335
@@ -542,7 +542,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 32,
-                        "durationMicroseconds": 250,
+                        "durationMicroseconds": 403,
                         "errorMessage": "Cannot access value for name navigationStack",
                         "functionName": "onClicked",
                         "line": 343
@@ -550,7 +550,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 49,
+                        "durationMicroseconds": 72,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 341
@@ -558,7 +558,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 24,
-                        "durationMicroseconds": 55,
+                        "durationMicroseconds": 140,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 354
@@ -566,7 +566,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 28,
-                        "durationMicroseconds": 140,
+                        "durationMicroseconds": 226,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 360
@@ -574,7 +574,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 28,
-                        "durationMicroseconds": 200,
+                        "durationMicroseconds": 317,
                         "errorMessage": "",
                         "functionName": "color",
                         "line": 363
@@ -582,7 +582,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 28,
-                        "durationMicroseconds": 100,
+                        "durationMicroseconds": 142,
                         "errorMessage": "",
                         "functionName": "scale",
                         "line": 365
@@ -590,7 +590,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 33,
-                        "durationMicroseconds": 95,
+                        "durationMicroseconds": 130,
                         "errorMessage": "Cannot load property radius from (component in C:/personal/code/IHA/qml/pages/HealthPage.qml)::parent with type QQuickItem.",
                         "functionName": "radius",
                         "line": 371
@@ -598,7 +598,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 46,
+                        "durationMicroseconds": 65,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 370
@@ -606,7 +606,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 38,
+                        "durationMicroseconds": 63,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 379
@@ -614,7 +614,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 55,
-                        "durationMicroseconds": 36,
+                        "durationMicroseconds": 92,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 393
@@ -622,7 +622,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 50,
-                        "durationMicroseconds": 62,
+                        "durationMicroseconds": 88,
                         "errorMessage": "",
                         "functionName": "weight",
                         "line": 396
@@ -630,7 +630,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 46,
-                        "durationMicroseconds": 50,
+                        "durationMicroseconds": 91,
                         "errorMessage": "",
                         "functionName": "weight",
                         "line": 404
@@ -638,7 +638,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 57,
-                        "durationMicroseconds": 63,
+                        "durationMicroseconds": 96,
                         "errorMessage": "",
                         "functionName": "verticalCenter",
                         "line": 406
@@ -646,7 +646,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 46,
-                        "durationMicroseconds": 51,
+                        "durationMicroseconds": 73,
                         "errorMessage": "",
                         "functionName": "weight",
                         "line": 415
@@ -654,7 +654,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 51,
-                        "durationMicroseconds": 182,
+                        "durationMicroseconds": 254,
                         "errorMessage": "Cannot generate efficient code for internal conversion into unsupported wrapper type.",
                         "functionName": "baseline",
                         "line": 422
@@ -662,7 +662,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 46,
-                        "durationMicroseconds": 104,
+                        "durationMicroseconds": 170,
                         "errorMessage": "",
                         "functionName": "weight",
                         "line": 427
@@ -670,7 +670,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 51,
-                        "durationMicroseconds": 160,
+                        "durationMicroseconds": 247,
                         "errorMessage": "Cannot generate efficient code for internal conversion into unsupported wrapper type.",
                         "functionName": "baseline",
                         "line": 434
@@ -678,7 +678,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 36,
-                        "durationMicroseconds": 54,
+                        "durationMicroseconds": 83,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 440
@@ -686,7 +686,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 47,
-                        "durationMicroseconds": 49,
+                        "durationMicroseconds": 65,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 444
@@ -694,7 +694,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 52,
-                        "durationMicroseconds": 80,
+                        "durationMicroseconds": 133,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 447
@@ -702,7 +702,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 52,
-                        "durationMicroseconds": 76,
+                        "durationMicroseconds": 130,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 448
@@ -710,7 +710,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 52,
-                        "durationMicroseconds": 73,
+                        "durationMicroseconds": 121,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 449
@@ -718,7 +718,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 52,
-                        "durationMicroseconds": 102,
+                        "durationMicroseconds": 196,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 450
@@ -726,7 +726,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 36,
-                        "durationMicroseconds": 245,
+                        "durationMicroseconds": 401,
                         "errorMessage": "Cannot access value for name navigationStack",
                         "functionName": "onClicked",
                         "line": 462
@@ -734,7 +734,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 46,
+                        "durationMicroseconds": 66,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 460
@@ -742,7 +742,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 28,
-                        "durationMicroseconds": 122,
+                        "durationMicroseconds": 192,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 474
@@ -750,7 +750,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 28,
-                        "durationMicroseconds": 174,
+                        "durationMicroseconds": 290,
                         "errorMessage": "",
                         "functionName": "color",
                         "line": 477
@@ -758,7 +758,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 28,
-                        "durationMicroseconds": 91,
+                        "durationMicroseconds": 149,
                         "errorMessage": "",
                         "functionName": "scale",
                         "line": 479
@@ -766,7 +766,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 33,
-                        "durationMicroseconds": 79,
+                        "durationMicroseconds": 119,
                         "errorMessage": "Cannot load property radius from (component in C:/personal/code/IHA/qml/pages/HealthPage.qml)::parent with type QQuickItem.",
                         "functionName": "radius",
                         "line": 485
@@ -774,7 +774,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 52,
+                        "durationMicroseconds": 72,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 484
@@ -782,7 +782,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 37,
+                        "durationMicroseconds": 70,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 493
@@ -790,7 +790,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 44,
-                        "durationMicroseconds": 54,
+                        "durationMicroseconds": 118,
                         "errorMessage": "",
                         "functionName": "loops",
                         "line": 510
@@ -798,7 +798,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 104,
-                        "durationMicroseconds": 53,
+                        "durationMicroseconds": 71,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 511
@@ -806,7 +806,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 55,
-                        "durationMicroseconds": 38,
+                        "durationMicroseconds": 47,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 517
@@ -814,7 +814,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 46,
-                        "durationMicroseconds": 48,
+                        "durationMicroseconds": 93,
                         "errorMessage": "",
                         "functionName": "weight",
                         "line": 527
@@ -822,7 +822,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 57,
-                        "durationMicroseconds": 72,
+                        "durationMicroseconds": 99,
                         "errorMessage": "",
                         "functionName": "verticalCenter",
                         "line": 529
@@ -830,7 +830,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 46,
-                        "durationMicroseconds": 49,
+                        "durationMicroseconds": 77,
                         "errorMessage": "",
                         "functionName": "weight",
                         "line": 538
@@ -838,7 +838,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 51,
-                        "durationMicroseconds": 159,
+                        "durationMicroseconds": 276,
                         "errorMessage": "Cannot generate efficient code for internal conversion into unsupported wrapper type.",
                         "functionName": "baseline",
                         "line": 545
@@ -846,7 +846,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 36,
-                        "durationMicroseconds": 123,
+                        "durationMicroseconds": 116,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 551
@@ -854,7 +854,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 38,
-                        "durationMicroseconds": 1450,
+                        "durationMicroseconds": 1815,
                         "errorMessage": "Cannot generate efficient code for call to untyped JavaScript function",
                         "functionName": "onPaint",
                         "line": 554
@@ -862,7 +862,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 52,
-                        "durationMicroseconds": 56,
+                        "durationMicroseconds": 76,
                         "errorMessage": "",
                         "functionName": "onCompleted",
                         "line": 574
@@ -870,7 +870,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 36,
-                        "durationMicroseconds": 175,
+                        "durationMicroseconds": 232,
                         "errorMessage": "Cannot access value for name navigationStack",
                         "functionName": "onClicked",
                         "line": 582
@@ -878,7 +878,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 48,
+                        "durationMicroseconds": 58,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 580

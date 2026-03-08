@@ -4,68 +4,188 @@
             {
                 "entries": [
                     {
-                        "codegenSuccessful": true,
-                        "column": 23,
-                        "durationMicroseconds": 228,
-                        "errorMessage": "",
-                        "functionName": "fill",
+                        "codegenSuccessful": false,
+                        "column": 40,
+                        "durationMicroseconds": 450,
+                        "errorMessage": "Cannot access value for name window",
+                        "functionName": "isDarkMode",
                         "line": 8
                     },
                     {
                         "codegenSuccessful": true,
-                        "column": 20,
-                        "durationMicroseconds": 153,
+                        "column": 38,
+                        "durationMicroseconds": 267,
                         "errorMessage": "",
-                        "functionName": "width",
+                        "functionName": "bgColor",
+                        "line": 9
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 40,
+                        "durationMicroseconds": 149,
+                        "errorMessage": "",
+                        "functionName": "cardColor",
+                        "line": 10
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 42,
+                        "durationMicroseconds": 143,
+                        "errorMessage": "",
+                        "functionName": "textPrimary",
+                        "line": 11
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 44,
+                        "durationMicroseconds": 148,
+                        "errorMessage": "",
+                        "functionName": "textSecondary",
                         "line": 12
                     },
                     {
                         "codegenSuccessful": true,
-                        "column": 31,
-                        "durationMicroseconds": 74,
+                        "column": 42,
+                        "durationMicroseconds": 152,
                         "errorMessage": "",
-                        "functionName": "fill",
-                        "line": 17
+                        "functionName": "headerColor",
+                        "line": 13
                     },
                     {
                         "codegenSuccessful": true,
-                        "column": 34,
-                        "durationMicroseconds": 120,
+                        "column": 39,
+                        "durationMicroseconds": 154,
                         "errorMessage": "",
-                        "functionName": "weight",
-                        "line": 23
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 45,
-                        "durationMicroseconds": 156,
-                        "errorMessage": "",
-                        "functionName": "verticalCenter",
-                        "line": 25
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 31,
-                        "durationMicroseconds": 246,
-                        "errorMessage": "",
-                        "functionName": "width",
-                        "line": 28
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 45,
-                        "durationMicroseconds": 121,
-                        "errorMessage": "",
-                        "functionName": "verticalCenter",
-                        "line": 35
+                        "functionName": "btnColor",
+                        "line": 14
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 43,
-                        "durationMicroseconds": 67,
+                        "durationMicroseconds": 141,
+                        "errorMessage": "",
+                        "functionName": "pressedColor",
+                        "line": 15
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 43,
+                        "durationMicroseconds": 150,
+                        "errorMessage": "",
+                        "functionName": "dividerColor",
+                        "line": 16
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 41,
+                        "durationMicroseconds": 157,
+                        "errorMessage": "",
+                        "functionName": "arrowColor",
+                        "line": 17
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 23,
+                        "durationMicroseconds": 53,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 20
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 20,
+                        "durationMicroseconds": 82,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 24
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 20,
+                        "durationMicroseconds": 28,
+                        "errorMessage": "Cannot access value for name headerColor",
+                        "functionName": "color",
+                        "line": 26
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 31,
+                        "durationMicroseconds": 59,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 29
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 28,
+                        "durationMicroseconds": 25,
+                        "errorMessage": "Cannot access value for name textPrimary",
+                        "functionName": "color",
+                        "line": 37
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 34,
+                        "durationMicroseconds": 90,
+                        "errorMessage": "",
+                        "functionName": "weight",
+                        "line": 36
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 45,
+                        "durationMicroseconds": 87,
+                        "errorMessage": "",
+                        "functionName": "verticalCenter",
+                        "line": 38
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 24,
+                        "durationMicroseconds": 55,
+                        "errorMessage": "Cannot access value for name pressedColor",
+                        "functionName": "color",
+                        "line": 47
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 32,
+                        "durationMicroseconds": 82,
+                        "errorMessage": "",
+                        "functionName": "right",
+                        "line": 48
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 41,
+                        "durationMicroseconds": 60,
+                        "errorMessage": "",
+                        "functionName": "verticalCenter",
+                        "line": 50
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 28,
+                        "durationMicroseconds": 26,
+                        "errorMessage": "Cannot access value for name textPrimary",
+                        "functionName": "color",
+                        "line": 56
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 39,
+                        "durationMicroseconds": 44,
                         "errorMessage": "",
                         "functionName": "centerIn",
-                        "line": 38
+                        "line": 53
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 35,
+                        "durationMicroseconds": 47,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 61
                     },
                     {
                         "codegenSuccessful": false,
@@ -73,7 +193,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find property \"width\".",
                         "functionName": "width",
-                        "line": 48
+                        "line": 67
                     },
                     {
                         "codegenSuccessful": false,
@@ -81,7 +201,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find property \"height\".",
                         "functionName": "height",
-                        "line": 49
+                        "line": 68
                     },
                     {
                         "codegenSuccessful": false,
@@ -89,151 +209,511 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find property \"policy\".",
                         "functionName": "policy",
-                        "line": 52
+                        "line": 71
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 24,
-                        "durationMicroseconds": 96,
+                        "durationMicroseconds": 85,
                         "errorMessage": "",
                         "functionName": "width",
-                        "line": 55
+                        "line": 74
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 28,
-                        "durationMicroseconds": 171,
+                        "durationMicroseconds": 110,
                         "errorMessage": "",
                         "functionName": "width",
-                        "line": 61
+                        "line": 80
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 28,
+                        "durationMicroseconds": 54,
+                        "errorMessage": "Cannot access value for name pressedColor",
+                        "functionName": "color",
+                        "line": 83
                     },
                     {
                         "codegenSuccessful": true,
-                        "column": 39,
-                        "durationMicroseconds": 62,
+                        "column": 47,
+                        "durationMicroseconds": 76,
                         "errorMessage": "",
-                        "functionName": "fill",
-                        "line": 67
+                        "functionName": "horizontalCenter",
+                        "line": 84
                     },
                     {
                         "codegenSuccessful": true,
-                        "column": 53,
-                        "durationMicroseconds": 140,
-                        "errorMessage": "",
-                        "functionName": "verticalCenter",
-                        "line": 76
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 51,
-                        "durationMicroseconds": 77,
-                        "errorMessage": "",
-                        "functionName": "centerIn",
-                        "line": 79
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 46,
-                        "durationMicroseconds": 87,
-                        "errorMessage": "",
-                        "functionName": "weight",
-                        "line": 82
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 53,
-                        "durationMicroseconds": 107,
+                        "column": 49,
+                        "durationMicroseconds": 63,
                         "errorMessage": "",
                         "functionName": "verticalCenter",
-                        "line": 89
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 46,
-                        "durationMicroseconds": 97,
-                        "errorMessage": "",
-                        "functionName": "weight",
                         "line": 94
                     },
                     {
                         "codegenSuccessful": true,
-                        "column": 28,
-                        "durationMicroseconds": 185,
-                        "errorMessage": "",
-                        "functionName": "width",
-                        "line": 109
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 32,
-                        "durationMicroseconds": 226,
-                        "errorMessage": "Cannot generate efficient code for storing an array in a non-sequence type",
-                        "functionName": "model",
-                        "line": 113
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 36,
-                        "durationMicroseconds": 223,
-                        "errorMessage": "",
-                        "functionName": "width",
-                        "line": 116
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 51,
-                        "durationMicroseconds": 64,
+                        "column": 47,
+                        "durationMicroseconds": 71,
                         "errorMessage": "",
                         "functionName": "centerIn",
-                        "line": 122
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 63,
-                        "durationMicroseconds": 95,
-                        "errorMessage": "",
-                        "functionName": "horizontalCenter",
-                        "line": 130
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 43,
-                        "durationMicroseconds": 695,
-                        "errorMessage": "Cannot access value for name modelData",
-                        "functionName": "text",
-                        "line": 134
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 28,
-                        "durationMicroseconds": 152,
-                        "errorMessage": "",
-                        "functionName": "width",
-                        "line": 145
+                        "line": 97
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 69,
+                        "durationMicroseconds": 76,
+                        "errorMessage": "",
+                        "functionName": "left",
+                        "line": 105
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 49,
+                        "durationMicroseconds": 59,
+                        "errorMessage": "",
+                        "functionName": "verticalCenter",
+                        "line": 107
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 35,
+                        "durationMicroseconds": 385,
+                        "errorMessage": "Cannot access value for name window",
+                        "functionName": "text",
+                        "line": 111
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 36,
+                        "durationMicroseconds": 24,
+                        "errorMessage": "Cannot access value for name textPrimary",
+                        "functionName": "color",
+                        "line": 114
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 42,
+                        "durationMicroseconds": 137,
+                        "errorMessage": "",
+                        "functionName": "weight",
+                        "line": 113
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 35,
+                        "durationMicroseconds": 1335,
+                        "errorMessage": "Cannot access value for name window",
+                        "functionName": "text",
+                        "line": 118
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 36,
+                        "durationMicroseconds": 47,
+                        "errorMessage": "Cannot access value for name textSecondary",
+                        "functionName": "color",
+                        "line": 125
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 32,
+                        "durationMicroseconds": 43,
+                        "errorMessage": "Cannot access value for name arrowColor",
+                        "functionName": "color",
+                        "line": 136
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 40,
+                        "durationMicroseconds": 151,
+                        "errorMessage": "",
+                        "functionName": "right",
+                        "line": 131
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 49,
+                        "durationMicroseconds": 107,
+                        "errorMessage": "",
+                        "functionName": "verticalCenter",
+                        "line": 133
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 36,
+                        "durationMicroseconds": 484,
+                        "errorMessage": "Cannot access value for name navigationStack",
+                        "functionName": "onClicked",
+                        "line": 142
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 39,
+                        "durationMicroseconds": 78,
                         "errorMessage": "",
                         "functionName": "fill",
+                        "line": 141
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 28,
+                        "durationMicroseconds": 167,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 150
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 47,
+                        "durationMicroseconds": 91,
+                        "errorMessage": "",
+                        "functionName": "horizontalCenter",
                         "line": 151
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 32,
+                        "durationMicroseconds": 358,
+                        "errorMessage": "Cannot generate efficient code for storing an array in a non-sequence type",
+                        "functionName": "model",
+                        "line": 155
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 36,
-                        "durationMicroseconds": 113,
+                        "durationMicroseconds": 151,
                         "errorMessage": "",
                         "functionName": "width",
-                        "line": 156
+                        "line": 163
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 36,
+                        "durationMicroseconds": 75,
+                        "errorMessage": "Cannot access value for name pressedColor",
+                        "functionName": "color",
+                        "line": 166
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 51,
+                        "durationMicroseconds": 74,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 169
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 43,
+                        "durationMicroseconds": 451,
+                        "errorMessage": "Cannot access value for name modelData",
+                        "functionName": "text",
+                        "line": 173
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 63,
+                        "durationMicroseconds": 92,
+                        "errorMessage": "",
+                        "functionName": "horizontalCenter",
+                        "line": 175
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 43,
+                        "durationMicroseconds": 393,
+                        "errorMessage": "Cannot access value for name modelData",
+                        "functionName": "text",
+                        "line": 179
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 44,
+                        "durationMicroseconds": 28,
+                        "errorMessage": "Cannot access value for name textSecondary",
+                        "functionName": "color",
+                        "line": 181
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 63,
+                        "durationMicroseconds": 78,
+                        "errorMessage": "",
+                        "functionName": "horizontalCenter",
+                        "line": 182
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 47,
+                        "durationMicroseconds": 42,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 188
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 28,
+                        "durationMicroseconds": 141,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 196
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 47,
+                        "durationMicroseconds": 68,
+                        "errorMessage": "",
+                        "functionName": "horizontalCenter",
+                        "line": 197
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 32,
+                        "durationMicroseconds": 166,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 202
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 32,
+                        "durationMicroseconds": 39,
+                        "errorMessage": "Cannot access value for name cardColor",
+                        "functionName": "color",
+                        "line": 205
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 43,
+                        "durationMicroseconds": 72,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 208
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 40,
+                        "durationMicroseconds": 41,
+                        "errorMessage": "Cannot access value for name textPrimary",
+                        "functionName": "color",
+                        "line": 216
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 46,
-                        "durationMicroseconds": 96,
+                        "durationMicroseconds": 104,
                         "errorMessage": "",
                         "functionName": "weight",
-                        "line": 161
+                        "line": 215
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 40,
+                        "durationMicroseconds": 95,
+                        "errorMessage": "Cannot access value for name textSecondary",
+                        "functionName": "color",
+                        "line": 222
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 40,
+                        "durationMicroseconds": 100,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 227
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 40,
+                        "durationMicroseconds": 71,
+                        "errorMessage": "Cannot access value for name isDarkMode",
+                        "functionName": "color",
+                        "line": 230
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 51,
+                        "durationMicroseconds": 67,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 233
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 65,
+                        "durationMicroseconds": 175,
+                        "errorMessage": "",
+                        "functionName": "verticalCenter",
+                        "line": 240
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 48,
+                        "durationMicroseconds": 81,
+                        "errorMessage": "Cannot access value for name textPrimary",
+                        "functionName": "color",
+                        "line": 246
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 65,
+                        "durationMicroseconds": 118,
+                        "errorMessage": "",
+                        "functionName": "verticalCenter",
+                        "line": 247
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 32,
+                        "durationMicroseconds": 157,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 256
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 32,
+                        "durationMicroseconds": 30,
+                        "errorMessage": "Cannot access value for name cardColor",
+                        "functionName": "color",
+                        "line": 259
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 43,
+                        "durationMicroseconds": 49,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 262
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 40,
+                        "durationMicroseconds": 86,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 267
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 44,
+                        "durationMicroseconds": 41,
+                        "errorMessage": "Cannot access value for name textPrimary",
+                        "functionName": "color",
+                        "line": 273
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 50,
+                        "durationMicroseconds": 352,
+                        "errorMessage": "",
+                        "functionName": "weight",
+                        "line": 272
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 47,
+                        "durationMicroseconds": 137,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 276
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 61,
+                        "durationMicroseconds": 171,
+                        "errorMessage": "",
+                        "functionName": "verticalCenter",
+                        "line": 284
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 40,
+                        "durationMicroseconds": 45,
+                        "errorMessage": "Cannot access value for name textSecondary",
+                        "functionName": "color",
+                        "line": 291
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 40,
+                        "durationMicroseconds": 251,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 296
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 40,
+                        "durationMicroseconds": 55,
+                        "errorMessage": "Cannot access value for name isDarkMode",
+                        "functionName": "color",
+                        "line": 299
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 55,
+                        "durationMicroseconds": 49,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 304
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 28,
+                        "durationMicroseconds": 91,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 313
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 28,
+                        "durationMicroseconds": 24,
+                        "errorMessage": "Cannot access value for name cardColor",
+                        "functionName": "color",
+                        "line": 316
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 47,
+                        "durationMicroseconds": 82,
+                        "errorMessage": "",
+                        "functionName": "horizontalCenter",
+                        "line": 317
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 39,
+                        "durationMicroseconds": 43,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 320
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 36,
+                        "durationMicroseconds": 95,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 325
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 40,
+                        "durationMicroseconds": 30,
+                        "errorMessage": "Cannot access value for name textPrimary",
+                        "functionName": "color",
+                        "line": 331
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 46,
+                        "durationMicroseconds": 65,
+                        "errorMessage": "",
+                        "functionName": "weight",
+                        "line": 330
                     },
                     {
                         "codegenSuccessful": true,
@@ -241,191 +721,583 @@
                         "durationMicroseconds": 166,
                         "errorMessage": "",
                         "functionName": "width",
-                        "line": 165
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 55,
-                        "durationMicroseconds": 108,
-                        "errorMessage": "",
-                        "functionName": "centerIn",
-                        "line": 174
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 28,
-                        "durationMicroseconds": 172,
-                        "errorMessage": "",
-                        "functionName": "width",
-                        "line": 192
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 32,
-                        "durationMicroseconds": 99,
-                        "errorMessage": "",
-                        "functionName": "width",
-                        "line": 197
+                        "line": 334
                     },
                     {
                         "codegenSuccessful": false,
+                        "column": 40,
+                        "durationMicroseconds": 31,
+                        "errorMessage": "Cannot access value for name textSecondary",
+                        "functionName": "color",
+                        "line": 339
+                    },
+                    {
+                        "codegenSuccessful": true,
                         "column": 36,
-                        "durationMicroseconds": 986,
+                        "durationMicroseconds": 58,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 345
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 40,
+                        "durationMicroseconds": 275,
                         "errorMessage": "Cannot generate efficient code for storing an array in a non-sequence type",
                         "functionName": "model",
-                        "line": 200
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 40,
-                        "durationMicroseconds": 127,
-                        "errorMessage": "",
-                        "functionName": "width",
-                        "line": 210
+                        "line": 349
                     },
                     {
                         "codegenSuccessful": false,
-                        "column": 46,
-                        "durationMicroseconds": 363,
+                        "column": 48,
+                        "durationMicroseconds": 338,
                         "errorMessage": "Cannot access value for name index",
-                        "functionName": "visible",
-                        "line": 215
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 44,
-                        "durationMicroseconds": 191,
-                        "errorMessage": "",
-                        "functionName": "width",
-                        "line": 219
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 50,
-                        "durationMicroseconds": 118,
-                        "errorMessage": "",
-                        "functionName": "top",
-                        "line": 216
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 51,
-                        "durationMicroseconds": 91,
-                        "errorMessage": "",
-                        "functionName": "left",
-                        "line": 217
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 51,
-                        "durationMicroseconds": 61,
-                        "errorMessage": "",
-                        "functionName": "fill",
-                        "line": 225
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 48,
-                        "durationMicroseconds": 402,
-                        "errorMessage": "Cannot access value for name modelData",
                         "functionName": "color",
-                        "line": 233
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 65,
-                        "durationMicroseconds": 152,
-                        "errorMessage": "",
-                        "functionName": "verticalCenter",
-                        "line": 234
+                        "line": 363
                     },
                     {
                         "codegenSuccessful": false,
-                        "column": 47,
-                        "durationMicroseconds": 726,
+                        "column": 51,
+                        "durationMicroseconds": 542,
                         "errorMessage": "Cannot access value for name modelData",
                         "functionName": "text",
-                        "line": 238
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 65,
-                        "durationMicroseconds": 271,
-                        "errorMessage": "",
-                        "functionName": "verticalCenter",
-                        "line": 241
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 51,
-                        "durationMicroseconds": 192,
-                        "errorMessage": "",
-                        "functionName": "width",
-                        "line": 244
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 50,
-                        "durationMicroseconds": 385,
-                        "errorMessage": "Cannot access value for name modelData",
-                        "functionName": "visible",
-                        "line": 248
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 48,
-                        "durationMicroseconds": 434,
-                        "errorMessage": "Cannot access value for name modelData",
-                        "functionName": "color",
-                        "line": 252
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 65,
-                        "durationMicroseconds": 131,
-                        "errorMessage": "",
-                        "functionName": "verticalCenter",
-                        "line": 253
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 51,
-                        "durationMicroseconds": 607,
-                        "errorMessage": "Cannot access value for name modelData",
-                        "functionName": "text",
-                        "line": 257
+                        "line": 367
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 52,
-                        "durationMicroseconds": 562,
-                        "errorMessage": "Cannot access value for name modelData",
+                        "durationMicroseconds": 41,
+                        "errorMessage": "Cannot access value for name textPrimary",
                         "functionName": "color",
-                        "line": 260
+                        "line": 370
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 63,
-                        "durationMicroseconds": 81,
+                        "durationMicroseconds": 72,
                         "errorMessage": "",
                         "functionName": "centerIn",
-                        "line": 256
+                        "line": 366
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 61,
+                        "durationMicroseconds": 746,
+                        "errorMessage": "Cannot access value for name modelData",
+                        "functionName": "pixelSize",
+                        "line": 368
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 58,
-                        "durationMicroseconds": 88,
+                        "durationMicroseconds": 121,
                         "errorMessage": "",
                         "functionName": "weight",
-                        "line": 259
+                        "line": 369
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 47,
+                        "durationMicroseconds": 624,
+                        "errorMessage": "Cannot access value for name modelData",
+                        "functionName": "text",
+                        "line": 375
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 48,
+                        "durationMicroseconds": 57,
+                        "errorMessage": "Cannot access value for name textSecondary",
+                        "functionName": "color",
+                        "line": 377
                     },
                     {
                         "codegenSuccessful": true,
-                        "column": 65,
+                        "column": 67,
+                        "durationMicroseconds": 161,
+                        "errorMessage": "",
+                        "functionName": "horizontalCenter",
+                        "line": 378
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 28,
+                        "durationMicroseconds": 198,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 388
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 29,
+                        "durationMicroseconds": 228,
+                        "errorMessage": "",
+                        "functionName": "height",
+                        "line": 389
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 28,
+                        "durationMicroseconds": 38,
+                        "errorMessage": "Cannot access value for name cardColor",
+                        "functionName": "color",
+                        "line": 391
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 47,
+                        "durationMicroseconds": 122,
+                        "errorMessage": "",
+                        "functionName": "horizontalCenter",
+                        "line": 392
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 32,
+                        "durationMicroseconds": 282,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 397
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 38,
+                        "durationMicroseconds": 110,
+                        "errorMessage": "",
+                        "functionName": "top",
+                        "line": 398
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 36,
+                        "durationMicroseconds": 121,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 403
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 41,
+                        "durationMicroseconds": 55,
+                        "errorMessage": "",
+                        "functionName": "isDarkMode",
+                        "line": 407
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 42,
+                        "durationMicroseconds": 59,
+                        "errorMessage": "",
+                        "functionName": "textPrimary",
+                        "line": 408
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 43,
+                        "durationMicroseconds": 55,
+                        "errorMessage": "",
+                        "functionName": "pressedColor",
+                        "line": 409
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 41,
+                        "durationMicroseconds": 60,
+                        "errorMessage": "",
+                        "functionName": "arrowColor",
+                        "line": 410
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 40,
+                        "durationMicroseconds": 831,
+                        "errorMessage": "Cannot access value for name navigationStack",
+                        "functionName": "onClicked",
+                        "line": 411
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 45,
+                        "durationMicroseconds": 28,
+                        "errorMessage": "Cannot access value for name dividerColor",
+                        "functionName": "separatorColor",
+                        "line": 419
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 36,
+                        "durationMicroseconds": 75,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 424
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 41,
+                        "durationMicroseconds": 52,
+                        "errorMessage": "",
+                        "functionName": "isDarkMode",
+                        "line": 428
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 42,
+                        "durationMicroseconds": 66,
+                        "errorMessage": "",
+                        "functionName": "textPrimary",
+                        "line": 429
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 43,
+                        "durationMicroseconds": 56,
+                        "errorMessage": "",
+                        "functionName": "pressedColor",
+                        "line": 430
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 41,
+                        "durationMicroseconds": 55,
+                        "errorMessage": "",
+                        "functionName": "arrowColor",
+                        "line": 431
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 45,
+                        "durationMicroseconds": 43,
+                        "errorMessage": "Cannot access value for name dividerColor",
+                        "functionName": "separatorColor",
+                        "line": 435
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 36,
+                        "durationMicroseconds": 72,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 440
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 41,
+                        "durationMicroseconds": 51,
+                        "errorMessage": "",
+                        "functionName": "isDarkMode",
+                        "line": 444
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 42,
+                        "durationMicroseconds": 58,
+                        "errorMessage": "",
+                        "functionName": "textPrimary",
+                        "line": 445
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 43,
+                        "durationMicroseconds": 55,
+                        "errorMessage": "",
+                        "functionName": "pressedColor",
+                        "line": 446
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 41,
+                        "durationMicroseconds": 63,
+                        "errorMessage": "",
+                        "functionName": "arrowColor",
+                        "line": 447
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 45,
+                        "durationMicroseconds": 28,
+                        "errorMessage": "Cannot access value for name dividerColor",
+                        "functionName": "separatorColor",
+                        "line": 451
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 36,
+                        "durationMicroseconds": 291,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 456
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 41,
+                        "durationMicroseconds": 76,
+                        "errorMessage": "",
+                        "functionName": "isDarkMode",
+                        "line": 461
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 42,
+                        "durationMicroseconds": 60,
+                        "errorMessage": "",
+                        "functionName": "textPrimary",
+                        "line": 462
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 44,
+                        "durationMicroseconds": 56,
+                        "errorMessage": "",
+                        "functionName": "textSecondary",
+                        "line": 463
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 43,
+                        "durationMicroseconds": 56,
+                        "errorMessage": "",
+                        "functionName": "pressedColor",
+                        "line": 464
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 45,
+                        "durationMicroseconds": 31,
+                        "errorMessage": "Cannot access value for name dividerColor",
+                        "functionName": "separatorColor",
+                        "line": 468
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 36,
+                        "durationMicroseconds": 75,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 473
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 41,
+                        "durationMicroseconds": 110,
+                        "errorMessage": "",
+                        "functionName": "isDarkMode",
+                        "line": 477
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 42,
                         "durationMicroseconds": 107,
                         "errorMessage": "",
+                        "functionName": "textPrimary",
+                        "line": 478
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 43,
+                        "durationMicroseconds": 59,
+                        "errorMessage": "",
+                        "functionName": "pressedColor",
+                        "line": 479
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 41,
+                        "durationMicroseconds": 55,
+                        "errorMessage": "",
+                        "functionName": "arrowColor",
+                        "line": 480
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 40,
+                        "durationMicroseconds": 514,
+                        "errorMessage": "Cannot access value for name navigationStack",
+                        "functionName": "onClicked",
+                        "line": 481
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 16,
+                        "durationMicroseconds": 185,
+                        "errorMessage": "",
+                        "functionName": "color",
+                        "line": 508
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 20,
+                        "durationMicroseconds": 27,
+                        "errorMessage": "Cannot access value for name iconColor",
+                        "functionName": "color",
+                        "line": 517
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 37,
+                        "durationMicroseconds": 72,
+                        "errorMessage": "",
                         "functionName": "verticalCenter",
-                        "line": 268
+                        "line": 518
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 23,
+                        "durationMicroseconds": 26,
+                        "errorMessage": "Cannot access value for name icon",
+                        "functionName": "text",
+                        "line": 522
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 35,
+                        "durationMicroseconds": 48,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 521
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 19,
+                        "durationMicroseconds": 22,
+                        "errorMessage": "Cannot access value for name title",
+                        "functionName": "text",
+                        "line": 530
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 20,
+                        "durationMicroseconds": 15,
+                        "errorMessage": "Cannot access value for name textPrimary",
+                        "functionName": "color",
+                        "line": 532
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 27,
+                        "durationMicroseconds": 70,
+                        "errorMessage": "",
+                        "functionName": "left",
+                        "line": 533
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 37,
+                        "durationMicroseconds": 59,
+                        "errorMessage": "",
+                        "functionName": "verticalCenter",
+                        "line": 535
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 19,
+                        "durationMicroseconds": 23,
+                        "errorMessage": "Cannot access value for name badge",
+                        "functionName": "text",
+                        "line": 540
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 20,
+                        "durationMicroseconds": 15,
+                        "errorMessage": "Cannot access value for name textSecondary",
+                        "functionName": "color",
+                        "line": 542
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 22,
+                        "durationMicroseconds": 19,
+                        "errorMessage": "Cannot access value for name badge",
+                        "functionName": "visible",
+                        "line": 546
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 28,
+                        "durationMicroseconds": 72,
+                        "errorMessage": "",
+                        "functionName": "right",
+                        "line": 543
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 37,
+                        "durationMicroseconds": 59,
+                        "errorMessage": "",
+                        "functionName": "verticalCenter",
+                        "line": 545
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 20,
+                        "durationMicroseconds": 23,
+                        "errorMessage": "Cannot access value for name arrowColor",
+                        "functionName": "color",
+                        "line": 553
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 22,
+                        "durationMicroseconds": 18,
+                        "errorMessage": "Cannot access value for name badge",
+                        "functionName": "visible",
+                        "line": 557
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 28,
+                        "durationMicroseconds": 73,
+                        "errorMessage": "",
+                        "functionName": "right",
+                        "line": 554
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 37,
+                        "durationMicroseconds": 56,
+                        "errorMessage": "",
+                        "functionName": "verticalCenter",
+                        "line": 556
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 24,
+                        "durationMicroseconds": 135,
+                        "errorMessage": "Type (component in C:/personal/code/IHA/qml/pages/ProfilePage.qml)::parent with type QQuickItem does not have a property clicked for calling",
+                        "functionName": "onClicked",
+                        "line": 563
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 27,
+                        "durationMicroseconds": 46,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 562
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 16,
+                        "durationMicroseconds": 105,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 570
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 16,
+                        "durationMicroseconds": 46,
+                        "errorMessage": "",
+                        "functionName": "color",
+                        "line": 572
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 35,
+                        "durationMicroseconds": 63,
+                        "errorMessage": "",
+                        "functionName": "horizontalCenter",
+                        "line": 573
                     }
                 ],
                 "filePath": "C:/personal/code/IHA/qml/pages/ProfilePage.qml"

@@ -16,6 +16,7 @@
     <file alias="qml/pages/details/CaloriesDetailPage.qml">C:/personal/code/IHA/qml/pages/details/CaloriesDetailPage.qml</file>
     <file alias="qml/pages/details/ActivityDetailPage.qml">C:/personal/code/IHA/qml/pages/details/ActivityDetailPage.qml</file>
     <file alias="qml/pages/details/ActivityCountDetailPage.qml">C:/personal/code/IHA/qml/pages/details/ActivityCountDetailPage.qml</file>
+    <file alias="qml/pages/settings/AppSettingsPage.qml">C:/personal/code/IHA/qml/pages/settings/AppSettingsPage.qml</file>
   </qresource>
 </RCC>
 

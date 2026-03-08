@@ -6,6 +6,17 @@ Item {
     
     property var navigationStack: null
     
+    // 使用全局主题
+    readonly property bool isDarkMode: typeof window !== 'undefined' ? window.darkMode : true
+    readonly property color bgColor: isDarkMode ? "#0D0D0F" : "#F5F5F7"
+    readonly property color cardColor: isDarkMode ? "#1E1E20" : "#FFFFFF"
+    readonly property color textPrimary: isDarkMode ? "#FFFFFF" : "#1A1A1A"
+    readonly property color textSecondary: isDarkMode ? "#A1A1AA" : "#8E8E93"
+    readonly property color headerColor: isDarkMode ? "#121214" : "#F5F5F7"
+    readonly property color pressedColor: isDarkMode ? "#2A2A2C" : "#E5E5EA"
+    readonly property color dividerColor: isDarkMode ? "#27272A" : "#E5E5EA"
+    readonly property color progressBg: isDarkMode ? "#27272A" : "#E5E5EA"
+    
     // 模拟数据
     property int sleepScore: 85
     property int sleepHours: 7
@@ -19,7 +30,7 @@ Item {
         Rectangle {
             width: parent.width
             height: 56
-            color: "#121214"
+            color: headerColor
             
             // 返回按钮
             Rectangle {
@@ -28,14 +39,14 @@ Item {
                 width: 36
                 height: 36
                 radius: 18
-                color: sleepBackMouseArea.pressed ? "#2A2A2C" : "transparent"
+                color: sleepBackMouseArea.pressed ? pressedColor : "transparent"
                 
                 Text {
                     anchors.centerIn: parent
                     text: "‹"
                     font.pixelSize: 28
                     font.weight: Font.Bold
-                    color: "#FFFFFF"
+                    color: textPrimary
                 }
                 
                 MouseArea {
@@ -55,7 +66,7 @@ Item {
                 text: "睡眠"
                 font.pixelSize: 20
                 font.weight: Font.Bold
-                color: "#FFFFFF"
+                color: textPrimary
                 anchors.centerIn: parent
             }
         }
@@ -76,7 +87,7 @@ Item {
                     width: parent.width - 32
                     height: 200
                     radius: 16
-                    color: "#1E1E20"
+                    color: cardColor
                     anchors.horizontalCenter: parent.horizontalCenter
                     
                     Column {
@@ -88,14 +99,14 @@ Item {
                             width: 120
                             height: 120
                             radius: 60
-                            color: "#27272A"
+                            color: progressBg
                             anchors.horizontalCenter: parent.horizontalCenter
                             
                             Rectangle {
                                 width: 100
                                 height: 100
                                 radius: 50
-                                color: "#1E1E20"
+                                color: cardColor
                                 anchors.centerIn: parent
                                 
                                 Column {
@@ -112,7 +123,7 @@ Item {
                                     Text {
                                         text: "分"
                                         font.pixelSize: 14
-                                        color: "#A1A1AA"
+                                        color: textSecondary
                                         anchors.horizontalCenter: parent.horizontalCenter
                                     }
                                 }
@@ -126,7 +137,7 @@ Item {
                             Text {
                                 text: "睡眠质量" + sleepQuality
                                 font.pixelSize: 16
-                                color: "#FFFFFF"
+                                color: textPrimary
                             }
                             
                             Text {
@@ -143,7 +154,7 @@ Item {
                     width: parent.width - 32
                     height: 120
                     radius: 16
-                    color: "#1E1E20"
+                    color: cardColor
                     anchors.horizontalCenter: parent.horizontalCenter
                     
                     Row {
@@ -157,7 +168,7 @@ Item {
                             Text {
                                 text: "睡眠时长"
                                 font.pixelSize: 14
-                                color: "#A1A1AA"
+                                color: textSecondary
                             }
                             
                             Row {
@@ -166,24 +177,24 @@ Item {
                                     text: sleepHours
                                     font.pixelSize: 36
                                     font.weight: Font.Bold
-                                    color: "#FFFFFF"
+                                    color: textPrimary
                                 }
                                 Text {
                                     text: "时"
                                     font.pixelSize: 16
-                                    color: "#A1A1AA"
+                                    color: textSecondary
                                     anchors.baseline: parent.children[0].baseline
                                 }
                                 Text {
                                     text: sleepMinutes
                                     font.pixelSize: 36
                                     font.weight: Font.Bold
-                                    color: "#FFFFFF"
+                                    color: textPrimary
                                 }
                                 Text {
                                     text: "分"
                                     font.pixelSize: 16
-                                    color: "#A1A1AA"
+                                    color: textSecondary
                                     anchors.baseline: parent.children[2].baseline
                                 }
                             }
@@ -198,17 +209,17 @@ Item {
                             Row {
                                 spacing: 8
                                 Rectangle { width: 12; height: 12; radius: 2; color: "#1E3A5F" }
-                                Text { text: "深睡 2h15m"; font.pixelSize: 12; color: "#A1A1AA" }
+                                Text { text: "深睡 2h15m"; font.pixelSize: 12; color: textSecondary }
                             }
                             Row {
                                 spacing: 8
                                 Rectangle { width: 12; height: 12; radius: 2; color: "#3B5998" }
-                                Text { text: "浅睡 3h40m"; font.pixelSize: 12; color: "#A1A1AA" }
+                                Text { text: "浅睡 3h40m"; font.pixelSize: 12; color: textSecondary }
                             }
                             Row {
                                 spacing: 8
                                 Rectangle { width: 12; height: 12; radius: 2; color: "#9B8FD7" }
-                                Text { text: "REM 2h12m"; font.pixelSize: 12; color: "#A1A1AA" }
+                                Text { text: "REM 2h12m"; font.pixelSize: 12; color: textSecondary }
                             }
                         }
                     }
@@ -219,7 +230,7 @@ Item {
                     width: parent.width - 32
                     height: 160
                     radius: 16
-                    color: "#1E1E20"
+                    color: cardColor
                     anchors.horizontalCenter: parent.horizontalCenter
                     
                     Column {
@@ -231,7 +242,7 @@ Item {
                             text: "睡眠阶段"
                             font.pixelSize: 16
                             font.weight: Font.DemiBold
-                            color: "#FFFFFF"
+                            color: textPrimary
                         }
                         
                         // 时间轴
@@ -272,9 +283,9 @@ Item {
                         
                         Row {
                             width: parent.width
-                            Text { text: "23:00"; font.pixelSize: 10; color: "#71717A" }
+                            Text { text: "23:00"; font.pixelSize: 10; color: textSecondary }
                             Item { width: parent.width - 80; height: 1 }
-                            Text { text: "06:07"; font.pixelSize: 10; color: "#71717A" }
+                            Text { text: "06:07"; font.pixelSize: 10; color: textSecondary }
                         }
                     }
                 }
@@ -283,7 +294,7 @@ Item {
                 Rectangle {
                     width: parent.width - 32
                     radius: 16
-                    color: "#1E1E20"
+                    color: cardColor
                     anchors.horizontalCenter: parent.horizontalCenter
                     
                     Column {
@@ -323,14 +334,14 @@ Item {
                                     Text {
                                         text: "入睡时间"
                                         font.pixelSize: 14
-                                        color: "#A1A1AA"
+                                        color: textSecondary
                                     }
                                     
                                     Text {
                                         text: "23:07 (偏晚)"
                                         font.pixelSize: 16
                                         font.weight: Font.DemiBold
-                                        color: "#FFFFFF"
+                                        color: textPrimary
                                     }
                                 }
                             }
@@ -339,7 +350,7 @@ Item {
                         Rectangle {
                             width: parent.width - 32
                             height: 1
-                            color: "#27272A"
+                            color: dividerColor
                             anchors.horizontalCenter: parent.horizontalCenter
                         }
                         
@@ -376,14 +387,14 @@ Item {
                                     Text {
                                         text: "睡眠建议"
                                         font.pixelSize: 14
-                                        color: "#A1A1AA"
+                                        color: textSecondary
                                     }
                                     
                                     Text {
                                         text: "建议提前30分钟入睡"
                                         font.pixelSize: 16
                                         font.weight: Font.DemiBold
-                                        color: "#FFFFFF"
+                                        color: textPrimary
                                     }
                                 }
                             }

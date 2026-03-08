@@ -8,7 +8,16 @@ Window {
     height: 844
     visible: true
     title: "IHA - 智能健康助理"
-    color: "#0D0D0F"
+    color: darkMode ? "#0D0D0F" : "#F5F5F7"
+    
+    // 全局深色模式
+    property bool darkMode: true
+    
+    // 主题颜色
+    readonly property color themeBgColor: darkMode ? "#0D0D0F" : "#F5F5F7"
+    readonly property color themeCardColor: darkMode ? "#1E1E20" : "#FFFFFF"
+    readonly property color themeTextPrimary: darkMode ? "#FFFFFF" : "#1A1A1A"
+    readonly property color themeTextSecondary: darkMode ? "#A1A1AA" : "#8E8E93"
     
     // 当前主页面索引
     property int currentTabIndex: 0
@@ -79,6 +88,43 @@ Window {
         
         function push(pageUrl) {
             pushFromCard(pageUrl, width / 2, height / 2, width, height)
+        }
+        
+        // 从右边滑入（用于设置页面）
+        function pushFromRight(pageUrl) {
+            if (isAnimating) return
+            isAnimating = true
+            
+            pageStack.push(pageUrl)
+            
+            // 设置初始状态：在屏幕右边
+            detailContainer.x = width
+            detailContainer.y = 0
+            detailScale.xScale = 1.0
+            detailScale.yScale = 1.0
+            detailLoader.opacity = 1
+            
+            // 显示容器
+            detailContainer.visible = true
+            mainPageLoader.visible = false
+            navBar.visible = false
+            
+            // 加载页面
+            detailLoader.source = pageUrl
+            detailLoader.visible = true
+            
+            // 启动滑动动画
+            slideInAnimation.start()
+        }
+        
+        // 滑出返回（用于设置页面）
+        function popToRight() {
+            if (isAnimating) return
+            if (pageStack.length > 0) {
+                isAnimating = true
+                pageStack.pop()
+                slideOutAnimation.start()
+            }
         }
         
         function pop() {
@@ -262,6 +308,45 @@ Window {
         }
     }
     
+    // 设置页面滑入动画（从右边滑入）
+    NumberAnimation {
+        id: slideInAnimation
+        target: detailContainer
+        property: "x"
+        from: width
+        to: 0
+        duration: 300
+        easing.type: Easing.OutCubic
+        
+        onFinished: {
+            isAnimating = false
+        }
+    }
+    
+    // 设置页面滑出动画（向右滑出）
+    NumberAnimation {
+        id: slideOutAnimation
+        target: detailContainer
+        property: "x"
+        from: 0
+        to: width
+        duration: 300
+        easing.type: Easing.OutCubic
+        
+        onStarted: {
+            mainPageLoader.visible = true
+            navBar.visible = true
+        }
+        
+        onFinished: {
+            detailContainer.visible = false
+            detailLoader.visible = false
+            detailLoader.source = ""
+            detailContainer.x = 0
+            isAnimating = false
+        }
+    }
+    
     // 一级页面向左滑动动画（新页面从右边进来）
     ParallelAnimation {
         id: slideLeftAnimation
@@ -374,7 +459,7 @@ Window {
             // 背景色
             Rectangle {
                 anchors.fill: parent
-                color: "#0D0D0F"
+                color: darkMode ? "#0D0D0F" : "#F5F5F7"
             }
             
             Loader {
@@ -401,7 +486,7 @@ Window {
         anchors.left: parent.left
         anchors.right: parent.right
         height: 56
-        color: "#CC121214"
+        color: darkMode ? "#CC121214" : "#EFFFF5F7"
         visible: true
         z: 5
         
@@ -409,7 +494,7 @@ Window {
             anchors.top: parent.top
             width: parent.width
             height: 1
-            color: "#27272A"
+            color: darkMode ? "#27272A" : "#E5E5EA"
         }
         
         Row {

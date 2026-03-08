@@ -1,0 +1,2100 @@
+[
+    {
+        "moduleFiles": [
+            {
+                "entries": [
+                    {
+                        "codegenSuccessful": false,
+                        "column": 40,
+                        "durationMicroseconds": 506,
+                        "errorMessage": "Cannot access value for name window",
+                        "functionName": "isDarkMode",
+                        "line": 9
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 38,
+                        "durationMicroseconds": 282,
+                        "errorMessage": "",
+                        "functionName": "bgColor",
+                        "line": 10
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 40,
+                        "durationMicroseconds": 143,
+                        "errorMessage": "",
+                        "functionName": "cardColor",
+                        "line": 11
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 42,
+                        "durationMicroseconds": 135,
+                        "errorMessage": "",
+                        "functionName": "textPrimary",
+                        "line": 12
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 44,
+                        "durationMicroseconds": 139,
+                        "errorMessage": "",
+                        "functionName": "textSecondary",
+                        "line": 13
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 44,
+                        "durationMicroseconds": 159,
+                        "errorMessage": "",
+                        "functionName": "accentBgColor",
+                        "line": 15
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 12,
+                        "durationMicroseconds": 68,
+                        "errorMessage": "",
+                        "functionName": "color",
+                        "line": 35
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 5,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Functions without type annotations won't be compiled",
+                        "functionName": "formatBirthday",
+                        "line": 48
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 5,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Functions without type annotations won't be compiled",
+                        "functionName": "getCurrentValue",
+                        "line": 54
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 5,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Functions without type annotations won't be compiled",
+                        "functionName": "openModal",
+                        "line": 576
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 28,
+                        "durationMicroseconds": 1073,
+                        "errorMessage": "Cannot access value for name window",
+                        "functionName": "onCompleted",
+                        "line": 37
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 18,
+                        "durationMicroseconds": 20,
+                        "errorMessage": "Cannot access value for name modalVisible",
+                        "functionName": "visible",
+                        "line": 66
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 23,
+                        "durationMicroseconds": 50,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 64
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 24,
+                        "durationMicroseconds": 22,
+                        "errorMessage": "Cannot find name modalVisible",
+                        "functionName": "onClicked",
+                        "line": 71
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 27,
+                        "durationMicroseconds": 55,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 70
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 16,
+                        "durationMicroseconds": 125,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 78
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 17,
+                        "durationMicroseconds": 66,
+                        "errorMessage": "Cannot access value for name currentField",
+                        "functionName": "height",
+                        "line": 79
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 16,
+                        "durationMicroseconds": 13,
+                        "errorMessage": "Cannot access value for name cardColor",
+                        "functionName": "color",
+                        "line": 85
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 12,
+                        "durationMicroseconds": 93,
+                        "errorMessage": "Cannot access value for name modalVisible",
+                        "functionName": "y",
+                        "line": 89
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 18,
+                        "durationMicroseconds": 119,
+                        "errorMessage": "",
+                        "functionName": "visible",
+                        "line": 94
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 35,
+                        "durationMicroseconds": 92,
+                        "errorMessage": "",
+                        "functionName": "horizontalCenter",
+                        "line": 87
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 59,
+                        "durationMicroseconds": 63,
+                        "errorMessage": "",
+                        "functionName": "type",
+                        "line": 91
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 27,
+                        "durationMicroseconds": 44,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 97
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 23,
+                        "durationMicroseconds": 94,
+                        "errorMessage": "Cannot access value for name currentField",
+                        "functionName": "text",
+                        "line": 106
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 24,
+                        "durationMicroseconds": 17,
+                        "errorMessage": "Cannot access value for name textPrimary",
+                        "functionName": "color",
+                        "line": 115
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 30,
+                        "durationMicroseconds": 71,
+                        "errorMessage": "",
+                        "functionName": "weight",
+                        "line": 114
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 43,
+                        "durationMicroseconds": 75,
+                        "errorMessage": "",
+                        "functionName": "horizontalCenter",
+                        "line": 116
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 24,
+                        "durationMicroseconds": 68,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 123
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 26,
+                        "durationMicroseconds": 27,
+                        "errorMessage": "Cannot access value for name currentField",
+                        "functionName": "visible",
+                        "line": 125
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 28,
+                        "durationMicroseconds": 111,
+                        "errorMessage": "Cannot generate efficient code for storing an array in a non-sequence type",
+                        "functionName": "model",
+                        "line": 128
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 32,
+                        "durationMicroseconds": 58,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 131
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 32,
+                        "durationMicroseconds": 335,
+                        "errorMessage": "Cannot access value for name tempGender",
+                        "functionName": "color",
+                        "line": 134
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 35,
+                        "durationMicroseconds": 406,
+                        "errorMessage": "Cannot access value for name modelData",
+                        "functionName": "text",
+                        "line": 140
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 36,
+                        "durationMicroseconds": 415,
+                        "errorMessage": "Cannot access value for name tempGender",
+                        "functionName": "color",
+                        "line": 142
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 43,
+                        "durationMicroseconds": 80,
+                        "errorMessage": "",
+                        "functionName": "left",
+                        "line": 137
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 53,
+                        "durationMicroseconds": 60,
+                        "errorMessage": "",
+                        "functionName": "verticalCenter",
+                        "line": 139
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 36,
+                        "durationMicroseconds": 26,
+                        "errorMessage": "Cannot access value for name accentColor",
+                        "functionName": "color",
+                        "line": 152
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 38,
+                        "durationMicroseconds": 400,
+                        "errorMessage": "Cannot access value for name tempGender",
+                        "functionName": "visible",
+                        "line": 153
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 44,
+                        "durationMicroseconds": 71,
+                        "errorMessage": "",
+                        "functionName": "right",
+                        "line": 146
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 53,
+                        "durationMicroseconds": 67,
+                        "errorMessage": "",
+                        "functionName": "verticalCenter",
+                        "line": 148
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 42,
+                        "durationMicroseconds": 66,
+                        "errorMessage": "",
+                        "functionName": "weight",
+                        "line": 151
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 40,
+                        "durationMicroseconds": 323,
+                        "errorMessage": "Cannot access value for name modelData",
+                        "functionName": "onClicked",
+                        "line": 158
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 43,
+                        "durationMicroseconds": 48,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 157
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 28,
+                        "durationMicroseconds": 90,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 166
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 32,
+                        "durationMicroseconds": 150,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 170
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 32,
+                        "durationMicroseconds": 46,
+                        "errorMessage": "Cannot access value for name isDarkMode",
+                        "functionName": "color",
+                        "line": 173
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 97,
+                        "durationMicroseconds": 22,
+                        "errorMessage": "Cannot access value for name textPrimary",
+                        "functionName": "color",
+                        "line": 175
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 50,
+                        "durationMicroseconds": 44,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 175
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 70,
+                        "durationMicroseconds": 26,
+                        "errorMessage": "Cannot find name modalVisible",
+                        "functionName": "onClicked",
+                        "line": 176
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 51,
+                        "durationMicroseconds": 40,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 176
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 32,
+                        "durationMicroseconds": 159,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 180
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 32,
+                        "durationMicroseconds": 24,
+                        "errorMessage": "Cannot access value for name accentColor",
+                        "functionName": "color",
+                        "line": 183
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 50,
+                        "durationMicroseconds": 40,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 185
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 40,
+                        "durationMicroseconds": 361,
+                        "errorMessage": "Cannot access value for name tempGender",
+                        "functionName": "onClicked",
+                        "line": 188
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 43,
+                        "durationMicroseconds": 49,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 187
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 24,
+                        "durationMicroseconds": 56,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 200
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 26,
+                        "durationMicroseconds": 27,
+                        "errorMessage": "Cannot access value for name currentField",
+                        "functionName": "visible",
+                        "line": 202
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 28,
+                        "durationMicroseconds": 65,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 205
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 43,
+                        "durationMicroseconds": 40,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 209
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 40,
+                        "durationMicroseconds": 26,
+                        "errorMessage": "Cannot access value for name accentBgColor",
+                        "functionName": "color",
+                        "line": 222
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 51,
+                        "durationMicroseconds": 39,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 219
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 56,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find signal \"currentIndexChanged\".",
+                        "functionName": "onCurrentIndexChanged",
+                        "line": 247
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 47,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"fill\".",
+                        "functionName": "fill",
+                        "line": 230
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 43,
+                        "durationMicroseconds": 333,
+                        "errorMessage": "Cannot access value for name index",
+                        "functionName": "text",
+                        "line": 237
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 44,
+                        "durationMicroseconds": 315,
+                        "errorMessage": "Cannot access value for name heightTumbler",
+                        "functionName": "color",
+                        "line": 240
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 46,
+                        "durationMicroseconds": 487,
+                        "errorMessage": "Cannot access value for name Math",
+                        "functionName": "opacity",
+                        "line": 241
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 58,
+                        "durationMicroseconds": 232,
+                        "errorMessage": "Cannot access value for name Text",
+                        "functionName": "horizontalAlignment",
+                        "line": 242
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 56,
+                        "durationMicroseconds": 214,
+                        "errorMessage": "Cannot access value for name Text",
+                        "functionName": "verticalAlignment",
+                        "line": 243
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 53,
+                        "durationMicroseconds": 301,
+                        "errorMessage": "Cannot access value for name heightTumbler",
+                        "functionName": "pixelSize",
+                        "line": 238
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 50,
+                        "durationMicroseconds": 698,
+                        "errorMessage": "Cannot access value for name heightTumbler",
+                        "functionName": "weight",
+                        "line": 239
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 56,
+                        "durationMicroseconds": 45,
+                        "errorMessage": "Cannot access value for name tempHeight",
+                        "functionName": "onCompleted",
+                        "line": 246
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 36,
+                        "durationMicroseconds": 22,
+                        "errorMessage": "Cannot access value for name accentColor",
+                        "functionName": "color",
+                        "line": 255
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 53,
+                        "durationMicroseconds": 87,
+                        "errorMessage": "",
+                        "functionName": "verticalCenter",
+                        "line": 256
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 28,
+                        "durationMicroseconds": 71,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 264
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 32,
+                        "durationMicroseconds": 129,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 268
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 32,
+                        "durationMicroseconds": 45,
+                        "errorMessage": "Cannot access value for name isDarkMode",
+                        "functionName": "color",
+                        "line": 271
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 97,
+                        "durationMicroseconds": 22,
+                        "errorMessage": "Cannot access value for name textPrimary",
+                        "functionName": "color",
+                        "line": 273
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 50,
+                        "durationMicroseconds": 45,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 273
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 70,
+                        "durationMicroseconds": 27,
+                        "errorMessage": "Cannot find name modalVisible",
+                        "functionName": "onClicked",
+                        "line": 274
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 51,
+                        "durationMicroseconds": 46,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 274
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 32,
+                        "durationMicroseconds": 155,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 278
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 32,
+                        "durationMicroseconds": 25,
+                        "errorMessage": "Cannot access value for name accentColor",
+                        "functionName": "color",
+                        "line": 281
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 50,
+                        "durationMicroseconds": 42,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 283
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 40,
+                        "durationMicroseconds": 341,
+                        "errorMessage": "Cannot access value for name tempHeight",
+                        "functionName": "onClicked",
+                        "line": 286
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 43,
+                        "durationMicroseconds": 47,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 285
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 24,
+                        "durationMicroseconds": 57,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 298
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 26,
+                        "durationMicroseconds": 27,
+                        "errorMessage": "Cannot access value for name currentField",
+                        "functionName": "visible",
+                        "line": 300
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 28,
+                        "durationMicroseconds": 67,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 303
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 43,
+                        "durationMicroseconds": 41,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 307
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 40,
+                        "durationMicroseconds": 26,
+                        "errorMessage": "Cannot access value for name accentBgColor",
+                        "functionName": "color",
+                        "line": 319
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 51,
+                        "durationMicroseconds": 39,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 316
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 56,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find signal \"currentIndexChanged\".",
+                        "functionName": "onCurrentIndexChanged",
+                        "line": 343
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 47,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"fill\".",
+                        "functionName": "fill",
+                        "line": 326
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 43,
+                        "durationMicroseconds": 314,
+                        "errorMessage": "Cannot access value for name index",
+                        "functionName": "text",
+                        "line": 333
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 44,
+                        "durationMicroseconds": 317,
+                        "errorMessage": "Cannot access value for name heartRateTumbler",
+                        "functionName": "color",
+                        "line": 336
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 46,
+                        "durationMicroseconds": 497,
+                        "errorMessage": "Cannot access value for name Math",
+                        "functionName": "opacity",
+                        "line": 337
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 58,
+                        "durationMicroseconds": 235,
+                        "errorMessage": "Cannot access value for name Text",
+                        "functionName": "horizontalAlignment",
+                        "line": 338
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 56,
+                        "durationMicroseconds": 215,
+                        "errorMessage": "Cannot access value for name Text",
+                        "functionName": "verticalAlignment",
+                        "line": 339
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 53,
+                        "durationMicroseconds": 371,
+                        "errorMessage": "Cannot access value for name heartRateTumbler",
+                        "functionName": "pixelSize",
+                        "line": 334
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 50,
+                        "durationMicroseconds": 749,
+                        "errorMessage": "Cannot access value for name heartRateTumbler",
+                        "functionName": "weight",
+                        "line": 335
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 56,
+                        "durationMicroseconds": 48,
+                        "errorMessage": "Cannot access value for name tempHeartRate",
+                        "functionName": "onCompleted",
+                        "line": 342
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 36,
+                        "durationMicroseconds": 24,
+                        "errorMessage": "Cannot access value for name accentColor",
+                        "functionName": "color",
+                        "line": 350
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 53,
+                        "durationMicroseconds": 93,
+                        "errorMessage": "",
+                        "functionName": "verticalCenter",
+                        "line": 351
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 28,
+                        "durationMicroseconds": 73,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 359
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 32,
+                        "durationMicroseconds": 120,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 363
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 32,
+                        "durationMicroseconds": 47,
+                        "errorMessage": "Cannot access value for name isDarkMode",
+                        "functionName": "color",
+                        "line": 366
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 97,
+                        "durationMicroseconds": 24,
+                        "errorMessage": "Cannot access value for name textPrimary",
+                        "functionName": "color",
+                        "line": 368
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 50,
+                        "durationMicroseconds": 46,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 368
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 70,
+                        "durationMicroseconds": 28,
+                        "errorMessage": "Cannot find name modalVisible",
+                        "functionName": "onClicked",
+                        "line": 369
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 51,
+                        "durationMicroseconds": 42,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 369
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 32,
+                        "durationMicroseconds": 159,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 373
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 32,
+                        "durationMicroseconds": 25,
+                        "errorMessage": "Cannot access value for name accentColor",
+                        "functionName": "color",
+                        "line": 376
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 50,
+                        "durationMicroseconds": 43,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 378
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 40,
+                        "durationMicroseconds": 354,
+                        "errorMessage": "Cannot access value for name tempHeartRate",
+                        "functionName": "onClicked",
+                        "line": 381
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 43,
+                        "durationMicroseconds": 61,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 380
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 24,
+                        "durationMicroseconds": 67,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 393
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 26,
+                        "durationMicroseconds": 29,
+                        "errorMessage": "Cannot access value for name currentField",
+                        "functionName": "visible",
+                        "line": 395
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 28,
+                        "durationMicroseconds": 54,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 398
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 43,
+                        "durationMicroseconds": 39,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 402
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 40,
+                        "durationMicroseconds": 32,
+                        "errorMessage": "Cannot access value for name accentBgColor",
+                        "functionName": "color",
+                        "line": 414
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 51,
+                        "durationMicroseconds": 60,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 411
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 56,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find signal \"currentIndexChanged\".",
+                        "functionName": "onCurrentIndexChanged",
+                        "line": 438
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 47,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"fill\".",
+                        "functionName": "fill",
+                        "line": 421
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 43,
+                        "durationMicroseconds": 336,
+                        "errorMessage": "Cannot access value for name index",
+                        "functionName": "text",
+                        "line": 428
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 44,
+                        "durationMicroseconds": 319,
+                        "errorMessage": "Cannot access value for name yearTumbler",
+                        "functionName": "color",
+                        "line": 431
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 46,
+                        "durationMicroseconds": 503,
+                        "errorMessage": "Cannot access value for name Math",
+                        "functionName": "opacity",
+                        "line": 432
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 58,
+                        "durationMicroseconds": 237,
+                        "errorMessage": "Cannot access value for name Text",
+                        "functionName": "horizontalAlignment",
+                        "line": 433
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 56,
+                        "durationMicroseconds": 231,
+                        "errorMessage": "Cannot access value for name Text",
+                        "functionName": "verticalAlignment",
+                        "line": 434
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 53,
+                        "durationMicroseconds": 312,
+                        "errorMessage": "Cannot access value for name yearTumbler",
+                        "functionName": "pixelSize",
+                        "line": 429
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 50,
+                        "durationMicroseconds": 749,
+                        "errorMessage": "Cannot access value for name yearTumbler",
+                        "functionName": "weight",
+                        "line": 430
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 56,
+                        "durationMicroseconds": 47,
+                        "errorMessage": "Cannot access value for name tempYear",
+                        "functionName": "onCompleted",
+                        "line": 437
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 36,
+                        "durationMicroseconds": 23,
+                        "errorMessage": "Cannot access value for name accentColor",
+                        "functionName": "color",
+                        "line": 445
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 53,
+                        "durationMicroseconds": 86,
+                        "errorMessage": "",
+                        "functionName": "verticalCenter",
+                        "line": 446
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 40,
+                        "durationMicroseconds": 26,
+                        "errorMessage": "Cannot access value for name accentBgColor",
+                        "functionName": "color",
+                        "line": 458
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 51,
+                        "durationMicroseconds": 44,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 455
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 56,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find signal \"currentIndexChanged\".",
+                        "functionName": "onCurrentIndexChanged",
+                        "line": 482
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 47,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"fill\".",
+                        "functionName": "fill",
+                        "line": 465
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 43,
+                        "durationMicroseconds": 297,
+                        "errorMessage": "Cannot access value for name index",
+                        "functionName": "text",
+                        "line": 472
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 44,
+                        "durationMicroseconds": 360,
+                        "errorMessage": "Cannot access value for name monthTumbler",
+                        "functionName": "color",
+                        "line": 475
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 46,
+                        "durationMicroseconds": 494,
+                        "errorMessage": "Cannot access value for name Math",
+                        "functionName": "opacity",
+                        "line": 476
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 58,
+                        "durationMicroseconds": 228,
+                        "errorMessage": "Cannot access value for name Text",
+                        "functionName": "horizontalAlignment",
+                        "line": 477
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 56,
+                        "durationMicroseconds": 217,
+                        "errorMessage": "Cannot access value for name Text",
+                        "functionName": "verticalAlignment",
+                        "line": 478
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 53,
+                        "durationMicroseconds": 285,
+                        "errorMessage": "Cannot access value for name monthTumbler",
+                        "functionName": "pixelSize",
+                        "line": 473
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 50,
+                        "durationMicroseconds": 721,
+                        "errorMessage": "Cannot access value for name monthTumbler",
+                        "functionName": "weight",
+                        "line": 474
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 56,
+                        "durationMicroseconds": 42,
+                        "errorMessage": "Cannot access value for name tempMonth",
+                        "functionName": "onCompleted",
+                        "line": 481
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 36,
+                        "durationMicroseconds": 22,
+                        "errorMessage": "Cannot access value for name accentColor",
+                        "functionName": "color",
+                        "line": 489
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 53,
+                        "durationMicroseconds": 86,
+                        "errorMessage": "",
+                        "functionName": "verticalCenter",
+                        "line": 490
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 40,
+                        "durationMicroseconds": 27,
+                        "errorMessage": "Cannot access value for name accentBgColor",
+                        "functionName": "color",
+                        "line": 502
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 51,
+                        "durationMicroseconds": 44,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 499
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 56,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find signal \"currentIndexChanged\".",
+                        "functionName": "onCurrentIndexChanged",
+                        "line": 526
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 47,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"fill\".",
+                        "functionName": "fill",
+                        "line": 509
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 43,
+                        "durationMicroseconds": 296,
+                        "errorMessage": "Cannot access value for name index",
+                        "functionName": "text",
+                        "line": 516
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 44,
+                        "durationMicroseconds": 324,
+                        "errorMessage": "Cannot access value for name dayTumbler",
+                        "functionName": "color",
+                        "line": 519
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 46,
+                        "durationMicroseconds": 504,
+                        "errorMessage": "Cannot access value for name Math",
+                        "functionName": "opacity",
+                        "line": 520
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 58,
+                        "durationMicroseconds": 221,
+                        "errorMessage": "Cannot access value for name Text",
+                        "functionName": "horizontalAlignment",
+                        "line": 521
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 56,
+                        "durationMicroseconds": 215,
+                        "errorMessage": "Cannot access value for name Text",
+                        "functionName": "verticalAlignment",
+                        "line": 522
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 53,
+                        "durationMicroseconds": 295,
+                        "errorMessage": "Cannot access value for name dayTumbler",
+                        "functionName": "pixelSize",
+                        "line": 517
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 50,
+                        "durationMicroseconds": 712,
+                        "errorMessage": "Cannot access value for name dayTumbler",
+                        "functionName": "weight",
+                        "line": 518
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 56,
+                        "durationMicroseconds": 53,
+                        "errorMessage": "Cannot access value for name tempDay",
+                        "functionName": "onCompleted",
+                        "line": 525
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 36,
+                        "durationMicroseconds": 22,
+                        "errorMessage": "Cannot access value for name accentColor",
+                        "functionName": "color",
+                        "line": 533
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 53,
+                        "durationMicroseconds": 91,
+                        "errorMessage": "",
+                        "functionName": "verticalCenter",
+                        "line": 534
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 28,
+                        "durationMicroseconds": 66,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 542
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 32,
+                        "durationMicroseconds": 143,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 546
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 32,
+                        "durationMicroseconds": 45,
+                        "errorMessage": "Cannot access value for name isDarkMode",
+                        "functionName": "color",
+                        "line": 549
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 97,
+                        "durationMicroseconds": 23,
+                        "errorMessage": "Cannot access value for name textPrimary",
+                        "functionName": "color",
+                        "line": 551
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 50,
+                        "durationMicroseconds": 45,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 551
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 70,
+                        "durationMicroseconds": 27,
+                        "errorMessage": "Cannot find name modalVisible",
+                        "functionName": "onClicked",
+                        "line": 552
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 51,
+                        "durationMicroseconds": 41,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 552
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 32,
+                        "durationMicroseconds": 114,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 556
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 32,
+                        "durationMicroseconds": 24,
+                        "errorMessage": "Cannot access value for name accentColor",
+                        "functionName": "color",
+                        "line": 559
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 50,
+                        "durationMicroseconds": 42,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 561
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 40,
+                        "durationMicroseconds": 407,
+                        "errorMessage": "Cannot access value for name tempYear",
+                        "functionName": "onClicked",
+                        "line": 564
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 43,
+                        "durationMicroseconds": 51,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 563
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 16,
+                        "durationMicroseconds": 37,
+                        "errorMessage": "Cannot access value for name isDarkMode",
+                        "functionName": "color",
+                        "line": 599
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 22,
+                        "durationMicroseconds": 73,
+                        "errorMessage": "",
+                        "functionName": "top",
+                        "line": 595
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 23,
+                        "durationMicroseconds": 57,
+                        "errorMessage": "",
+                        "functionName": "left",
+                        "line": 596
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 24,
+                        "durationMicroseconds": 54,
+                        "errorMessage": "",
+                        "functionName": "right",
+                        "line": 597
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 20,
+                        "durationMicroseconds": 49,
+                        "errorMessage": "Cannot access value for name isDarkMode",
+                        "functionName": "color",
+                        "line": 608
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 84,
+                        "durationMicroseconds": 19,
+                        "errorMessage": "Cannot access value for name textPrimary",
+                        "functionName": "color",
+                        "line": 610
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 38,
+                        "durationMicroseconds": 44,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 610
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 28,
+                        "durationMicroseconds": 91,
+                        "errorMessage": "Cannot access value for name navigationStack",
+                        "functionName": "onClicked",
+                        "line": 615
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 31,
+                        "durationMicroseconds": 53,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 614
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 107,
+                        "durationMicroseconds": 23,
+                        "errorMessage": "Cannot access value for name textPrimary",
+                        "functionName": "color",
+                        "line": 619
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 34,
+                        "durationMicroseconds": 52,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 619
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 89,
+                        "durationMicroseconds": 60,
+                        "errorMessage": "",
+                        "functionName": "weight",
+                        "line": 619
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 16,
+                        "durationMicroseconds": 21,
+                        "errorMessage": "Cannot access value for name cardColor",
+                        "functionName": "color",
+                        "line": 631
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 22,
+                        "durationMicroseconds": 70,
+                        "errorMessage": "",
+                        "functionName": "top",
+                        "line": 625
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 23,
+                        "durationMicroseconds": 58,
+                        "errorMessage": "",
+                        "functionName": "left",
+                        "line": 626
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 24,
+                        "durationMicroseconds": 53,
+                        "errorMessage": "",
+                        "functionName": "right",
+                        "line": 627
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 27,
+                        "durationMicroseconds": 43,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 634
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 41,
+                        "durationMicroseconds": 59,
+                        "errorMessage": "",
+                        "functionName": "verticalCenter",
+                        "line": 640
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 42,
+                        "durationMicroseconds": 37,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 641
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 41,
+                        "durationMicroseconds": 59,
+                        "errorMessage": "",
+                        "functionName": "verticalCenter",
+                        "line": 645
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 30,
+                        "durationMicroseconds": 353,
+                        "errorMessage": "Cannot access value for name window",
+                        "functionName": "text",
+                        "line": 648
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 149,
+                        "durationMicroseconds": 21,
+                        "errorMessage": "Cannot access value for name textPrimary",
+                        "functionName": "color",
+                        "line": 648
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 131,
+                        "durationMicroseconds": 61,
+                        "errorMessage": "",
+                        "functionName": "weight",
+                        "line": 648
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 30,
+                        "durationMicroseconds": 329,
+                        "errorMessage": "Cannot access value for name window",
+                        "functionName": "text",
+                        "line": 649
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 126,
+                        "durationMicroseconds": 21,
+                        "errorMessage": "Cannot access value for name textSecondary",
+                        "functionName": "color",
+                        "line": 649
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 17,
+                        "durationMicroseconds": 68,
+                        "errorMessage": "",
+                        "functionName": "height",
+                        "line": 661
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 16,
+                        "durationMicroseconds": 19,
+                        "errorMessage": "Cannot access value for name cardColor",
+                        "functionName": "color",
+                        "line": 663
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 22,
+                        "durationMicroseconds": 91,
+                        "errorMessage": "",
+                        "functionName": "top",
+                        "line": 657
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 23,
+                        "durationMicroseconds": 59,
+                        "errorMessage": "",
+                        "functionName": "left",
+                        "line": 658
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 24,
+                        "durationMicroseconds": 55,
+                        "errorMessage": "",
+                        "functionName": "right",
+                        "line": 659
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 20,
+                        "durationMicroseconds": 55,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 667
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 24,
+                        "durationMicroseconds": 52,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 671
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 24,
+                        "durationMicroseconds": 52,
+                        "errorMessage": "Cannot access value for name isDarkMode",
+                        "functionName": "color",
+                        "line": 672
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 161,
+                        "durationMicroseconds": 22,
+                        "errorMessage": "Cannot access value for name textPrimary",
+                        "functionName": "color",
+                        "line": 674
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 38,
+                        "durationMicroseconds": 132,
+                        "errorMessage": "",
+                        "functionName": "left",
+                        "line": 674
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 99,
+                        "durationMicroseconds": 58,
+                        "errorMessage": "",
+                        "functionName": "verticalCenter",
+                        "line": 674
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 36,
+                        "durationMicroseconds": 62,
+                        "errorMessage": "",
+                        "functionName": "right",
+                        "line": 677
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 99,
+                        "durationMicroseconds": 54,
+                        "errorMessage": "",
+                        "functionName": "verticalCenter",
+                        "line": 677
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 34,
+                        "durationMicroseconds": 560,
+                        "errorMessage": "method getCurrentValue cannot be resolved.",
+                        "functionName": "text",
+                        "line": 678
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 88,
+                        "durationMicroseconds": 21,
+                        "errorMessage": "Cannot access value for name textSecondary",
+                        "functionName": "color",
+                        "line": 678
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 66,
+                        "durationMicroseconds": 20,
+                        "errorMessage": "Cannot access value for name textSecondary",
+                        "functionName": "color",
+                        "line": 679
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 78,
+                        "durationMicroseconds": 282,
+                        "errorMessage": "method openModal cannot be resolved.",
+                        "functionName": "onClicked",
+                        "line": 682
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 59,
+                        "durationMicroseconds": 58,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 682
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 32,
+                        "durationMicroseconds": 96,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 685
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 69,
+                        "durationMicroseconds": 40,
+                        "errorMessage": "Cannot access value for name isDarkMode",
+                        "functionName": "color",
+                        "line": 685
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 131,
+                        "durationMicroseconds": 68,
+                        "errorMessage": "",
+                        "functionName": "horizontalCenter",
+                        "line": 685
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 24,
+                        "durationMicroseconds": 57,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 689
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 24,
+                        "durationMicroseconds": 47,
+                        "errorMessage": "Cannot access value for name isDarkMode",
+                        "functionName": "color",
+                        "line": 690
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 161,
+                        "durationMicroseconds": 21,
+                        "errorMessage": "Cannot access value for name textPrimary",
+                        "functionName": "color",
+                        "line": 692
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 38,
+                        "durationMicroseconds": 67,
+                        "errorMessage": "",
+                        "functionName": "left",
+                        "line": 692
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 99,
+                        "durationMicroseconds": 58,
+                        "errorMessage": "",
+                        "functionName": "verticalCenter",
+                        "line": 692
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 36,
+                        "durationMicroseconds": 64,
+                        "errorMessage": "",
+                        "functionName": "right",
+                        "line": 695
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 99,
+                        "durationMicroseconds": 53,
+                        "errorMessage": "",
+                        "functionName": "verticalCenter",
+                        "line": 695
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 34,
+                        "durationMicroseconds": 550,
+                        "errorMessage": "method getCurrentValue cannot be resolved.",
+                        "functionName": "text",
+                        "line": 696
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 90,
+                        "durationMicroseconds": 21,
+                        "errorMessage": "Cannot access value for name textSecondary",
+                        "functionName": "color",
+                        "line": 696
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 66,
+                        "durationMicroseconds": 19,
+                        "errorMessage": "Cannot access value for name textSecondary",
+                        "functionName": "color",
+                        "line": 697
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 80,
+                        "durationMicroseconds": 282,
+                        "errorMessage": "method openModal cannot be resolved.",
+                        "functionName": "onClicked",
+                        "line": 700
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 61,
+                        "durationMicroseconds": 49,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 700
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 32,
+                        "durationMicroseconds": 102,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 703
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 69,
+                        "durationMicroseconds": 40,
+                        "errorMessage": "Cannot access value for name isDarkMode",
+                        "functionName": "color",
+                        "line": 703
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 131,
+                        "durationMicroseconds": 69,
+                        "errorMessage": "",
+                        "functionName": "horizontalCenter",
+                        "line": 703
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 24,
+                        "durationMicroseconds": 54,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 707
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 24,
+                        "durationMicroseconds": 48,
+                        "errorMessage": "Cannot access value for name isDarkMode",
+                        "functionName": "color",
+                        "line": 708
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 161,
+                        "durationMicroseconds": 21,
+                        "errorMessage": "Cannot access value for name textPrimary",
+                        "functionName": "color",
+                        "line": 710
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 38,
+                        "durationMicroseconds": 158,
+                        "errorMessage": "",
+                        "functionName": "left",
+                        "line": 710
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 99,
+                        "durationMicroseconds": 59,
+                        "errorMessage": "",
+                        "functionName": "verticalCenter",
+                        "line": 710
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 36,
+                        "durationMicroseconds": 75,
+                        "errorMessage": "",
+                        "functionName": "right",
+                        "line": 713
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 99,
+                        "durationMicroseconds": 55,
+                        "errorMessage": "",
+                        "functionName": "verticalCenter",
+                        "line": 713
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 34,
+                        "durationMicroseconds": 548,
+                        "errorMessage": "method getCurrentValue cannot be resolved.",
+                        "functionName": "text",
+                        "line": 714
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 95,
+                        "durationMicroseconds": 21,
+                        "errorMessage": "Cannot access value for name textSecondary",
+                        "functionName": "color",
+                        "line": 714
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 66,
+                        "durationMicroseconds": 20,
+                        "errorMessage": "Cannot access value for name textSecondary",
+                        "functionName": "color",
+                        "line": 715
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 78,
+                        "durationMicroseconds": 289,
+                        "errorMessage": "method openModal cannot be resolved.",
+                        "functionName": "onClicked",
+                        "line": 718
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 59,
+                        "durationMicroseconds": 54,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 718
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 32,
+                        "durationMicroseconds": 96,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 721
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 69,
+                        "durationMicroseconds": 41,
+                        "errorMessage": "Cannot access value for name isDarkMode",
+                        "functionName": "color",
+                        "line": 721
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 131,
+                        "durationMicroseconds": 70,
+                        "errorMessage": "",
+                        "functionName": "horizontalCenter",
+                        "line": 721
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 24,
+                        "durationMicroseconds": 56,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 725
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 24,
+                        "durationMicroseconds": 48,
+                        "errorMessage": "Cannot access value for name isDarkMode",
+                        "functionName": "color",
+                        "line": 726
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 163,
+                        "durationMicroseconds": 23,
+                        "errorMessage": "Cannot access value for name textPrimary",
+                        "functionName": "color",
+                        "line": 728
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 38,
+                        "durationMicroseconds": 68,
+                        "errorMessage": "",
+                        "functionName": "left",
+                        "line": 728
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 99,
+                        "durationMicroseconds": 57,
+                        "errorMessage": "",
+                        "functionName": "verticalCenter",
+                        "line": 728
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 36,
+                        "durationMicroseconds": 75,
+                        "errorMessage": "",
+                        "functionName": "right",
+                        "line": 731
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 99,
+                        "durationMicroseconds": 120,
+                        "errorMessage": "",
+                        "functionName": "verticalCenter",
+                        "line": 731
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 34,
+                        "durationMicroseconds": 569,
+                        "errorMessage": "method getCurrentValue cannot be resolved.",
+                        "functionName": "text",
+                        "line": 732
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 99,
+                        "durationMicroseconds": 21,
+                        "errorMessage": "Cannot access value for name textSecondary",
+                        "functionName": "color",
+                        "line": 732
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 66,
+                        "durationMicroseconds": 20,
+                        "errorMessage": "Cannot access value for name textSecondary",
+                        "functionName": "color",
+                        "line": 733
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 81,
+                        "durationMicroseconds": 275,
+                        "errorMessage": "method openModal cannot be resolved.",
+                        "functionName": "onClicked",
+                        "line": 736
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 62,
+                        "durationMicroseconds": 50,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 736
+                    }
+                ],
+                "filePath": "C:/personal/code/IHA/qml/pages/settings/ProfileInfoPage.qml"
+            }
+        ],
+        "moduleId": "IHA(appIHA)"
+    }
+]

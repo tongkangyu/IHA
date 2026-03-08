@@ -101,13 +101,13 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 49,
+				"line" : 52,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 1,
-				"line" : 44,
+				"line" : 47,
 				"parent" : 0
 			},
 			{
@@ -407,47 +407,6 @@
 				"parent" : 59
 			},
 			{
-				"file" : 1,
-				"line" : -1,
-				"parent" : 0
-			},
-			{
-				"command" : 20,
-				"file" : 20,
-				"line" : 1,
-				"parent" : 61
-			},
-			{
-				"command" : 19,
-				"file" : 0,
-				"line" : 844,
-				"parent" : 62
-			},
-			{
-				"command" : 18,
-				"file" : 0,
-				"line" : 766,
-				"parent" : 63
-			},
-			{
-				"command" : 17,
-				"file" : 0,
-				"line" : 766,
-				"parent" : 64
-			},
-			{
-				"command" : 16,
-				"file" : 12,
-				"line" : 4516,
-				"parent" : 65
-			},
-			{
-				"command" : 13,
-				"file" : 12,
-				"line" : 4291,
-				"parent" : 66
-			},
-			{
 				"command" : 14,
 				"file" : 12,
 				"line" : 3607,
@@ -457,6 +416,47 @@
 				"command" : 13,
 				"file" : 12,
 				"line" : 2976,
+				"parent" : 61
+			},
+			{
+				"file" : 1,
+				"line" : -1,
+				"parent" : 0
+			},
+			{
+				"command" : 20,
+				"file" : 20,
+				"line" : 1,
+				"parent" : 63
+			},
+			{
+				"command" : 19,
+				"file" : 0,
+				"line" : 844,
+				"parent" : 64
+			},
+			{
+				"command" : 18,
+				"file" : 0,
+				"line" : 766,
+				"parent" : 65
+			},
+			{
+				"command" : 17,
+				"file" : 0,
+				"line" : 766,
+				"parent" : 66
+			},
+			{
+				"command" : 16,
+				"file" : 12,
+				"line" : 4516,
+				"parent" : 67
+			},
+			{
+				"command" : 13,
+				"file" : 12,
+				"line" : 4291,
 				"parent" : 68
 			},
 			{
@@ -730,6 +730,42 @@
 				"parent" : 58
 			},
 			{
+				"command" : 23,
+				"file" : 12,
+				"line" : 3321,
+				"parent" : 58
+			},
+			{
+				"command" : 23,
+				"file" : 12,
+				"line" : 3514,
+				"parent" : 58
+			},
+			{
+				"command" : 23,
+				"file" : 12,
+				"line" : 3321,
+				"parent" : 58
+			},
+			{
+				"command" : 23,
+				"file" : 12,
+				"line" : 3514,
+				"parent" : 58
+			},
+			{
+				"command" : 23,
+				"file" : 12,
+				"line" : 3321,
+				"parent" : 58
+			},
+			{
+				"command" : 23,
+				"file" : 12,
+				"line" : 3514,
+				"parent" : 58
+			},
+			{
 				"command" : 28,
 				"file" : 12,
 				"line" : 3629,
@@ -739,31 +775,31 @@
 				"command" : 27,
 				"file" : 0,
 				"line" : 400,
-				"parent" : 115
+				"parent" : 121
 			},
 			{
 				"command" : 26,
 				"file" : 0,
 				"line" : 2560,
-				"parent" : 116
+				"parent" : 122
 			},
 			{
 				"command" : 23,
 				"file" : 0,
 				"line" : 2104,
-				"parent" : 117
+				"parent" : 123
 			},
 			{
 				"command" : 30,
 				"file" : 0,
 				"line" : 838,
-				"parent" : 62
+				"parent" : 64
 			},
 			{
 				"command" : 23,
 				"file" : 0,
 				"line" : 2229,
-				"parent" : 119
+				"parent" : 125
 			}
 		]
 	},
@@ -986,7 +1022,10 @@
 				33,
 				35,
 				37,
-				38
+				39,
+				41,
+				43,
+				44
 			]
 		},
 		{
@@ -1197,23 +1236,23 @@
 	"dependencies" : 
 	[
 		{
-			"backtrace" : 0,
-			"id" : "appIHA_autogen::@6890427a1f51a3e7e1df"
+			"backtrace" : 60,
+			"id" : "appIHA_copy_res::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 62,
+			"id" : "appIHA_copy_qml::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 69,
+			"id" : "appIHA_qmlimportscan::@6890427a1f51a3e7e1df"
 		},
 		{
 			"id" : "appIHA_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		},
 		{
-			"backtrace" : 60,
-			"id" : "appIHA_copy_res::@6890427a1f51a3e7e1df"
-		},
-		{
-			"backtrace" : 67,
-			"id" : "appIHA_qmlimportscan::@6890427a1f51a3e7e1df"
-		},
-		{
-			"backtrace" : 69,
-			"id" : "appIHA_copy_qml::@6890427a1f51a3e7e1df"
+			"backtrace" : 0,
+			"id" : "appIHA_autogen::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "appIHA::@6890427a1f51a3e7e1df",
@@ -1375,7 +1414,10 @@
 				30,
 				32,
 				34,
-				36
+				36,
+				38,
+				40,
+				42
 			]
 		},
 		{
@@ -1402,39 +1444,36 @@
 				33,
 				35,
 				37,
-				38,
 				39,
-				40,
-				41
+				41,
+				43,
+				44,
+				45,
+				46,
+				47
 			]
 		},
 		{
 			"name" : "",
 			"sourceIndexes" : 
 			[
-				42,
-				66,
-				67,
-				68,
-				69,
-				70,
-				71,
-				72,
-				73,
-				74,
-				75
+				48,
+				75,
+				76,
+				77,
+				78,
+				79,
+				80,
+				81,
+				82,
+				83,
+				84
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				43,
-				44,
-				45,
-				46,
-				47,
-				48,
 				49,
 				50,
 				51,
@@ -1451,7 +1490,16 @@
 				62,
 				63,
 				64,
-				65
+				65,
+				66,
+				67,
+				68,
+				69,
+				70,
+				71,
+				72,
+				73,
+				74
 			]
 		}
 	],
@@ -1690,26 +1738,62 @@
 			"sourceGroupIndex" : 1
 		},
 		{
+			"backtrace" : 115,
+			"path" : "qml/pages/settings/AppSettingsPage.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 116,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/.rcc/qmlcache/appIHA_qml/pages/settings/AppSettingsPage_qml.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 117,
+			"path" : "qml/pages/settings/AboutPage.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
 			"backtrace" : 118,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/.rcc/qmlcache/appIHA_qml/pages/settings/AboutPage_qml.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 119,
+			"path" : "qml/pages/settings/ProfileInfoPage.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 120,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/.rcc/qmlcache/appIHA_qml/pages/settings/ProfileInfoPage_qml.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 124,
 			"compileGroupIndex" : 0,
 			"isGenerated" : true,
 			"path" : "build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/.qt/rcc/qrc_appIHA_raw_qml_0.cpp",
 			"sourceGroupIndex" : 1
 		},
 		{
-			"backtrace" : 120,
+			"backtrace" : 126,
 			"isGenerated" : true,
 			"path" : "build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/.qt/rcc/qmake_IHA.qrc",
 			"sourceGroupIndex" : 1
 		},
 		{
-			"backtrace" : 120,
+			"backtrace" : 126,
 			"isGenerated" : true,
 			"path" : "build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/IHA/qmldir",
 			"sourceGroupIndex" : 1
 		},
 		{
-			"backtrace" : 120,
+			"backtrace" : 126,
 			"isGenerated" : true,
 			"path" : "build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/.qt/rcc/appIHA_raw_qml_0.qrc",
 			"sourceGroupIndex" : 1
@@ -1838,6 +1922,24 @@
 			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/.rcc/qmlcache/appIHA_qml/pages/details/ActivityCountDetailPage_qml.cpp.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/.rcc/qmlcache/appIHA_qml/pages/settings/AppSettingsPage_qml.cpp.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/.rcc/qmlcache/appIHA_qml/pages/settings/AboutPage_qml.cpp.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/.rcc/qmlcache/appIHA_qml/pages/settings/ProfileInfoPage_qml.cpp.rule",
 			"sourceGroupIndex" : 3
 		},
 		{

@@ -6,6 +6,18 @@ Item {
     
     property var navigationStack: null
     
+    // 使用全局主题
+    readonly property bool isDarkMode: typeof window !== 'undefined' ? window.darkMode : true
+    readonly property color bgColor: isDarkMode ? "#0D0D0F" : "#F5F5F7"
+    readonly property color cardColor: isDarkMode ? "#1E1E20" : "#FFFFFF"
+    readonly property color textPrimary: isDarkMode ? "#FFFFFF" : "#1A1A1A"
+    readonly property color textSecondary: isDarkMode ? "#A1A1AA" : "#8E8E93"
+    readonly property color pressedColor: isDarkMode ? "#3A3A3C" : "#E5E5EA"
+    readonly property color btnColor: isDarkMode ? "#1E1E20" : "#E5E5EA"
+    readonly property color progressBg: isDarkMode ? "#2A2A2C" : "#E5E5EA"
+    readonly property color arrowColor: isDarkMode ? "#5A5A5C" : "#C7C7CC"
+    readonly property color cardPressed: isDarkMode ? "#303032" : "#F0F0F5"
+    
     // 模拟数据
     property int todaySteps: 9580
     property int stepsGoal: 10000
@@ -39,7 +51,7 @@ Item {
                     text: "健康"
                     font.pixelSize: 32
                     font.weight: Font.Bold
-                    color: "#FFFFFF"
+                    color: textPrimary
                 }
                 
                 Item { width: parent.width - 100; height: 1 }
@@ -49,7 +61,7 @@ Item {
                     width: 36
                     height: 36
                     radius: 18
-                    color: addMouseArea.pressed ? "#3A3A3C" : "#1E1E20"
+                    color: addMouseArea.pressed ? pressedColor : btnColor
                     anchors.verticalCenter: parent.verticalCenter
                     
                     scale: addMouseArea.pressed ? 0.85 : 1.0
@@ -60,7 +72,7 @@ Item {
                         anchors.centerIn: parent
                         text: "+"
                         font.pixelSize: 20
-                        color: "#FFFFFF"
+                        color: textPrimary
                     }
                     
                     MouseArea {
@@ -77,7 +89,7 @@ Item {
                 width: parent.width
                 height: 200
                 radius: 24
-                color: "#1E1E20"
+                color: cardColor
                 
                 // 圆环容器
                 Item {
@@ -90,7 +102,7 @@ Item {
                     property int lineWidth: 14
                     property real ringRadius: (width - lineWidth) / 2
                     
-                    // 背景圆环 - 使用 Rectangle 边框
+                    // 背景圆环
                     Rectangle {
                         anchors.centerIn: parent
                         width: ringContainer.width - ringContainer.lineWidth
@@ -98,10 +110,10 @@ Item {
                         radius: width / 2
                         color: "transparent"
                         border.width: ringContainer.lineWidth
-                        border.color: "#2A2A2C"
+                        border.color: progressBg
                     }
                     
-                    // 进度圆环 - 使用 Canvas
+                    // 进度圆环
                     Canvas {
                         id: progressCanvas
                         anchors.fill: parent
@@ -122,7 +134,6 @@ Item {
                             var startAngle = -Math.PI / 2
                             var endAngle = startAngle + (Math.PI * 2 * Math.min(progressValue, 1))
                             
-                            // 使用线性渐变模拟彩虹效果
                             var gradient = ctx.createLinearGradient(0, 0, width, height)
                             gradient.addColorStop(0, "#FF6B35")
                             gradient.addColorStop(0.5, "#22C55E")
@@ -147,7 +158,7 @@ Item {
                         Text {
                             font.pixelSize: 42
                             font.weight: Font.Bold
-                            color: "#FFFFFF"
+                            color: textPrimary
                             anchors.horizontalCenter: parent.horizontalCenter
                             text: Math.round(todaySteps / stepsGoal * 100) + "%"
                         }
@@ -155,7 +166,7 @@ Item {
                         Text {
                             text: "健康指数"
                             font.pixelSize: 14
-                            color: "#A1A1AA"
+                            color: textSecondary
                             anchors.horizontalCenter: parent.horizontalCenter
                         }
                     }
@@ -178,7 +189,7 @@ Item {
                         width: (parent.width - 20) / 3
                         height: 110
                         radius: 20
-                        color: metricMouseArea.pressed ? "#303032" : "#1E1E20"
+                        color: metricMouseArea.pressed ? cardPressed : cardColor
                         
                         scale: metricMouseArea.pressed ? 0.92 : 1.0
                         Behavior on scale { NumberAnimation { duration: 80 } }
@@ -192,7 +203,7 @@ Item {
                             anchors.margins: 8
                             height: 3
                             radius: 1.5
-                            color: "#2A2A2C"
+                            color: progressBg
                             
                             Rectangle {
                                 width: parent.width * Math.min(modelData.value / modelData.goal, 1)
@@ -229,7 +240,7 @@ Item {
                                 Text {
                                     text: modelData.title
                                     font.pixelSize: 13
-                                    color: "#A1A1AA"
+                                    color: textSecondary
                                     anchors.verticalCenter: parent.verticalCenter
                                 }
                             }
@@ -238,13 +249,13 @@ Item {
                                 text: modelData.value.toLocaleString()
                                 font.pixelSize: 22
                                 font.weight: Font.Bold
-                                color: "#FFFFFF"
+                                color: textPrimary
                             }
                             
                             Text {
                                 text: "目标 " + modelData.goal.toLocaleString()
                                 font.pixelSize: 11
-                                color: "#5A5A5C"
+                                color: textSecondary
                             }
                         }
                         
@@ -254,10 +265,7 @@ Item {
                             hoverEnabled: true
                             onClicked: {
                                 if (navigationStack) {
-                                    // 使用 mapToGlobal 获取全局坐标，然后转换为窗口坐标
-                                    var globalPos = parent.mapToGlobal(0, 0)
                                     var windowPos = parent.mapToItem(null, 0, 0)
-                                    console.log("Global:", globalPos.x, globalPos.y, "Window:", windowPos.x, windowPos.y)
                                     navigationStack.pushFromCard(modelData.page, windowPos.x, windowPos.y, parent.width, parent.height)
                                 }
                             }
@@ -272,7 +280,7 @@ Item {
                 width: parent.width
                 height: 64
                 radius: 20
-                color: activityMouseArea.pressed ? "#303032" : "#1E1E20"
+                color: activityMouseArea.pressed ? cardPressed : cardColor
                 
                 scale: activityMouseArea.pressed ? 0.97 : 1.0
                 Behavior on scale { NumberAnimation { duration: 80 } }
@@ -306,7 +314,7 @@ Item {
                             text: "中高强度活动"
                             font.pixelSize: 15
                             font.weight: Font.Medium
-                            color: "#FFFFFF"
+                            color: textPrimary
                         }
                         
                         Row {
@@ -320,7 +328,7 @@ Item {
                             Text {
                                 text: "分钟"
                                 font.pixelSize: 13
-                                color: "#8A8A8C"
+                                color: textSecondary
                                 anchors.baseline: parent.children[0].baseline
                             }
                         }
@@ -331,7 +339,7 @@ Item {
                     Text {
                         text: "›"
                         font.pixelSize: 24
-                        color: "#5A5A5C"
+                        color: arrowColor
                         anchors.verticalCenter: parent.verticalCenter
                     }
                 }
@@ -360,7 +368,7 @@ Item {
                     width: (parent.width - 10) / 2
                     height: 150
                     radius: 24
-                    color: sleepMouseArea.pressed ? "#303032" : "#1E1E20"
+                    color: sleepMouseArea.pressed ? cardPressed : cardColor
                     
                     scale: sleepMouseArea.pressed ? 0.96 : 1.0
                     Behavior on scale { NumberAnimation { duration: 80 } }
@@ -370,8 +378,8 @@ Item {
                         anchors.fill: parent
                         radius: parent.radius
                         gradient: Gradient {
-                            GradientStop { position: 0.0; color: "#2A2040" }
-                            GradientStop { position: 1.0; color: "#1E1E20" }
+                            GradientStop { position: 0.0; color: isDarkMode ? "#2A2040" : "#E8E0F5" }
+                            GradientStop { position: 1.0; color: cardColor }
                         }
                     }
                     
@@ -402,7 +410,7 @@ Item {
                                 text: "睡眠"
                                 font.pixelSize: 16
                                 font.weight: Font.Medium
-                                color: "#FFFFFF"
+                                color: textPrimary
                                 anchors.verticalCenter: parent.verticalCenter
                             }
                         }
@@ -413,29 +421,29 @@ Item {
                                 text: "7"
                                 font.pixelSize: 32
                                 font.weight: Font.Bold
-                                color: "#FFFFFF"
+                                color: textPrimary
                             }
                             Text {
                                 text: "时"
                                 font.pixelSize: 14
-                                color: "#8A8A8C"
+                                color: textSecondary
                                 anchors.baseline: parent.children[0].baseline
                             }
                             Text {
                                 text: "7"
                                 font.pixelSize: 32
                                 font.weight: Font.Bold
-                                color: "#FFFFFF"
+                                color: textPrimary
                             }
                             Text {
                                 text: "分"
                                 font.pixelSize: 14
-                                color: "#8A8A8C"
+                                color: textSecondary
                                 anchors.baseline: parent.children[2].baseline
                             }
                         }
                         
-                        // 睡眠质量进度 - 使用相对宽度避免超出
+                        // 睡眠质量进度
                         Item {
                             width: parent.width
                             height: 4
@@ -444,14 +452,13 @@ Item {
                                 anchors.fill: parent
                                 spacing: 2
                                 
-                                Rectangle { width: parent.width * 0.25; height: 4; radius: 2; color: "#4A3A80" }
-                                Rectangle { width: parent.width * 0.35; height: 4; radius: 2; color: "#5A4A90" }
-                                Rectangle { width: parent.width * 0.25; height: 4; radius: 2; color: "#6A5AA0" }
+                                Rectangle { width: parent.width * 0.25; height: 4; radius: 2; color: isDarkMode ? "#4A3A80" : "#C4B8E0" }
+                                Rectangle { width: parent.width * 0.35; height: 4; radius: 2; color: isDarkMode ? "#5A4A90" : "#B4A8D0" }
+                                Rectangle { width: parent.width * 0.25; height: 4; radius: 2; color: isDarkMode ? "#6A5AA0" : "#A498C0" }
                                 Rectangle { width: parent.width * 0.15 - 6; height: 4; radius: 2; color: "#7D5FFF" }
                             }
                         }
                         
-                        // 占位，与心率曲线高度对齐
                         Item { width: 1; height: 20 }
                     }
                     
@@ -474,7 +481,7 @@ Item {
                     width: (parent.width - 10) / 2
                     height: 150
                     radius: 24
-                    color: heartMouseArea.pressed ? "#303032" : "#1E1E20"
+                    color: heartMouseArea.pressed ? cardPressed : cardColor
                     
                     scale: heartMouseArea.pressed ? 0.96 : 1.0
                     Behavior on scale { NumberAnimation { duration: 80 } }
@@ -484,8 +491,8 @@ Item {
                         anchors.fill: parent
                         radius: parent.radius
                         gradient: Gradient {
-                            GradientStop { position: 0.0; color: "#301515" }
-                            GradientStop { position: 1.0; color: "#1E1E20" }
+                            GradientStop { position: 0.0; color: isDarkMode ? "#301515" : "#F5E0E0" }
+                            GradientStop { position: 1.0; color: cardColor }
                         }
                     }
                     
@@ -504,7 +511,6 @@ Item {
                                 radius: 16
                                 color: "#EF4444"
                                 
-                                // 心跳动画
                                 SequentialAnimation on scale {
                                     running: true
                                     loops: Animation.Infinite
@@ -525,7 +531,7 @@ Item {
                                 text: "心率"
                                 font.pixelSize: 16
                                 font.weight: Font.Medium
-                                color: "#FFFFFF"
+                                color: textPrimary
                                 anchors.verticalCenter: parent.verticalCenter
                             }
                         }
@@ -536,17 +542,17 @@ Item {
                                 text: "72"
                                 font.pixelSize: 36
                                 font.weight: Font.Bold
-                                color: "#FFFFFF"
+                                color: textPrimary
                             }
                             Text {
                                 text: "次/分"
                                 font.pixelSize: 14
-                                color: "#8A8A8C"
+                                color: textSecondary
                                 anchors.baseline: parent.children[0].baseline
                             }
                         }
                         
-                        // 心率曲线 - 高度与睡眠条区域对齐
+                        // 心率曲线
                         Canvas {
                             width: heartCard.width - 36
                             height: 24

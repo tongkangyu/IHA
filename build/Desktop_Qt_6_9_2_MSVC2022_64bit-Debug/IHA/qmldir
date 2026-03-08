@@ -17,5 +17,8 @@ HeartRateDetailPage 1.0 qml/pages/details/HeartRateDetailPage.qml
 CaloriesDetailPage 1.0 qml/pages/details/CaloriesDetailPage.qml
 ActivityDetailPage 1.0 qml/pages/details/ActivityDetailPage.qml
 ActivityCountDetailPage 1.0 qml/pages/details/ActivityCountDetailPage.qml
+AppSettingsPage 1.0 qml/pages/settings/AppSettingsPage.qml
+AboutPage 1.0 qml/pages/settings/AboutPage.qml
+ProfileInfoPage 1.0 qml/pages/settings/ProfileInfoPage.qml
 depends QtQuick
 

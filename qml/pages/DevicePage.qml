@@ -9,6 +9,18 @@ Item {
     property int deviceBattery: 44
     property string deviceLastCharge: "距上次充电已4天"
     
+    // 使用全局主题
+    readonly property bool isDarkMode: typeof window !== 'undefined' ? window.darkMode : true
+    readonly property color bgColor: isDarkMode ? "#0D0D0F" : "#F5F5F7"
+    readonly property color cardColor: isDarkMode ? "#1E1E20" : "#FFFFFF"
+    readonly property color textPrimary: isDarkMode ? "#FFFFFF" : "#1A1A1A"
+    readonly property color textSecondary: isDarkMode ? "#A1A1AA" : "#8E8E93"
+    readonly property color headerColor: isDarkMode ? "#121214" : "#F5F5F7"
+    readonly property color btnColor: isDarkMode ? "#1E1E20" : "#E5E5EA"
+    readonly property color dividerColor: isDarkMode ? "#27272A" : "#E5E5EA"
+    readonly property color arrowColor: isDarkMode ? "#71717A" : "#C7C7CC"
+    readonly property color deviceBg: isDarkMode ? "#2A2A2C" : "#E5E5EA"
+    
     Column {
         anchors.fill: parent
         
@@ -16,7 +28,7 @@ Item {
         Rectangle {
             width: parent.width
             height: 56
-            color: "#121214"
+            color: headerColor
             
             Row {
                 anchors.fill: parent
@@ -26,7 +38,7 @@ Item {
                     text: "穿戴设备"
                     font.pixelSize: 24
                     font.weight: Font.Bold
-                    color: "#FFFFFF"
+                    color: textPrimary
                     anchors.verticalCenter: parent.verticalCenter
                 }
                 
@@ -36,14 +48,14 @@ Item {
                     width: 36
                     height: 36
                     radius: 18
-                    color: "#1E1E20"
+                    color: btnColor
                     anchors.verticalCenter: parent.verticalCenter
                     
                     Text {
                         anchors.centerIn: parent
                         text: "+"
                         font.pixelSize: 20
-                        color: "#FFFFFF"
+                        color: textPrimary
                     }
                 }
             }
@@ -66,7 +78,7 @@ Item {
                     width: parent.width - 32
                     height: 140
                     radius: 16
-                    color: "#1E1E20"
+                    color: cardColor
                     
                     Row {
                         anchors.fill: parent
@@ -78,7 +90,7 @@ Item {
                             width: 90
                             height: 110
                             radius: 12
-                            color: "#2A2A2C"
+                            color: deviceBg
                             anchors.verticalCenter: parent.verticalCenter
                             
                             Column {
@@ -90,13 +102,13 @@ Item {
                                     font.family: "Consolas"
                                     font.pixelSize: 16
                                     font.weight: Font.Bold
-                                    color: "#FFFFFF"
+                                    color: textPrimary
                                 }
                                 
                                 Text {
                                     text: "3月7日 周六"
                                     font.pixelSize: 10
-                                    color: "#A1A1AA"
+                                    color: textSecondary
                                 }
                             }
                         }
@@ -110,7 +122,7 @@ Item {
                                 text: deviceName
                                 font.pixelSize: 20
                                 font.weight: Font.DemiBold
-                                color: "#FFFFFF"
+                                color: textPrimary
                             }
                             
                             Text {
@@ -124,14 +136,14 @@ Item {
                                 Text {
                                     text: deviceBattery + "%"
                                     font.pixelSize: 14
-                                    color: "#A1A1AA"
+                                    color: textSecondary
                                 }
                                 
                                 Rectangle {
                                     width: 24
                                     height: 12
                                     radius: 2
-                                    color: "#27272A"
+                                    color: isDarkMode ? "#27272A" : "#E5E5EA"
                                     anchors.verticalCenter: parent.verticalCenter
                                     
                                     Rectangle {
@@ -146,7 +158,7 @@ Item {
                             Text {
                                 text: deviceLastCharge
                                 font.pixelSize: 12
-                                color: "#71717A"
+                                color: textSecondary
                             }
                         }
                     }
@@ -174,7 +186,7 @@ Item {
                 Rectangle {
                     width: parent.width - 32
                     radius: 16
-                    color: "#1E1E20"
+                    color: cardColor
                     
                     Column {
                         width: parent.width
@@ -200,7 +212,7 @@ Item {
                                     anchors.leftMargin: 52
                                     width: parent.width - 68
                                     height: 1
-                                    color: "#27272A"
+                                    color: dividerColor
                                 }
                                 
                                 Row {
@@ -219,7 +231,7 @@ Item {
                                     Text {
                                         text: modelData.title
                                         font.pixelSize: 14
-                                        color: "#FFFFFF"
+                                        color: textPrimary
                                         anchors.verticalCenter: parent.verticalCenter
                                     }
                                     
@@ -228,7 +240,7 @@ Item {
                                     Text {
                                         text: ">"
                                         font.pixelSize: 16
-                                        color: "#71717A"
+                                        color: arrowColor
                                         anchors.verticalCenter: parent.verticalCenter
                                     }
                                 }

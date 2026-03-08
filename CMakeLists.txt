@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(IHA VERSION 0.1 LANGUAGES CXX)
+project(IHA VERSION 0.1.18 LANGUAGES CXX)
 
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -33,6 +33,9 @@ qt_add_qml_module(appIHA
         qml/pages/details/CaloriesDetailPage.qml
         qml/pages/details/ActivityDetailPage.qml
         qml/pages/details/ActivityCountDetailPage.qml
+        qml/pages/settings/AppSettingsPage.qml
+        qml/pages/settings/AboutPage.qml
+        qml/pages/settings/ProfileInfoPage.qml
 )
 
 set_target_properties(appIHA PROPERTIES

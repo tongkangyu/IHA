@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 34,
-                        "durationMicroseconds": 502,
+                        "durationMicroseconds": 782,
                         "errorMessage": "Cannot access value for name index",
                         "functionName": "animationDelay",
                         "line": 8
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 21,
-                        "durationMicroseconds": 203,
+                        "durationMicroseconds": 237,
                         "errorMessage": "",
                         "functionName": "target",
                         "line": 19
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 26,
-                        "durationMicroseconds": 143,
+                        "durationMicroseconds": 172,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 24
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 21,
-                        "durationMicroseconds": 77,
+                        "durationMicroseconds": 117,
                         "errorMessage": "",
                         "functionName": "target",
                         "line": 28
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 26,
-                        "durationMicroseconds": 153,
+                        "durationMicroseconds": 111,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 33
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 90,
+                        "durationMicroseconds": 219,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 40

@@ -18,3 +18,6 @@ C:/personal/code/IHA/build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/.qt/rcc/appIHA_
 /qt/qml/IHA/qml/pages/details/CaloriesDetailPage.qml
 /qt/qml/IHA/qml/pages/details/ActivityDetailPage.qml
 /qt/qml/IHA/qml/pages/details/ActivityCountDetailPage.qml
+/qt/qml/IHA/qml/pages/settings/AppSettingsPage.qml
+/qt/qml/IHA/qml/pages/settings/AboutPage.qml
+/qt/qml/IHA/qml/pages/settings/ProfileInfoPage.qml

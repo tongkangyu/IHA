@@ -6,6 +6,17 @@ Item {
     
     property var navigationStack: null
     
+    // 使用全局主题
+    readonly property bool isDarkMode: typeof window !== 'undefined' ? window.darkMode : true
+    readonly property color bgColor: isDarkMode ? "#0D0D0F" : "#F5F5F7"
+    readonly property color cardColor: isDarkMode ? "#1E1E20" : "#FFFFFF"
+    readonly property color textPrimary: isDarkMode ? "#FFFFFF" : "#1A1A1A"
+    readonly property color textSecondary: isDarkMode ? "#A1A1AA" : "#8E8E93"
+    readonly property color headerColor: isDarkMode ? "#121214" : "#F5F5F7"
+    readonly property color pressedColor: isDarkMode ? "#2A2A2C" : "#E5E5EA"
+    readonly property color dividerColor: isDarkMode ? "#27272A" : "#E5E5EA"
+    readonly property color progressBg: isDarkMode ? "#27272A" : "#E5E5EA"
+    
     // 模拟数据
     property int activityMinutes: 85
     property int activityGoal: 120
@@ -21,7 +32,7 @@ Item {
         Rectangle {
             width: parent.width
             height: 56
-            color: "#121214"
+            color: headerColor
             
             // 返回按钮
             Rectangle {
@@ -30,14 +41,14 @@ Item {
                 width: 36
                 height: 36
                 radius: 18
-                color: backMouseArea.pressed ? "#2A2A2C" : "transparent"
+                color: backMouseArea.pressed ? pressedColor : "transparent"
                 
                 Text {
                     anchors.centerIn: parent
                     text: "‹"
                     font.pixelSize: 28
                     font.weight: Font.Bold
-                    color: "#FFFFFF"
+                    color: textPrimary
                 }
                 
                 MouseArea {
@@ -57,7 +68,7 @@ Item {
                 text: "中高强度活动"
                 font.pixelSize: 20
                 font.weight: Font.Bold
-                color: "#FFFFFF"
+                color: textPrimary
                 anchors.centerIn: parent
             }
         }
@@ -78,7 +89,7 @@ Item {
                     width: parent.width - 32
                     height: 180
                     radius: 16
-                    color: "#1E1E20"
+                    color: cardColor
                     anchors.horizontalCenter: parent.horizontalCenter
                     
                     Column {
@@ -101,13 +112,13 @@ Item {
                                 text: activityMinutes.toLocaleString()
                                 font.pixelSize: 48
                                 font.weight: Font.Bold
-                                color: "#FFFFFF"
+                                color: textPrimary
                             }
                             
                             Text {
                                 text: "分钟"
                                 font.pixelSize: 16
-                                color: "#A1A1AA"
+                                color: textSecondary
                                 anchors.baseline: parent.children[1].baseline
                             }
                         }
@@ -115,7 +126,7 @@ Item {
                         Text {
                             text: "今日活动时长"
                             font.pixelSize: 16
-                            color: "#A1A1AA"
+                            color: textSecondary
                             anchors.horizontalCenter: parent.horizontalCenter
                         }
                         
@@ -124,7 +135,7 @@ Item {
                             width: 200
                             height: 8
                             radius: 4
-                            color: "#27272A"
+                            color: progressBg
                             anchors.horizontalCenter: parent.horizontalCenter
                             
                             Rectangle {
@@ -138,7 +149,7 @@ Item {
                         Text {
                             text: "目标: " + activityGoal + " 分钟"
                             font.pixelSize: 14
-                            color: "#71717A"
+                            color: textSecondary
                             anchors.horizontalCenter: parent.horizontalCenter
                         }
                     }
@@ -149,7 +160,7 @@ Item {
                     width: parent.width - 32
                     height: 100
                     radius: 16
-                    color: "#1E1E20"
+                    color: cardColor
                     anchors.horizontalCenter: parent.horizontalCenter
                     
                     Row {
@@ -163,7 +174,7 @@ Item {
                             Text {
                                 text: "今日活动次数"
                                 font.pixelSize: 14
-                                color: "#A1A1AA"
+                                color: textSecondary
                             }
                             
                             Row {
@@ -177,7 +188,7 @@ Item {
                                 Text {
                                     text: "/" + activityGoalCount + " 次"
                                     font.pixelSize: 16
-                                    color: "#A1A1AA"
+                                    color: textSecondary
                                     anchors.baseline: parent.children[0].baseline
                                 }
                             }
@@ -190,7 +201,7 @@ Item {
                             width: 64
                             height: 64
                             radius: 32
-                            color: "#27272A"
+                            color: progressBg
                             anchors.verticalCenter: parent.verticalCenter
                             
                             Rectangle {
@@ -198,7 +209,7 @@ Item {
                                 width: 52
                                 height: 52
                                 radius: 26
-                                color: "#1E1E20"
+                                color: cardColor
                             }
                             
                             Canvas {
@@ -233,7 +244,7 @@ Item {
                     width: parent.width - 32
                     height: 200
                     radius: 16
-                    color: "#1E1E20"
+                    color: cardColor
                     anchors.horizontalCenter: parent.horizontalCenter
                     
                     Column {
@@ -245,7 +256,7 @@ Item {
                             text: "本周统计"
                             font.pixelSize: 16
                             font.weight: Font.DemiBold
-                            color: "#FFFFFF"
+                            color: textPrimary
                         }
                         
                         // 柱状图
@@ -266,7 +277,7 @@ Item {
                                         width: parent.width - 8
                                         height: parent.height - 30
                                         radius: 4
-                                        color: "#27272A"
+                                        color: progressBg
                                         anchors.horizontalCenter: parent.horizontalCenter
                                         
                                         Rectangle {
@@ -281,7 +292,7 @@ Item {
                                     Text {
                                         text: weekDays[index]
                                         font.pixelSize: 12
-                                        color: index === 5 ? "#3B82F6" : "#71717A"
+                                        color: index === 5 ? "#3B82F6" : textSecondary
                                         anchors.horizontalCenter: parent.horizontalCenter
                                     }
                                 }
@@ -294,7 +305,7 @@ Item {
                 Rectangle {
                     width: parent.width - 32
                     radius: 16
-                    color: "#1E1E20"
+                    color: cardColor
                     anchors.horizontalCenter: parent.horizontalCenter
                     
                     Column {
@@ -335,14 +346,14 @@ Item {
                                     Text {
                                         text: "高强度活动"
                                         font.pixelSize: 14
-                                        color: "#A1A1AA"
+                                        color: textSecondary
                                     }
                                     
                                     Text {
                                         text: "25 分钟"
                                         font.pixelSize: 16
                                         font.weight: Font.DemiBold
-                                        color: "#FFFFFF"
+                                        color: textPrimary
                                     }
                                 }
                             }
@@ -351,7 +362,7 @@ Item {
                         Rectangle {
                             width: parent.width - 32
                             height: 1
-                            color: "#27272A"
+                            color: dividerColor
                             anchors.horizontalCenter: parent.horizontalCenter
                         }
                         
@@ -390,14 +401,14 @@ Item {
                                     Text {
                                         text: "中强度活动"
                                         font.pixelSize: 14
-                                        color: "#A1A1AA"
+                                        color: textSecondary
                                     }
                                     
                                     Text {
                                         text: "60 分钟"
                                         font.pixelSize: 16
                                         font.weight: Font.DemiBold
-                                        color: "#FFFFFF"
+                                        color: textPrimary
                                     }
                                 }
                             }

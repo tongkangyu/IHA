@@ -6,6 +6,17 @@ Item {
     
     property var navigationStack: null
     
+    // 使用全局主题
+    readonly property bool isDarkMode: typeof window !== 'undefined' ? window.darkMode : true
+    readonly property color bgColor: isDarkMode ? "#0D0D0F" : "#F5F5F7"
+    readonly property color cardColor: isDarkMode ? "#1E1E20" : "#FFFFFF"
+    readonly property color textPrimary: isDarkMode ? "#FFFFFF" : "#1A1A1A"
+    readonly property color textSecondary: isDarkMode ? "#A1A1AA" : "#8E8E93"
+    readonly property color headerColor: isDarkMode ? "#121214" : "#F5F5F7"
+    readonly property color pressedColor: isDarkMode ? "#2A2A2C" : "#E5E5EA"
+    readonly property color dividerColor: isDarkMode ? "#27272A" : "#E5E5EA"
+    readonly property color progressBg: isDarkMode ? "#27272A" : "#E5E5EA"
+    
     // 模拟数据
     property int currentHeartRate: 72
     property int minHeartRate: 52
@@ -20,7 +31,7 @@ Item {
         Rectangle {
             width: parent.width
             height: 56
-            color: "#121214"
+            color: headerColor
             
             // 返回按钮
             Rectangle {
@@ -29,14 +40,14 @@ Item {
                 width: 36
                 height: 36
                 radius: 18
-                color: heartBackMouseArea.pressed ? "#2A2A2C" : "transparent"
+                color: heartBackMouseArea.pressed ? pressedColor : "transparent"
                 
                 Text {
                     anchors.centerIn: parent
                     text: "‹"
                     font.pixelSize: 28
                     font.weight: Font.Bold
-                    color: "#FFFFFF"
+                    color: textPrimary
                 }
                 
                 MouseArea {
@@ -56,7 +67,7 @@ Item {
                 text: "心率"
                 font.pixelSize: 20
                 font.weight: Font.Bold
-                color: "#FFFFFF"
+                color: textPrimary
                 anchors.centerIn: parent
             }
         }
@@ -77,7 +88,7 @@ Item {
                     width: parent.width - 32
                     height: 180
                     radius: 16
-                    color: "#1E1E20"
+                    color: cardColor
                     anchors.horizontalCenter: parent.horizontalCenter
                     
                     Column {
@@ -100,13 +111,13 @@ Item {
                                 text: currentHeartRate
                                 font.pixelSize: 56
                                 font.weight: Font.Bold
-                                color: "#FFFFFF"
+                                color: textPrimary
                             }
                             
                             Text {
                                 text: "次/分"
                                 font.pixelSize: 16
-                                color: "#A1A1AA"
+                                color: textSecondary
                                 anchors.baseline: parent.children[1].baseline
                             }
                         }
@@ -114,7 +125,7 @@ Item {
                         Text {
                             text: "当前心率"
                             font.pixelSize: 16
-                            color: "#A1A1AA"
+                            color: textSecondary
                             anchors.horizontalCenter: parent.horizontalCenter
                         }
                         
@@ -132,7 +143,7 @@ Item {
                     width: parent.width - 32
                     height: 200
                     radius: 16
-                    color: "#1E1E20"
+                    color: cardColor
                     anchors.horizontalCenter: parent.horizontalCenter
                     
                     Column {
@@ -144,7 +155,7 @@ Item {
                             text: "今日心率曲线"
                             font.pixelSize: 16
                             font.weight: Font.DemiBold
-                            color: "#FFFFFF"
+                            color: textPrimary
                         }
                         
                         // 心率图表区域
@@ -160,7 +171,7 @@ Item {
                                 ctx.clearRect(0, 0, width, height)
                                 
                                 // 绘制背景网格
-                                ctx.strokeStyle = "#27272A"
+                                ctx.strokeStyle = isDarkMode ? "#27272A" : "#E5E5EA"
                                 ctx.lineWidth = 1
                                 for (var i = 0; i < 5; i++) {
                                     var y = i * height / 4
@@ -203,9 +214,9 @@ Item {
                         
                         Row {
                             width: parent.width
-                            Text { text: "00:00"; font.pixelSize: 10; color: "#71717A" }
+                            Text { text: "00:00"; font.pixelSize: 10; color: textSecondary }
                             Item { width: parent.width - 80; height: 1 }
-                            Text { text: "现在"; font.pixelSize: 10; color: "#71717A" }
+                            Text { text: "现在"; font.pixelSize: 10; color: textSecondary }
                         }
                     }
                 }
@@ -214,7 +225,7 @@ Item {
                 Rectangle {
                     width: parent.width - 32
                     radius: 16
-                    color: "#1E1E20"
+                    color: cardColor
                     anchors.horizontalCenter: parent.horizontalCenter
                     
                     Column {
@@ -254,7 +265,7 @@ Item {
                                     Text {
                                         text: "最低心率"
                                         font.pixelSize: 14
-                                        color: "#A1A1AA"
+                                        color: textSecondary
                                     }
                                     
                                     Row {
@@ -263,12 +274,12 @@ Item {
                                             text: minHeartRate
                                             font.pixelSize: 18
                                             font.weight: Font.Bold
-                                            color: "#FFFFFF"
+                                            color: textPrimary
                                         }
                                         Text {
                                             text: "次/分"
                                             font.pixelSize: 12
-                                            color: "#A1A1AA"
+                                            color: textSecondary
                                             anchors.baseline: parent.children[0].baseline
                                         }
                                     }
@@ -279,7 +290,7 @@ Item {
                                 Text {
                                     text: "03:42"
                                     font.pixelSize: 14
-                                    color: "#71717A"
+                                    color: textSecondary
                                     anchors.verticalCenter: parent.verticalCenter
                                 }
                             }
@@ -288,7 +299,7 @@ Item {
                         Rectangle {
                             width: parent.width - 32
                             height: 1
-                            color: "#27272A"
+                            color: dividerColor
                             anchors.horizontalCenter: parent.horizontalCenter
                         }
                         
@@ -326,7 +337,7 @@ Item {
                                     Text {
                                         text: "平均心率"
                                         font.pixelSize: 14
-                                        color: "#A1A1AA"
+                                        color: textSecondary
                                     }
                                     
                                     Row {
@@ -335,12 +346,12 @@ Item {
                                             text: avgHeartRate
                                             font.pixelSize: 18
                                             font.weight: Font.Bold
-                                            color: "#FFFFFF"
+                                            color: textPrimary
                                         }
                                         Text {
                                             text: "次/分"
                                             font.pixelSize: 12
-                                            color: "#A1A1AA"
+                                            color: textSecondary
                                             anchors.baseline: parent.children[0].baseline
                                         }
                                     }
@@ -351,7 +362,7 @@ Item {
                         Rectangle {
                             width: parent.width - 32
                             height: 1
-                            color: "#27272A"
+                            color: dividerColor
                             anchors.horizontalCenter: parent.horizontalCenter
                         }
                         
@@ -389,7 +400,7 @@ Item {
                                     Text {
                                         text: "最高心率"
                                         font.pixelSize: 14
-                                        color: "#A1A1AA"
+                                        color: textSecondary
                                     }
                                     
                                     Row {
@@ -398,12 +409,12 @@ Item {
                                             text: maxHeartRate
                                             font.pixelSize: 18
                                             font.weight: Font.Bold
-                                            color: "#FFFFFF"
+                                            color: textPrimary
                                         }
                                         Text {
                                             text: "次/分"
                                             font.pixelSize: 12
-                                            color: "#A1A1AA"
+                                            color: textSecondary
                                             anchors.baseline: parent.children[0].baseline
                                         }
                                     }
@@ -414,7 +425,7 @@ Item {
                                 Text {
                                     text: "15:28"
                                     font.pixelSize: 14
-                                    color: "#71717A"
+                                    color: textSecondary
                                     anchors.verticalCenter: parent.verticalCenter
                                 }
                             }
@@ -423,7 +434,7 @@ Item {
                         Rectangle {
                             width: parent.width - 32
                             height: 1
-                            color: "#27272A"
+                            color: dividerColor
                             anchors.horizontalCenter: parent.horizontalCenter
                         }
                         
@@ -461,7 +472,7 @@ Item {
                                     Text {
                                         text: "静息心率"
                                         font.pixelSize: 14
-                                        color: "#A1A1AA"
+                                        color: textSecondary
                                     }
                                     
                                     Row {
@@ -470,12 +481,12 @@ Item {
                                             text: restingHeartRate
                                             font.pixelSize: 18
                                             font.weight: Font.Bold
-                                            color: "#FFFFFF"
+                                            color: textPrimary
                                         }
                                         Text {
                                             text: "次/分"
                                             font.pixelSize: 12
-                                            color: "#A1A1AA"
+                                            color: textSecondary
                                             anchors.baseline: parent.children[0].baseline
                                         }
                                     }

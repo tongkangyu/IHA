@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 30,
-                        "durationMicroseconds": 553,
+                        "durationMicroseconds": 382,
                         "errorMessage": "Cannot generate efficient code for storing an array in a non-sequence type",
                         "functionName": "weeklyData",
                         "line": 12
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 28,
-                        "durationMicroseconds": 294,
+                        "durationMicroseconds": 322,
                         "errorMessage": "Cannot generate efficient code for storing an array in a non-sequence type",
                         "functionName": "weekDays",
                         "line": 13
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 115,
+                        "durationMicroseconds": 153,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 16
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 140,
+                        "durationMicroseconds": 161,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 20
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 24,
-                        "durationMicroseconds": 368,
+                        "durationMicroseconds": 382,
                         "errorMessage": "",
                         "functionName": "color",
                         "line": 31
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 66,
+                        "durationMicroseconds": 69,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 34
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 34,
-                        "durationMicroseconds": 117,
+                        "durationMicroseconds": 112,
                         "errorMessage": "",
                         "functionName": "weight",
                         "line": 37
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 34,
-                        "durationMicroseconds": 121,
+                        "durationMicroseconds": 134,
                         "errorMessage": "",
                         "functionName": "cursorShape",
                         "line": 44
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 32,
-                        "durationMicroseconds": 150,
+                        "durationMicroseconds": 145,
                         "errorMessage": "Cannot access value for name navigationStack",
                         "functionName": "onClicked",
                         "line": 45
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 70,
+                        "durationMicroseconds": 77,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 43
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 30,
-                        "durationMicroseconds": 100,
+                        "durationMicroseconds": 89,
                         "errorMessage": "",
                         "functionName": "weight",
                         "line": 57
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 60,
+                        "durationMicroseconds": 87,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 59
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 24,
-                        "durationMicroseconds": 107,
+                        "durationMicroseconds": 105,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 71
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 28,
-                        "durationMicroseconds": 215,
+                        "durationMicroseconds": 205,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 76
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 47,
-                        "durationMicroseconds": 126,
+                        "durationMicroseconds": 110,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
                         "line": 80
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 43,
-                        "durationMicroseconds": 94,
+                        "durationMicroseconds": 77,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 83
@@ -158,7 +158,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 35,
-                        "durationMicroseconds": 56,
+                        "durationMicroseconds": 48,
                         "errorMessage": "Cannot access value for name todaySteps",
                         "functionName": "text",
                         "line": 87
@@ -166,7 +166,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 42,
-                        "durationMicroseconds": 81,
+                        "durationMicroseconds": 86,
                         "errorMessage": "",
                         "functionName": "weight",
                         "line": 89
@@ -174,7 +174,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 55,
-                        "durationMicroseconds": 141,
+                        "durationMicroseconds": 89,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
                         "line": 91
@@ -182,7 +182,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 55,
-                        "durationMicroseconds": 113,
+                        "durationMicroseconds": 101,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
                         "line": 98
@@ -190,7 +190,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 55,
-                        "durationMicroseconds": 119,
+                        "durationMicroseconds": 200,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
                         "line": 107
@@ -198,7 +198,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 40,
-                        "durationMicroseconds": 140,
+                        "durationMicroseconds": 154,
                         "errorMessage": "Cannot access value for name todaySteps",
                         "functionName": "width",
                         "line": 110
@@ -206,7 +206,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 41,
-                        "durationMicroseconds": 81,
+                        "durationMicroseconds": 84,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 111
@@ -214,7 +214,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 35,
-                        "durationMicroseconds": 57,
+                        "durationMicroseconds": 62,
                         "errorMessage": "Cannot access value for name stepsGoal",
                         "functionName": "text",
                         "line": 118
@@ -222,7 +222,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 55,
-                        "durationMicroseconds": 102,
+                        "durationMicroseconds": 105,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
                         "line": 121
@@ -230,7 +230,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 28,
-                        "durationMicroseconds": 191,
+                        "durationMicroseconds": 150,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 128
@@ -238,7 +238,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 47,
-                        "durationMicroseconds": 218,
+                        "durationMicroseconds": 188,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
                         "line": 132
@@ -246,7 +246,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 91,
+                        "durationMicroseconds": 92,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 135
@@ -254,7 +254,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 42,
-                        "durationMicroseconds": 100,
+                        "durationMicroseconds": 118,
                         "errorMessage": "",
                         "functionName": "weight",
                         "line": 142
@@ -262,7 +262,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 36,
-                        "durationMicroseconds": 96,
+                        "durationMicroseconds": 100,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 148
@@ -270,7 +270,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 44,
-                        "durationMicroseconds": 261,
+                        "durationMicroseconds": 264,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 156
@@ -278,7 +278,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 45,
-                        "durationMicroseconds": 87,
+                        "durationMicroseconds": 83,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 157
@@ -286,7 +286,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 48,
-                        "durationMicroseconds": 121,
+                        "durationMicroseconds": 155,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 161
@@ -294,7 +294,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 49,
-                        "durationMicroseconds": 179,
+                        "durationMicroseconds": 204,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 162
@@ -302,7 +302,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 67,
-                        "durationMicroseconds": 113,
+                        "durationMicroseconds": 131,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
                         "line": 165
@@ -310,7 +310,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 52,
-                        "durationMicroseconds": 119,
+                        "durationMicroseconds": 95,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 168
@@ -318,7 +318,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 53,
-                        "durationMicroseconds": 458,
+                        "durationMicroseconds": 447,
                         "errorMessage": "Cannot access value for name weeklyData",
                         "functionName": "height",
                         "line": 169
@@ -326,7 +326,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 52,
-                        "durationMicroseconds": 352,
+                        "durationMicroseconds": 314,
                         "errorMessage": "Cannot access value for name index",
                         "functionName": "color",
                         "line": 171
@@ -334,7 +334,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 61,
-                        "durationMicroseconds": 131,
+                        "durationMicroseconds": 126,
                         "errorMessage": "",
                         "functionName": "bottom",
                         "line": 172
@@ -342,7 +342,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 47,
-                        "durationMicroseconds": 555,
+                        "durationMicroseconds": 528,
                         "errorMessage": "Cannot access value for name weekDays",
                         "functionName": "text",
                         "line": 177
@@ -350,7 +350,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 48,
-                        "durationMicroseconds": 507,
+                        "durationMicroseconds": 469,
                         "errorMessage": "Cannot access value for name index",
                         "functionName": "color",
                         "line": 179
@@ -358,7 +358,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 67,
-                        "durationMicroseconds": 128,
+                        "durationMicroseconds": 147,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
                         "line": 180
@@ -366,7 +366,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 28,
-                        "durationMicroseconds": 152,
+                        "durationMicroseconds": 151,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 190
@@ -374,7 +374,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 47,
-                        "durationMicroseconds": 104,
+                        "durationMicroseconds": 103,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
                         "line": 193
@@ -382,7 +382,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 32,
-                        "durationMicroseconds": 244,
+                        "durationMicroseconds": 142,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 196
@@ -390,7 +390,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 36,
-                        "durationMicroseconds": 146,
+                        "durationMicroseconds": 77,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 200
@@ -398,7 +398,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 47,
-                        "durationMicroseconds": 108,
+                        "durationMicroseconds": 54,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 205
@@ -406,7 +406,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 61,
-                        "durationMicroseconds": 179,
+                        "durationMicroseconds": 85,
                         "errorMessage": "",
                         "functionName": "verticalCenter",
                         "line": 213
@@ -422,7 +422,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 54,
-                        "durationMicroseconds": 109,
+                        "durationMicroseconds": 93,
                         "errorMessage": "",
                         "functionName": "weight",
                         "line": 219
@@ -430,7 +430,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 61,
-                        "durationMicroseconds": 119,
+                        "durationMicroseconds": 103,
                         "errorMessage": "",
                         "functionName": "verticalCenter",
                         "line": 226
@@ -438,7 +438,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 51,
-                        "durationMicroseconds": 113,
+                        "durationMicroseconds": 111,
                         "errorMessage": "",
                         "functionName": "left",
                         "line": 227
@@ -446,7 +446,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 54,
-                        "durationMicroseconds": 141,
+                        "durationMicroseconds": 85,
                         "errorMessage": "",
                         "functionName": "weight",
                         "line": 239
@@ -454,7 +454,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 36,
-                        "durationMicroseconds": 148,
+                        "durationMicroseconds": 143,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 247
@@ -462,7 +462,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 55,
-                        "durationMicroseconds": 131,
+                        "durationMicroseconds": 148,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
                         "line": 250
@@ -470,7 +470,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 36,
-                        "durationMicroseconds": 72,
+                        "durationMicroseconds": 88,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 255
@@ -478,7 +478,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 47,
-                        "durationMicroseconds": 48,
+                        "durationMicroseconds": 67,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 260
@@ -486,7 +486,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 61,
-                        "durationMicroseconds": 220,
+                        "durationMicroseconds": 105,
                         "errorMessage": "",
                         "functionName": "verticalCenter",
                         "line": 268
@@ -494,7 +494,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 59,
-                        "durationMicroseconds": 53,
+                        "durationMicroseconds": 66,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 271
@@ -502,7 +502,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 54,
-                        "durationMicroseconds": 86,
+                        "durationMicroseconds": 83,
                         "errorMessage": "",
                         "functionName": "weight",
                         "line": 274
@@ -510,7 +510,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 61,
-                        "durationMicroseconds": 91,
+                        "durationMicroseconds": 137,
                         "errorMessage": "",
                         "functionName": "verticalCenter",
                         "line": 281
@@ -526,7 +526,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 54,
-                        "durationMicroseconds": 90,
+                        "durationMicroseconds": 94,
                         "errorMessage": "",
                         "functionName": "weight",
                         "line": 294
@@ -534,7 +534,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 36,
-                        "durationMicroseconds": 121,
+                        "durationMicroseconds": 155,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 302
@@ -542,7 +542,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 55,
-                        "durationMicroseconds": 107,
+                        "durationMicroseconds": 184,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
                         "line": 305
@@ -550,7 +550,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 36,
-                        "durationMicroseconds": 81,
+                        "durationMicroseconds": 80,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 310
@@ -558,7 +558,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 47,
-                        "durationMicroseconds": 103,
+                        "durationMicroseconds": 80,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 315
@@ -566,7 +566,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 61,
-                        "durationMicroseconds": 101,
+                        "durationMicroseconds": 95,
                         "errorMessage": "",
                         "functionName": "verticalCenter",
                         "line": 323
@@ -574,7 +574,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 59,
-                        "durationMicroseconds": 68,
+                        "durationMicroseconds": 58,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 326
@@ -582,7 +582,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 54,
-                        "durationMicroseconds": 86,
+                        "durationMicroseconds": 94,
                         "errorMessage": "",
                         "functionName": "weight",
                         "line": 329
@@ -590,7 +590,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 61,
-                        "durationMicroseconds": 94,
+                        "durationMicroseconds": 122,
                         "errorMessage": "",
                         "functionName": "verticalCenter",
                         "line": 336
@@ -598,7 +598,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 51,
-                        "durationMicroseconds": 105,
+                        "durationMicroseconds": 93,
                         "errorMessage": "",
                         "functionName": "left",
                         "line": 337
@@ -606,7 +606,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 54,
-                        "durationMicroseconds": 107,
+                        "durationMicroseconds": 78,
                         "errorMessage": "",
                         "functionName": "weight",
                         "line": 349
