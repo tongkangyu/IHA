@@ -15,7 +15,8 @@ Item {
             
             Row {
                 anchors.fill: parent
-                anchors.margins: 16
+                anchors.leftMargin: 16
+                anchors.rightMargin: 16
                 
                 Text {
                     text: "我的"
@@ -24,22 +25,28 @@ Item {
                     color: "#FFFFFF"
                     anchors.verticalCenter: parent.verticalCenter
                 }
+            }
+            
+            // 右上角添加按钮
+            Rectangle {
+                width: 36
+                height: 36
+                radius: 18
+                color: addMouseArea.pressed ? "#2A2A2C" : "#1E1E20"
+                anchors.right: parent.right
+                anchors.rightMargin: 16
+                anchors.verticalCenter: parent.verticalCenter
                 
-                Item { width: parent.width - 100; height: 1 }
+                Text {
+                    anchors.centerIn: parent
+                    text: "+"
+                    font.pixelSize: 20
+                    color: "#FFFFFF"
+                }
                 
-                Rectangle {
-                    width: 36
-                    height: 36
-                    radius: 18
-                    color: "#1E1E20"
-                    anchors.verticalCenter: parent.verticalCenter
-                    
-                    Text {
-                        anchors.centerIn: parent
-                        text: "+"
-                        font.pixelSize: 20
-                        color: "#FFFFFF"
-                    }
+                MouseArea {
+                    id: addMouseArea
+                    anchors.fill: parent
                 }
             }
         }
@@ -54,33 +61,32 @@ Item {
             Column {
                 width: profilePage.width
                 spacing: 16
-                anchors.margins: 16
                 
-                // 用户信息
+                // 用户信息卡片
                 Rectangle {
                     width: parent.width - 32
-                    height: 80
-                    radius: 16
+                    height: 90
+                    radius: 20
                     color: "#1E1E20"
+                    anchors.horizontalCenter: parent.horizontalCenter
                     
                     Row {
                         anchors.fill: parent
                         anchors.margins: 16
-                        spacing: 16
+                        spacing: 14
                         
+                        // 头像
                         Rectangle {
-                            width: 56
-                            height: 56
-                            radius: 28
+                            width: 58
+                            height: 58
+                            radius: 29
                             color: "#7D5FFF"
                             anchors.verticalCenter: parent.verticalCenter
                             
                             Text {
                                 anchors.centerIn: parent
-                                text: "U"
-                                font.pixelSize: 20
-                                font.weight: Font.Bold
-                                color: "#FFFFFF"
+                                text: "👤"
+                                font.pixelSize: 28
                             }
                         }
                         
@@ -89,7 +95,7 @@ Item {
                             anchors.verticalCenter: parent.verticalCenter
                             
                             Text {
-                                text: "超懒哥"
+                                text: "用户名"
                                 font.pixelSize: 20
                                 font.weight: Font.Bold
                                 color: "#FFFFFF"
@@ -97,7 +103,7 @@ Item {
                             
                             Text {
                                 text: "男 | 175厘米 | 19岁"
-                                font.pixelSize: 12
+                                font.pixelSize: 13
                                 color: "#A1A1AA"
                             }
                         }
@@ -107,168 +113,302 @@ Item {
                 // 快捷入口
                 Row {
                     width: parent.width - 32
+                    anchors.horizontalCenter: parent.horizontalCenter
                     spacing: 8
                     
                     Repeater {
-                        model: ["我的活动", "我的课程", "我的订单", "我的亲友"]
+                        model: [
+                            { name: "我的活动", icon: "🏃" },
+                            { name: "我的课程", icon: "📚" },
+                            { name: "我的订单", icon: "📄" },
+                            { name: "我的亲友", icon: "❤️" }
+                        ]
                         
                         Rectangle {
                             width: (parent.width - 24) / 4
-                            height: 72
-                            radius: 12
-                            color: "#1E1E20"
+                            height: 70
+                            radius: 14
+                            color: quickMouseArea.pressed ? "#252527" : "#1E1E20"
                             
                             Column {
                                 anchors.centerIn: parent
-                                spacing: 4
+                                spacing: 6
                                 
-                                Rectangle {
-                                    width: 28
-                                    height: 28
-                                    radius: 14
-                                    color: "#2A2A2C"
+                                Text {
+                                    text: modelData.icon
+                                    font.pixelSize: 24
                                     anchors.horizontalCenter: parent.horizontalCenter
                                 }
                                 
                                 Text {
-                                    text: modelData
+                                    text: modelData.name
                                     font.pixelSize: 12
                                     color: "#A1A1AA"
+                                    anchors.horizontalCenter: parent.horizontalCenter
                                 }
+                            }
+                            
+                            MouseArea {
+                                id: quickMouseArea
+                                anchors.fill: parent
                             }
                         }
                     }
                 }
                 
-                // VIP 横幅
-                Rectangle {
+                // 小习惯 + 运动健康周报
+                Row {
                     width: parent.width - 32
-                    height: 100
-                    radius: 16
-                    color: "#2D251F"
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    spacing: 8
                     
-                    Column {
-                        anchors.fill: parent
-                        anchors.margins: 16
-                        spacing: 8
+                    // 小习惯
+                    Rectangle {
+                        width: (parent.width - 8) / 2
+                        height: 120
+                        radius: 16
+                        color: "#1E1E20"
                         
-                        Row {
-                            width: parent.width
+                        Column {
+                            anchors.fill: parent
+                            anchors.margins: 14
+                            spacing: 8
                             
                             Text {
-                                text: "VIP 小米运动健康会员"
-                                font.pixelSize: 16
+                                text: "小习惯"
+                                font.pixelSize: 15
                                 font.weight: Font.DemiBold
                                 color: "#FFFFFF"
                             }
                             
-                            Item { width: parent.width - 250; height: 1 }
+                            Text {
+                                text: "加入打卡"
+                                font.pixelSize: 12
+                                color: "#71717A"
+                            }
                             
+                            // 习惯卡片
                             Rectangle {
-                                width: 72
-                                height: 28
-                                radius: 14
-                                color: "#FF6B35"
+                                width: parent.width
+                                height: 40
+                                radius: 10
+                                color: "#3D2D6B"
                                 
-                                Text {
-                                    anchors.centerIn: parent
-                                    text: "立即开通"
-                                    font.pixelSize: 12
-                                    color: "#FFFFFF"
+                                Row {
+                                    anchors.fill: parent
+                                    anchors.margins: 10
+                                    spacing: 8
+                                    
+                                    Text {
+                                        text: "📞"
+                                        font.pixelSize: 18
+                                        anchors.verticalCenter: parent.verticalCenter
+                                    }
+                                    
+                                    Text {
+                                        text: "给爸妈打个电话"
+                                        font.pixelSize: 13
+                                        color: "#FFFFFF"
+                                        anchors.verticalCenter: parent.verticalCenter
+                                    }
                                 }
                             }
                         }
+                    }
+                    
+                    // 运动健康周报
+                    Rectangle {
+                        width: (parent.width - 8) / 2
+                        height: 120
+                        radius: 16
+                        color: "#1E1E20"
                         
-                        Text {
-                            text: "公立医生在线问诊 >"
-                            font.pixelSize: 12
-                            color: "#A1A1AA"
+                        Column {
+                            anchors.fill: parent
+                            anchors.margins: 14
+                            spacing: 8
+                            
+                            Row {
+                                width: parent.width
+                                
+                                Text {
+                                    text: "运动健康周报"
+                                    font.pixelSize: 15
+                                    font.weight: Font.DemiBold
+                                    color: "#FFFFFF"
+                                }
+                                
+                                Item { width: parent.width - 120; height: 1 }
+                                
+                                // 新内容红点
+                                Rectangle {
+                                    width: 8
+                                    height: 8
+                                    radius: 4
+                                    color: "#EF4444"
+                                    anchors.verticalCenter: parent.verticalCenter
+                                }
+                            }
+                            
+                            Text {
+                                text: "02.23 ~ 03.01"
+                                font.pixelSize: 12
+                                color: "#71717A"
+                            }
+                            
+                            // 图标区域，与左侧小习惯卡片对齐
+                            Rectangle {
+                                width: parent.width
+                                height: 40
+                                radius: 10
+                                color: "#2A4A5A"
+                                
+                                Text {
+                                    text: "📊"
+                                    font.pixelSize: 24
+                                    anchors.centerIn: parent
+                                }
+                            }
                         }
                     }
                 }
                 
-                // 功能菜单
+                // 我的勋章
                 Rectangle {
                     width: parent.width - 32
-                    radius: 16
+                    height: 130
+                    radius: 20
                     color: "#1E1E20"
+                    anchors.horizontalCenter: parent.horizontalCenter
                     
                     Column {
-                        width: parent.width
+                        anchors.fill: parent
+                        anchors.margins: 16
+                        spacing: 12
                         
-                        Repeater {
-                            model: [
-                                { title: "健康问诊", color: "#7D5FFF", badge: "NEW" },
-                                { title: "App 设置", color: "#A78BFA", badge: "" },
-                                { title: "系统权限", color: "#84CC16", badge: "" },
-                                { title: "帮助与反馈", color: "#F59E0B", badge: "" },
-                                { title: "App 版本", color: "#6366F1", badge: "V3.53.1" },
-                                { title: "关于", color: "#0EA5E9", badge: "" }
-                            ]
+                        Row {
+                            width: parent.width - 8
                             
-                            delegate: Rectangle {
-                                width: parent.width
-                                height: 56
-                                color: "transparent"
+                            Text {
+                                text: "我的勋章"
+                                font.pixelSize: 15
+                                font.weight: Font.DemiBold
+                                color: "#FFFFFF"
+                            }
+                            
+                            Item { width: parent.width - 100; height: 1 }
+                            
+                            Text {
+                                text: "全部 ›"
+                                font.pixelSize: 13
+                                color: "#71717A"
+                            }
+                        }
+                        
+                        // 勋章列表
+                        Row {
+                            width: parent.width
+                            spacing: 12
+                            
+                            Repeater {
+                                model: [
+                                    { value: "500", name: "500次步数" },
+                                    { value: "START", name: "首次游泳" },
+                                    { value: "5000", name: "运动达人" },
+                                    { value: "365", name: "365次打卡" }
+                                ]
                                 
-                                Rectangle {
-                                    visible: index > 0
-                                    anchors.top: parent.top
-                                    anchors.left: parent.left
-                                    anchors.leftMargin: 52
-                                    width: parent.width - 68
-                                    height: 1
-                                    color: "#27272A"
-                                }
-                                
-                                Row {
-                                    anchors.fill: parent
-                                    anchors.margins: 16
-                                    spacing: 12
+                                Column {
+                                    spacing: 4
                                     
                                     Rectangle {
-                                        width: 32
-                                        height: 32
-                                        radius: 16
-                                        color: modelData.color
-                                        anchors.verticalCenter: parent.verticalCenter
-                                    }
-                                    
-                                    Text {
-                                        text: modelData.title
-                                        font.pixelSize: 14
-                                        color: "#FFFFFF"
-                                        anchors.verticalCenter: parent.verticalCenter
-                                    }
-                                    
-                                    Item { width: parent.width - 200; height: 1 }
-                                    
-                                    // 标签
-                                    Rectangle {
-                                        visible: modelData.badge !== ""
-                                        width: 36
-                                        height: 18
-                                        radius: 9
-                                        color: modelData.badge === "NEW" ? "#F9E8C5" : "transparent"
-                                        anchors.verticalCenter: parent.verticalCenter
+                                        width: 52
+                                        height: 52
+                                        radius: 26
+                                        color: index % 2 === 0 ? "#3D2D6B" : "#2A4A5A"
                                         
                                         Text {
                                             anchors.centerIn: parent
-                                            text: modelData.badge
-                                            font.pixelSize: 10
+                                            text: modelData.value
+                                            font.pixelSize: modelData.value.length > 3 ? 10 : 14
                                             font.weight: Font.Bold
-                                            color: modelData.badge === "NEW" ? "#333333" : "#71717A"
+                                            color: "#FFFFFF"
                                         }
                                     }
                                     
                                     Text {
-                                        text: ">"
-                                        font.pixelSize: 16
+                                        text: modelData.name
+                                        font.pixelSize: 10
                                         color: "#71717A"
-                                        anchors.verticalCenter: parent.verticalCenter
+                                        anchors.horizontalCenter: parent.horizontalCenter
                                     }
                                 }
                             }
+                        }
+                    }
+                }
+                
+                // 功能菜单（参考图片风格）
+                Rectangle {
+                    width: parent.width - 32
+                    height: menuColumn.height + 32
+                    radius: 20
+                    color: "#1E1E20"
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    
+                    Column {
+                        id: menuColumn
+                        width: parent.width
+                        anchors.top: parent.top
+                        anchors.topMargin: 8
+                        
+                        // App 设置 - 淡紫色齿轮
+                        MenuItem {
+                            width: parent.width
+                            icon: "⚙"
+                            iconColor: "#8A7AE6"
+                            title: "App 设置"
+                        }
+                        
+                        MenuSeparator {}
+                        
+                        // 系统权限 - 浅绿色锁
+                        MenuItem {
+                            width: parent.width
+                            icon: "🔒"
+                            iconColor: "#81C784"
+                            title: "系统权限"
+                        }
+                        
+                        MenuSeparator {}
+                        
+                        // 帮助与反馈 - 橙黄色对话
+                        MenuItem {
+                            width: parent.width
+                            icon: "💬"
+                            iconColor: "#FFB300"
+                            title: "帮助与反馈"
+                        }
+                        
+                        MenuSeparator {}
+                        
+                        // App 版本 - 淡紫色云下载
+                        MenuItem {
+                            width: parent.width
+                            icon: "☁"
+                            iconColor: "#8A7AE6"
+                            title: "App 版本"
+                            badge: "1.0.0"
+                        }
+                        
+                        MenuSeparator {}
+                        
+                        // 关于 - 浅蓝色信息
+                        MenuItem {
+                            width: parent.width
+                            icon: "ⓘ"
+                            iconColor: "#64B5F6"
+                            title: "关于"
                         }
                     }
                 }
@@ -276,5 +416,79 @@ Item {
                 Item { width: 1; height: 24 }
             }
         }
+    }
+    
+    // 菜单项组件（参考图片风格）
+    component MenuItem: Rectangle {
+        property string icon: ""
+        property string iconColor: "#6366F1"
+        property string title: ""
+        property string badge: ""
+        
+        height: 56
+        color: itemMouseArea.pressed ? "#252527" : "transparent"
+        
+        // 圆形图标背景
+        Rectangle {
+            id: menuIcon
+            x: 16
+            width: 32
+            height: 32
+            radius: 16
+            color: iconColor
+            anchors.verticalCenter: parent.verticalCenter
+            
+            Text {
+                anchors.centerIn: parent
+                text: icon
+                font.pixelSize: 16
+                color: "#FFFFFF"
+            }
+        }
+        
+        // 标题
+        Text {
+            text: title
+            font.pixelSize: 16
+            color: "#FFFFFF"
+            anchors.left: menuIcon.right
+            anchors.leftMargin: 12
+            anchors.verticalCenter: parent.verticalCenter
+        }
+        
+        // 版本号标签（右对齐）
+        Text {
+            text: badge
+            font.pixelSize: 14
+            color: "#A0A0A0"
+            anchors.right: parent.right
+            anchors.rightMargin: 16
+            anchors.verticalCenter: parent.verticalCenter
+            visible: badge !== ""
+        }
+        
+        // 右箭头（右对齐，有版本号时不显示）
+        Text {
+            text: ">"
+            font.pixelSize: 16
+            color: "#707070"
+            anchors.right: parent.right
+            anchors.rightMargin: 16
+            anchors.verticalCenter: parent.verticalCenter
+            visible: badge === ""
+        }
+        
+        MouseArea {
+            id: itemMouseArea
+            anchors.fill: parent
+        }
+    }
+    
+    // 分隔线组件
+    component MenuSeparator: Rectangle {
+        width: parent.width - 60
+        height: 1
+        color: "#27272A"
+        anchors.horizontalCenter: parent.horizontalCenter
     }
 }

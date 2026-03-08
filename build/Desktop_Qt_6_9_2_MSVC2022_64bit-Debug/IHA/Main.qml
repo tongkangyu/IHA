@@ -95,7 +95,7 @@ Window {
         }
     }
     
-    // Push 动画
+    // Push 动画 - 流畅的物理感动画
     ParallelAnimation {
         id: pushAnimation
         
@@ -103,57 +103,60 @@ Window {
             target: detailContainer
             property: "x"
             to: 0
-            duration: 400
-            easing.type: Easing.OutCubic
+            duration: 320
+            easing.type: Easing.OutBack
+            easing.overshoot: 0.5
         }
         
         NumberAnimation {
             target: detailContainer
             property: "y"
             to: 0
-            duration: 400
-            easing.type: Easing.OutCubic
+            duration: 320
+            easing.type: Easing.OutBack
+            easing.overshoot: 0.5
         }
         
         NumberAnimation {
             target: detailScale
             property: "xScale"
             to: 1.0
-            duration: 400
-            easing.type: Easing.OutCubic
+            duration: 320
+            easing.type: Easing.OutBack
+            easing.overshoot: 0.5
         }
         
         NumberAnimation {
             target: detailScale
             property: "yScale"
             to: 1.0
-            duration: 400
-            easing.type: Easing.OutCubic
+            duration: 320
+            easing.type: Easing.OutBack
+            easing.overshoot: 0.5
         }
         
         NumberAnimation {
             target: detailLoader
             property: "opacity"
             to: 1.0
-            duration: 300
-            easing.type: Easing.OutQuad
-        }
-        
-        onStarted: {
-            // 确保动画开始时状态正确
+            duration: 250
+            easing.type: Easing.OutCubic
         }
         
         onFinished: {
+            detailContainer.x = 0
+            detailContainer.y = 0
+            detailScale.xScale = 1.0
+            detailScale.yScale = 1.0
             isAnimating = false
             navBar.visible = false
         }
     }
     
-    // Pop 动画
+    // Pop 动画 - 流畅的物理感动画
     ParallelAnimation {
         id: popAnimation
         
-        // 卡片动画参数（在 pushFromCard 中设置）
         property real targetX: 0
         property real targetY: 0
         property real targetScaleX: 0.3
@@ -163,44 +166,47 @@ Window {
             target: detailContainer
             property: "x"
             to: popAnimation.targetX
-            duration: 350
-            easing.type: Easing.InCubic
+            duration: 280
+            easing.type: Easing.InBack
+            easing.overshoot: 0.3
         }
         
         NumberAnimation {
             target: detailContainer
             property: "y"
             to: popAnimation.targetY
-            duration: 350
-            easing.type: Easing.InCubic
+            duration: 280
+            easing.type: Easing.InBack
+            easing.overshoot: 0.3
         }
         
         NumberAnimation {
             target: detailScale
             property: "xScale"
             to: popAnimation.targetScaleX
-            duration: 350
-            easing.type: Easing.InCubic
+            duration: 280
+            easing.type: Easing.InBack
+            easing.overshoot: 0.3
         }
         
         NumberAnimation {
             target: detailScale
             property: "yScale"
             to: popAnimation.targetScaleY
-            duration: 350
-            easing.type: Easing.InCubic
+            duration: 280
+            easing.type: Easing.InBack
+            easing.overshoot: 0.3
         }
         
         NumberAnimation {
             target: detailLoader
             property: "opacity"
             to: 0
-            duration: 250
+            duration: 200
             easing.type: Easing.InQuad
         }
         
         onStarted: {
-            // 显示主页面（在动画后面）
             pageLoader.visible = true
         }
         
@@ -241,15 +247,17 @@ Window {
         // 二级页面容器（在主页面上面）
         Item {
             id: detailContainer
-            anchors.fill: parent
+            width: parent.width
+            height: parent.height
             visible: false  // 直接控制，不绑定
             clip: true
             z: 10  // 确保在主页面上方
             
+            // 使用 transform 实现缩放，以容器中心为原点
             transform: Scale {
                 id: detailScale
-                origin.x: width / 2
-                origin.y: height / 2
+                origin.x: detailContainer.width / 2
+                origin.y: detailContainer.height / 2
                 xScale: 1
                 yScale: 1
             }

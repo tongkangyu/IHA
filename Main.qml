@@ -13,11 +13,17 @@ Window {
     // 当前主页面索引
     property int currentTabIndex: 0
     
+    // 上一个主页面索引（用于判断滑动方向）
+    property int previousTabIndex: 0
+    
     // 页面栈
     property var pageStack: []
     
     // 是否正在动画中
     property bool isAnimating: false
+    
+    // 是否正在切换一级页面
+    property bool isTabAnimating: false
     
     // 主页面路径
     readonly property var mainPages: [
@@ -60,7 +66,7 @@ Window {
             
             // 显示容器
             detailContainer.visible = true
-            pageLoader.visible = false
+            mainPageLoader.visible = false
             navBar.visible = false
             
             // 加载页面
@@ -89,9 +95,41 @@ Window {
             detailContainer.visible = false
             detailLoader.visible = false
             detailLoader.source = ""
-            pageLoader.visible = true
-            pageLoader.source = mainPages[currentTabIndex]
+            mainPageLoader.visible = true
+            mainPageLoader.source = mainPages[currentTabIndex]
             navBar.visible = true
+        }
+        
+        // 切换一级页面的方法
+        function switchTab(newIndex) {
+            if (isTabAnimating || newIndex === currentTabIndex) return
+            
+            isTabAnimating = true
+            previousTabIndex = currentTabIndex
+            
+            // 判断滑动方向：新索引大于当前索引，向左滑（新页面从右边进来）
+            var goingLeft = newIndex > currentTabIndex
+            
+            // 设置旧页面加载器
+            oldPageLoader.source = mainPages[currentTabIndex]
+            oldPageLoader.visible = true
+            oldPageLoader.x = 0
+            
+            // 设置新页面加载器
+            mainPageLoader.source = mainPages[newIndex]
+            mainPageLoader.visible = true
+            mainPageLoader.x = goingLeft ? width : -width
+            
+            // 更新索引
+            currentTabIndex = newIndex
+            pageStack = []
+            
+            // 启动动画
+            if (goingLeft) {
+                slideLeftAnimation.start()
+            } else {
+                slideRightAnimation.start()
+            }
         }
     }
     
@@ -207,7 +245,7 @@ Window {
         }
         
         onStarted: {
-            pageLoader.visible = true
+            mainPageLoader.visible = true
         }
         
         onFinished: {
@@ -224,18 +262,89 @@ Window {
         }
     }
     
+    // 一级页面向左滑动动画（新页面从右边进来）
+    ParallelAnimation {
+        id: slideLeftAnimation
+        
+        NumberAnimation {
+            target: oldPageLoader
+            property: "x"
+            to: -width
+            duration: 300
+            easing.type: Easing.OutCubic
+        }
+        
+        NumberAnimation {
+            target: mainPageLoader
+            property: "x"
+            to: 0
+            duration: 300
+            easing.type: Easing.OutCubic
+        }
+        
+        onFinished: {
+            oldPageLoader.visible = false
+            oldPageLoader.source = ""
+            isTabAnimating = false
+        }
+    }
+    
+    // 一级页面向右滑动动画（新页面从左边进来）
+    ParallelAnimation {
+        id: slideRightAnimation
+        
+        NumberAnimation {
+            target: oldPageLoader
+            property: "x"
+            to: width
+            duration: 300
+            easing.type: Easing.OutCubic
+        }
+        
+        NumberAnimation {
+            target: mainPageLoader
+            property: "x"
+            to: 0
+            duration: 300
+            easing.type: Easing.OutCubic
+        }
+        
+        onFinished: {
+            oldPageLoader.visible = false
+            oldPageLoader.source = ""
+            isTabAnimating = false
+        }
+    }
+    
     // 主内容区域
     Item {
         id: contentArea
         anchors.fill: parent
         anchors.bottomMargin: navBar.visible ? 56 : 0
         
+        // 旧页面加载器（用于动画过渡）
+        Loader {
+            id: oldPageLoader
+            width: parent.width
+            height: parent.height
+            visible: false
+            z: 1
+            
+            onLoaded: {
+                if (item && item.hasOwnProperty('navigationStack')) {
+                    item.navigationStack = navigationStack
+                }
+            }
+        }
+        
         // 主页面加载器
         Loader {
-            id: pageLoader
-            anchors.fill: parent
+            id: mainPageLoader
+            width: parent.width
+            height: parent.height
             visible: true
             source: mainPages[currentTabIndex]
+            z: 2
             
             onLoaded: {
                 if (item && item.hasOwnProperty('navigationStack')) {
@@ -386,12 +495,8 @@ Window {
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
                         onClicked: {
-                            if (index !== currentTabIndex) {
-                                currentTabIndex = index
-                                pageStack = []
-                                pageLoader.visible = true
-                                pageLoader.source = mainPages[index]
-                                navBar.visible = true
+                            if (index !== currentTabIndex && !isTabAnimating) {
+                                navigationStack.switchTab(index)
                             }
                         }
                     }

@@ -254,11 +254,11 @@ Item {
                             hoverEnabled: true
                             onClicked: {
                                 if (navigationStack) {
-                                    // 使用 delegate 的 Rectangle 作为卡片
-                                    var cardRect = parent
-                                    var cardPos = cardRect.mapToItem(null, 0, 0)
-                                    console.log("Card pos:", cardPos.x, cardPos.y, cardRect.width, cardRect.height)
-                                    navigationStack.pushFromCard(modelData.page, cardPos.x, cardPos.y, cardRect.width, cardRect.height)
+                                    // 使用 mapToGlobal 获取全局坐标，然后转换为窗口坐标
+                                    var globalPos = parent.mapToGlobal(0, 0)
+                                    var windowPos = parent.mapToItem(null, 0, 0)
+                                    console.log("Global:", globalPos.x, globalPos.y, "Window:", windowPos.x, windowPos.y)
+                                    navigationStack.pushFromCard(modelData.page, windowPos.x, windowPos.y, parent.width, parent.height)
                                 }
                             }
                         }
