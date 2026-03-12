@@ -75,6 +75,55 @@ namespace _qt_qml_IHA_qml_pages_ProfilePage_qml {
         reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
     };
 }
+namespace _qt_qml_IHA_qml_pages_MyActivitiesPage_qml { 
+    extern const unsigned char qmlData[];
+    extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
+    const QQmlPrivate::CachedQmlUnit unit = {
+        reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
+    };
+}
+namespace _qt_qml_IHA_qml_pages_MyCoursesPage_qml { 
+    extern const unsigned char qmlData[];
+    extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
+    const QQmlPrivate::CachedQmlUnit unit = {
+        reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
+    };
+}
+namespace _qt_qml_IHA_qml_pages_MyOrdersPage_qml { 
+    extern const unsigned char qmlData[];
+    extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
+    const QQmlPrivate::CachedQmlUnit unit = {
+        reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
+    };
+}
+namespace _qt_qml_IHA_qml_pages_HabitsPage_qml { 
+    extern const unsigned char qmlData[];
+    extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
+    const QQmlPrivate::CachedQmlUnit unit = {
+        reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
+    };
+}
+namespace _qt_qml_IHA_qml_pages_HealthReportPage_qml { 
+    extern const unsigned char qmlData[];
+    extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
+    const QQmlPrivate::CachedQmlUnit unit = {
+        reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
+    };
+}
+namespace _qt_qml_IHA_qml_pages_MyBadgesPage_qml { 
+    extern const unsigned char qmlData[];
+    extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
+    const QQmlPrivate::CachedQmlUnit unit = {
+        reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
+    };
+}
+namespace _qt_qml_IHA_qml_pages_MyFamilyFriendsPage_qml { 
+    extern const unsigned char qmlData[];
+    extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
+    const QQmlPrivate::CachedQmlUnit unit = {
+        reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
+    };
+}
 namespace _qt_qml_IHA_qml_pages_details_StepsDetailPage_qml { 
     extern const unsigned char qmlData[];
     extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
@@ -138,6 +187,20 @@ namespace _qt_qml_IHA_qml_pages_settings_ProfileInfoPage_qml {
         reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
     };
 }
+namespace _qt_qml_IHA_qml_pages_settings_SystemPermissionsPage_qml { 
+    extern const unsigned char qmlData[];
+    extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
+    const QQmlPrivate::CachedQmlUnit unit = {
+        reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
+    };
+}
+namespace _qt_qml_IHA_qml_pages_settings_HelpFeedbackPage_qml { 
+    extern const unsigned char qmlData[];
+    extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
+    const QQmlPrivate::CachedQmlUnit unit = {
+        reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
+    };
+}
 
 }
 namespace {
@@ -162,6 +225,13 @@ Registry::Registry() {
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/IHA/qml/pages/AssistantPage.qml"), &QmlCacheGeneratedCode::_qt_qml_IHA_qml_pages_AssistantPage_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/IHA/qml/pages/DevicePage.qml"), &QmlCacheGeneratedCode::_qt_qml_IHA_qml_pages_DevicePage_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/IHA/qml/pages/ProfilePage.qml"), &QmlCacheGeneratedCode::_qt_qml_IHA_qml_pages_ProfilePage_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/IHA/qml/pages/MyActivitiesPage.qml"), &QmlCacheGeneratedCode::_qt_qml_IHA_qml_pages_MyActivitiesPage_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/IHA/qml/pages/MyCoursesPage.qml"), &QmlCacheGeneratedCode::_qt_qml_IHA_qml_pages_MyCoursesPage_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/IHA/qml/pages/MyOrdersPage.qml"), &QmlCacheGeneratedCode::_qt_qml_IHA_qml_pages_MyOrdersPage_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/IHA/qml/pages/HabitsPage.qml"), &QmlCacheGeneratedCode::_qt_qml_IHA_qml_pages_HabitsPage_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/IHA/qml/pages/HealthReportPage.qml"), &QmlCacheGeneratedCode::_qt_qml_IHA_qml_pages_HealthReportPage_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/IHA/qml/pages/MyBadgesPage.qml"), &QmlCacheGeneratedCode::_qt_qml_IHA_qml_pages_MyBadgesPage_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/IHA/qml/pages/MyFamilyFriendsPage.qml"), &QmlCacheGeneratedCode::_qt_qml_IHA_qml_pages_MyFamilyFriendsPage_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/IHA/qml/pages/details/StepsDetailPage.qml"), &QmlCacheGeneratedCode::_qt_qml_IHA_qml_pages_details_StepsDetailPage_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/IHA/qml/pages/details/SleepDetailPage.qml"), &QmlCacheGeneratedCode::_qt_qml_IHA_qml_pages_details_SleepDetailPage_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/IHA/qml/pages/details/HeartRateDetailPage.qml"), &QmlCacheGeneratedCode::_qt_qml_IHA_qml_pages_details_HeartRateDetailPage_qml::unit);
@@ -171,6 +241,8 @@ Registry::Registry() {
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/IHA/qml/pages/settings/AppSettingsPage.qml"), &QmlCacheGeneratedCode::_qt_qml_IHA_qml_pages_settings_AppSettingsPage_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/IHA/qml/pages/settings/AboutPage.qml"), &QmlCacheGeneratedCode::_qt_qml_IHA_qml_pages_settings_AboutPage_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/IHA/qml/pages/settings/ProfileInfoPage.qml"), &QmlCacheGeneratedCode::_qt_qml_IHA_qml_pages_settings_ProfileInfoPage_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/IHA/qml/pages/settings/SystemPermissionsPage.qml"), &QmlCacheGeneratedCode::_qt_qml_IHA_qml_pages_settings_SystemPermissionsPage_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/IHA/qml/pages/settings/HelpFeedbackPage.qml"), &QmlCacheGeneratedCode::_qt_qml_IHA_qml_pages_settings_HelpFeedbackPage_qml::unit);
     QQmlPrivate::RegisterQmlUnitCacheHook registration;
     registration.structVersion = 0;
     registration.lookupCachedQmlUnit = &lookupCachedUnit;

@@ -101,13 +101,13 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 52,
+				"line" : 61,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 1,
-				"line" : 47,
+				"line" : 56,
 				"parent" : 0
 			},
 			{
@@ -397,7 +397,7 @@
 			{
 				"command" : 14,
 				"file" : 12,
-				"line" : 3613,
+				"line" : 3607,
 				"parent" : 58
 			},
 			{
@@ -409,7 +409,7 @@
 			{
 				"command" : 14,
 				"file" : 12,
-				"line" : 3607,
+				"line" : 3613,
 				"parent" : 58
 			},
 			{
@@ -766,6 +766,114 @@
 				"parent" : 58
 			},
 			{
+				"command" : 23,
+				"file" : 12,
+				"line" : 3321,
+				"parent" : 58
+			},
+			{
+				"command" : 23,
+				"file" : 12,
+				"line" : 3514,
+				"parent" : 58
+			},
+			{
+				"command" : 23,
+				"file" : 12,
+				"line" : 3321,
+				"parent" : 58
+			},
+			{
+				"command" : 23,
+				"file" : 12,
+				"line" : 3514,
+				"parent" : 58
+			},
+			{
+				"command" : 23,
+				"file" : 12,
+				"line" : 3321,
+				"parent" : 58
+			},
+			{
+				"command" : 23,
+				"file" : 12,
+				"line" : 3514,
+				"parent" : 58
+			},
+			{
+				"command" : 23,
+				"file" : 12,
+				"line" : 3321,
+				"parent" : 58
+			},
+			{
+				"command" : 23,
+				"file" : 12,
+				"line" : 3514,
+				"parent" : 58
+			},
+			{
+				"command" : 23,
+				"file" : 12,
+				"line" : 3321,
+				"parent" : 58
+			},
+			{
+				"command" : 23,
+				"file" : 12,
+				"line" : 3514,
+				"parent" : 58
+			},
+			{
+				"command" : 23,
+				"file" : 12,
+				"line" : 3321,
+				"parent" : 58
+			},
+			{
+				"command" : 23,
+				"file" : 12,
+				"line" : 3514,
+				"parent" : 58
+			},
+			{
+				"command" : 23,
+				"file" : 12,
+				"line" : 3321,
+				"parent" : 58
+			},
+			{
+				"command" : 23,
+				"file" : 12,
+				"line" : 3514,
+				"parent" : 58
+			},
+			{
+				"command" : 23,
+				"file" : 12,
+				"line" : 3321,
+				"parent" : 58
+			},
+			{
+				"command" : 23,
+				"file" : 12,
+				"line" : 3514,
+				"parent" : 58
+			},
+			{
+				"command" : 23,
+				"file" : 12,
+				"line" : 3321,
+				"parent" : 58
+			},
+			{
+				"command" : 23,
+				"file" : 12,
+				"line" : 3514,
+				"parent" : 58
+			},
+			{
 				"command" : 28,
 				"file" : 12,
 				"line" : 3629,
@@ -775,19 +883,19 @@
 				"command" : 27,
 				"file" : 0,
 				"line" : 400,
-				"parent" : 121
+				"parent" : 139
 			},
 			{
 				"command" : 26,
 				"file" : 0,
 				"line" : 2560,
-				"parent" : 122
+				"parent" : 140
 			},
 			{
 				"command" : 23,
 				"file" : 0,
 				"line" : 2104,
-				"parent" : 123
+				"parent" : 141
 			},
 			{
 				"command" : 30,
@@ -799,7 +907,7 @@
 				"command" : 23,
 				"file" : 0,
 				"line" : 2229,
-				"parent" : 125
+				"parent" : 143
 			}
 		]
 	},
@@ -1025,7 +1133,16 @@
 				39,
 				41,
 				43,
-				44
+				45,
+				47,
+				49,
+				51,
+				53,
+				55,
+				57,
+				59,
+				61,
+				62
 			]
 		},
 		{
@@ -1237,22 +1354,22 @@
 	[
 		{
 			"backtrace" : 60,
-			"id" : "appIHA_copy_res::@6890427a1f51a3e7e1df"
+			"id" : "appIHA_copy_qml::@6890427a1f51a3e7e1df"
 		},
 		{
 			"backtrace" : 62,
-			"id" : "appIHA_copy_qml::@6890427a1f51a3e7e1df"
+			"id" : "appIHA_copy_res::@6890427a1f51a3e7e1df"
 		},
 		{
 			"backtrace" : 69,
 			"id" : "appIHA_qmlimportscan::@6890427a1f51a3e7e1df"
 		},
 		{
-			"id" : "appIHA_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
-		},
-		{
 			"backtrace" : 0,
 			"id" : "appIHA_autogen::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "appIHA_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "appIHA::@6890427a1f51a3e7e1df",
@@ -1417,7 +1534,16 @@
 				36,
 				38,
 				40,
-				42
+				42,
+				44,
+				46,
+				48,
+				50,
+				52,
+				54,
+				56,
+				58,
+				60
 			]
 		},
 		{
@@ -1447,17 +1573,50 @@
 				39,
 				41,
 				43,
-				44,
 				45,
-				46,
-				47
+				47,
+				49,
+				51,
+				53,
+				55,
+				57,
+				59,
+				61,
+				62,
+				63,
+				64,
+				65
 			]
 		},
 		{
 			"name" : "",
 			"sourceIndexes" : 
 			[
-				48,
+				66,
+				102,
+				103,
+				104,
+				105,
+				106,
+				107,
+				108,
+				109,
+				110,
+				111
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				67,
+				68,
+				69,
+				70,
+				71,
+				72,
+				73,
+				74,
 				75,
 				76,
 				77,
@@ -1467,39 +1626,24 @@
 				81,
 				82,
 				83,
-				84
-			]
-		},
-		{
-			"name" : "CMake Rules",
-			"sourceIndexes" : 
-			[
-				49,
-				50,
-				51,
-				52,
-				53,
-				54,
-				55,
-				56,
-				57,
-				58,
-				59,
-				60,
-				61,
-				62,
-				63,
-				64,
-				65,
-				66,
-				67,
-				68,
-				69,
-				70,
-				71,
-				72,
-				73,
-				74
+				84,
+				85,
+				86,
+				87,
+				88,
+				89,
+				90,
+				91,
+				92,
+				93,
+				94,
+				95,
+				96,
+				97,
+				98,
+				99,
+				100,
+				101
 			]
 		}
 	],
@@ -1667,133 +1811,241 @@
 		},
 		{
 			"backtrace" : 103,
-			"path" : "qml/pages/details/StepsDetailPage.qml",
+			"path" : "qml/pages/MyActivitiesPage.qml",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 104,
 			"compileGroupIndex" : 0,
 			"isGenerated" : true,
-			"path" : "build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/.rcc/qmlcache/appIHA_qml/pages/details/StepsDetailPage_qml.cpp",
+			"path" : "build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/.rcc/qmlcache/appIHA_qml/pages/MyActivitiesPage_qml.cpp",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 105,
-			"path" : "qml/pages/details/SleepDetailPage.qml",
+			"path" : "qml/pages/MyCoursesPage.qml",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 106,
 			"compileGroupIndex" : 0,
 			"isGenerated" : true,
-			"path" : "build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/.rcc/qmlcache/appIHA_qml/pages/details/SleepDetailPage_qml.cpp",
+			"path" : "build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/.rcc/qmlcache/appIHA_qml/pages/MyCoursesPage_qml.cpp",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 107,
-			"path" : "qml/pages/details/HeartRateDetailPage.qml",
+			"path" : "qml/pages/MyOrdersPage.qml",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 108,
 			"compileGroupIndex" : 0,
 			"isGenerated" : true,
-			"path" : "build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/.rcc/qmlcache/appIHA_qml/pages/details/HeartRateDetailPage_qml.cpp",
+			"path" : "build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/.rcc/qmlcache/appIHA_qml/pages/MyOrdersPage_qml.cpp",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 109,
-			"path" : "qml/pages/details/CaloriesDetailPage.qml",
+			"path" : "qml/pages/HabitsPage.qml",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 110,
 			"compileGroupIndex" : 0,
 			"isGenerated" : true,
-			"path" : "build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/.rcc/qmlcache/appIHA_qml/pages/details/CaloriesDetailPage_qml.cpp",
+			"path" : "build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/.rcc/qmlcache/appIHA_qml/pages/HabitsPage_qml.cpp",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 111,
-			"path" : "qml/pages/details/ActivityDetailPage.qml",
+			"path" : "qml/pages/HealthReportPage.qml",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 112,
 			"compileGroupIndex" : 0,
 			"isGenerated" : true,
-			"path" : "build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/.rcc/qmlcache/appIHA_qml/pages/details/ActivityDetailPage_qml.cpp",
+			"path" : "build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/.rcc/qmlcache/appIHA_qml/pages/HealthReportPage_qml.cpp",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 113,
-			"path" : "qml/pages/details/ActivityCountDetailPage.qml",
+			"path" : "qml/pages/MyBadgesPage.qml",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 114,
 			"compileGroupIndex" : 0,
 			"isGenerated" : true,
-			"path" : "build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/.rcc/qmlcache/appIHA_qml/pages/details/ActivityCountDetailPage_qml.cpp",
+			"path" : "build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/.rcc/qmlcache/appIHA_qml/pages/MyBadgesPage_qml.cpp",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 115,
-			"path" : "qml/pages/settings/AppSettingsPage.qml",
+			"path" : "qml/pages/MyFamilyFriendsPage.qml",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 116,
 			"compileGroupIndex" : 0,
 			"isGenerated" : true,
-			"path" : "build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/.rcc/qmlcache/appIHA_qml/pages/settings/AppSettingsPage_qml.cpp",
+			"path" : "build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/.rcc/qmlcache/appIHA_qml/pages/MyFamilyFriendsPage_qml.cpp",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 117,
-			"path" : "qml/pages/settings/AboutPage.qml",
+			"path" : "qml/pages/details/StepsDetailPage.qml",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 118,
 			"compileGroupIndex" : 0,
 			"isGenerated" : true,
-			"path" : "build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/.rcc/qmlcache/appIHA_qml/pages/settings/AboutPage_qml.cpp",
+			"path" : "build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/.rcc/qmlcache/appIHA_qml/pages/details/StepsDetailPage_qml.cpp",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 119,
-			"path" : "qml/pages/settings/ProfileInfoPage.qml",
+			"path" : "qml/pages/details/SleepDetailPage.qml",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 120,
 			"compileGroupIndex" : 0,
 			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/.rcc/qmlcache/appIHA_qml/pages/details/SleepDetailPage_qml.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 121,
+			"path" : "qml/pages/details/HeartRateDetailPage.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 122,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/.rcc/qmlcache/appIHA_qml/pages/details/HeartRateDetailPage_qml.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 123,
+			"path" : "qml/pages/details/CaloriesDetailPage.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 124,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/.rcc/qmlcache/appIHA_qml/pages/details/CaloriesDetailPage_qml.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 125,
+			"path" : "qml/pages/details/ActivityDetailPage.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 126,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/.rcc/qmlcache/appIHA_qml/pages/details/ActivityDetailPage_qml.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 127,
+			"path" : "qml/pages/details/ActivityCountDetailPage.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 128,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/.rcc/qmlcache/appIHA_qml/pages/details/ActivityCountDetailPage_qml.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 129,
+			"path" : "qml/pages/settings/AppSettingsPage.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 130,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/.rcc/qmlcache/appIHA_qml/pages/settings/AppSettingsPage_qml.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 131,
+			"path" : "qml/pages/settings/AboutPage.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 132,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/.rcc/qmlcache/appIHA_qml/pages/settings/AboutPage_qml.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 133,
+			"path" : "qml/pages/settings/ProfileInfoPage.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 134,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
 			"path" : "build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/.rcc/qmlcache/appIHA_qml/pages/settings/ProfileInfoPage_qml.cpp",
 			"sourceGroupIndex" : 1
 		},
 		{
-			"backtrace" : 124,
+			"backtrace" : 135,
+			"path" : "qml/pages/settings/SystemPermissionsPage.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 136,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/.rcc/qmlcache/appIHA_qml/pages/settings/SystemPermissionsPage_qml.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 137,
+			"path" : "qml/pages/settings/HelpFeedbackPage.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 138,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/.rcc/qmlcache/appIHA_qml/pages/settings/HelpFeedbackPage_qml.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 142,
 			"compileGroupIndex" : 0,
 			"isGenerated" : true,
 			"path" : "build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/.qt/rcc/qrc_appIHA_raw_qml_0.cpp",
 			"sourceGroupIndex" : 1
 		},
 		{
-			"backtrace" : 126,
+			"backtrace" : 144,
 			"isGenerated" : true,
 			"path" : "build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/.qt/rcc/qmake_IHA.qrc",
 			"sourceGroupIndex" : 1
 		},
 		{
-			"backtrace" : 126,
+			"backtrace" : 144,
 			"isGenerated" : true,
 			"path" : "build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/IHA/qmldir",
 			"sourceGroupIndex" : 1
 		},
 		{
-			"backtrace" : 126,
+			"backtrace" : 144,
 			"isGenerated" : true,
 			"path" : "build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/.qt/rcc/appIHA_raw_qml_0.qrc",
 			"sourceGroupIndex" : 1
@@ -1891,6 +2143,48 @@
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/.rcc/qmlcache/appIHA_qml/pages/MyActivitiesPage_qml.cpp.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/.rcc/qmlcache/appIHA_qml/pages/MyCoursesPage_qml.cpp.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/.rcc/qmlcache/appIHA_qml/pages/MyOrdersPage_qml.cpp.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/.rcc/qmlcache/appIHA_qml/pages/HabitsPage_qml.cpp.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/.rcc/qmlcache/appIHA_qml/pages/HealthReportPage_qml.cpp.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/.rcc/qmlcache/appIHA_qml/pages/MyBadgesPage_qml.cpp.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/.rcc/qmlcache/appIHA_qml/pages/MyFamilyFriendsPage_qml.cpp.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
 			"path" : "build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/.rcc/qmlcache/appIHA_qml/pages/details/StepsDetailPage_qml.cpp.rule",
 			"sourceGroupIndex" : 3
 		},
@@ -1940,6 +2234,18 @@
 			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/.rcc/qmlcache/appIHA_qml/pages/settings/ProfileInfoPage_qml.cpp.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/.rcc/qmlcache/appIHA_qml/pages/settings/SystemPermissionsPage_qml.cpp.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_2_MSVC2022_64bit-Debug/.rcc/qmlcache/appIHA_qml/pages/settings/HelpFeedbackPage_qml.cpp.rule",
 			"sourceGroupIndex" : 3
 		},
 		{

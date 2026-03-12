@@ -97,7 +97,7 @@ Item {
             }
             
             Text {
-                text: "版本 0.1.18"
+                text: "版本 0.1.19"
                 font.pixelSize: 16
                 color: textSecondary
                 anchors.horizontalCenter: parent.horizontalCenter

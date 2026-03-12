@@ -11,6 +11,13 @@ HealthPage 1.0 qml/pages/HealthPage.qml
 AssistantPage 1.0 qml/pages/AssistantPage.qml
 DevicePage 1.0 qml/pages/DevicePage.qml
 ProfilePage 1.0 qml/pages/ProfilePage.qml
+MyActivitiesPage 1.0 qml/pages/MyActivitiesPage.qml
+MyCoursesPage 1.0 qml/pages/MyCoursesPage.qml
+MyOrdersPage 1.0 qml/pages/MyOrdersPage.qml
+HabitsPage 1.0 qml/pages/HabitsPage.qml
+HealthReportPage 1.0 qml/pages/HealthReportPage.qml
+MyBadgesPage 1.0 qml/pages/MyBadgesPage.qml
+MyFamilyFriendsPage 1.0 qml/pages/MyFamilyFriendsPage.qml
 StepsDetailPage 1.0 qml/pages/details/StepsDetailPage.qml
 SleepDetailPage 1.0 qml/pages/details/SleepDetailPage.qml
 HeartRateDetailPage 1.0 qml/pages/details/HeartRateDetailPage.qml
@@ -20,5 +27,7 @@ ActivityCountDetailPage 1.0 qml/pages/details/ActivityCountDetailPage.qml
 AppSettingsPage 1.0 qml/pages/settings/AppSettingsPage.qml
 AboutPage 1.0 qml/pages/settings/AboutPage.qml
 ProfileInfoPage 1.0 qml/pages/settings/ProfileInfoPage.qml
+SystemPermissionsPage 1.0 qml/pages/settings/SystemPermissionsPage.qml
+HelpFeedbackPage 1.0 qml/pages/settings/HelpFeedbackPage.qml
 depends QtQuick
 

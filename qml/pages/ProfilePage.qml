@@ -151,43 +151,68 @@ Item {
                     anchors.horizontalCenter: parent.horizontalCenter
                     spacing: 8
                     
-                    Repeater {
-                        model: [
-                            { name: "我的活动", icon: "🏃" },
-                            { name: "我的课程", icon: "📚" },
-                            { name: "我的订单", icon: "📄" },
-                            { name: "我的亲友", icon: "❤️" }
-                        ]
+                    // 我的活动
+                    Rectangle {
+                        width: (parent.width - 24) / 4
+                        height: 70
+                        radius: 14
+                        color: activitiesMA.pressed ? pressedColor : cardColor
                         
-                        Rectangle {
-                            width: (parent.width - 24) / 4
-                            height: 70
-                            radius: 14
-                            color: quickMouseArea.pressed ? pressedColor : cardColor
-                            
-                            Column {
-                                anchors.centerIn: parent
-                                spacing: 6
-                                
-                                Text {
-                                    text: modelData.icon
-                                    font.pixelSize: 24
-                                    anchors.horizontalCenter: parent.horizontalCenter
-                                }
-                                
-                                Text {
-                                    text: modelData.name
-                                    font.pixelSize: 12
-                                    color: textSecondary
-                                    anchors.horizontalCenter: parent.horizontalCenter
-                                }
-                            }
-                            
-                            MouseArea {
-                                id: quickMouseArea
-                                anchors.fill: parent
-                            }
+                        Column {
+                            anchors.centerIn: parent
+                            spacing: 6
+                            Text { text: "🏃"; font.pixelSize: 24; anchors.horizontalCenter: parent.horizontalCenter }
+                            Text { text: "我的活动"; font.pixelSize: 12; color: textSecondary; anchors.horizontalCenter: parent.horizontalCenter }
                         }
+                        MouseArea { id: activitiesMA; anchors.fill: parent; onClicked: navigationStack.pushFromRight("qrc:/qt/qml/IHA/qml/pages/MyActivitiesPage.qml") }
+                    }
+                    
+                    // 我的课程
+                    Rectangle {
+                        width: (parent.width - 24) / 4
+                        height: 70
+                        radius: 14
+                        color: coursesMA.pressed ? pressedColor : cardColor
+                        
+                        Column {
+                            anchors.centerIn: parent
+                            spacing: 6
+                            Text { text: "📚"; font.pixelSize: 24; anchors.horizontalCenter: parent.horizontalCenter }
+                            Text { text: "我的课程"; font.pixelSize: 12; color: textSecondary; anchors.horizontalCenter: parent.horizontalCenter }
+                        }
+                        MouseArea { id: coursesMA; anchors.fill: parent; onClicked: navigationStack.pushFromRight("qrc:/qt/qml/IHA/qml/pages/MyCoursesPage.qml") }
+                    }
+                    
+                    // 我的订单
+                    Rectangle {
+                        width: (parent.width - 24) / 4
+                        height: 70
+                        radius: 14
+                        color: ordersMA.pressed ? pressedColor : cardColor
+                        
+                        Column {
+                            anchors.centerIn: parent
+                            spacing: 6
+                            Text { text: "📄"; font.pixelSize: 24; anchors.horizontalCenter: parent.horizontalCenter }
+                            Text { text: "我的订单"; font.pixelSize: 12; color: textSecondary; anchors.horizontalCenter: parent.horizontalCenter }
+                        }
+                        MouseArea { id: ordersMA; anchors.fill: parent; onClicked: navigationStack.pushFromRight("qrc:/qt/qml/IHA/qml/pages/MyOrdersPage.qml") }
+                    }
+                    
+                    // 我的亲友
+                    Rectangle {
+                        width: (parent.width - 24) / 4
+                        height: 70
+                        radius: 14
+                        color: familyMA.pressed ? pressedColor : cardColor
+                        
+                        Column {
+                            anchors.centerIn: parent
+                            spacing: 6
+                            Text { text: "❤️"; font.pixelSize: 24; anchors.horizontalCenter: parent.horizontalCenter }
+                            Text { text: "我的亲友"; font.pixelSize: 12; color: textSecondary; anchors.horizontalCenter: parent.horizontalCenter }
+                        }
+                        MouseArea { id: familyMA; anchors.fill: parent; onClicked: navigationStack.pushFromRight("qrc:/qt/qml/IHA/qml/pages/MyFamilyFriendsPage.qml") }
                     }
                 }
                 
@@ -249,6 +274,8 @@ Item {
                                 }
                             }
                         }
+                        
+                        MouseArea { anchors.fill: parent; onClicked: navigationStack.pushFromRight("qrc:/qt/qml/IHA/qml/pages/HabitsPage.qml") }
                     }
                     
                     // 运动健康周报
@@ -305,6 +332,8 @@ Item {
                                 }
                             }
                         }
+                        
+                        MouseArea { anchors.fill: parent; onClicked: navigationStack.pushFromRight("qrc:/qt/qml/IHA/qml/pages/HealthReportPage.qml") }
                     }
                 }
                 
@@ -342,8 +371,8 @@ Item {
                         
                         // 勋章列表
                         Row {
-                            width: parent.width
                             spacing: 12
+                            anchors.horizontalCenter: parent.horizontalCenter
                             
                             Repeater {
                                 model: [
@@ -354,6 +383,7 @@ Item {
                                 ]
                                 
                                 Column {
+                                    width: 64
                                     spacing: 4
                                     
                                     Rectangle {
@@ -361,6 +391,7 @@ Item {
                                         height: 52
                                         radius: 26
                                         color: index % 2 === 0 ? (isDarkMode ? "#3D2D6B" : "#E8E0F5") : (isDarkMode ? "#2A4A5A" : "#D4E8ED")
+                                        anchors.horizontalCenter: parent.horizontalCenter
                                         
                                         Text {
                                             anchors.centerIn: parent
@@ -381,6 +412,8 @@ Item {
                             }
                         }
                     }
+                    
+                    MouseArea { anchors.fill: parent; onClicked: navigationStack.pushFromRight("qrc:/qt/qml/IHA/qml/pages/MyBadgesPage.qml") }
                 }
                 
                 // 功能菜单（参考图片风格）
@@ -429,6 +462,7 @@ Item {
                             textPrimary: profilePage.textPrimary
                             pressedColor: profilePage.pressedColor
                             arrowColor: profilePage.arrowColor
+                            onClicked: navigationStack.pushFromRight("qrc:/qt/qml/IHA/qml/pages/settings/SystemPermissionsPage.qml")
                         }
                         
                         MenuSeparator {
@@ -445,6 +479,7 @@ Item {
                             textPrimary: profilePage.textPrimary
                             pressedColor: profilePage.pressedColor
                             arrowColor: profilePage.arrowColor
+                            onClicked: navigationStack.pushFromRight("qrc:/qt/qml/IHA/qml/pages/settings/HelpFeedbackPage.qml")
                         }
                         
                         MenuSeparator {
@@ -457,7 +492,7 @@ Item {
                             icon: "☁"
                             iconColor: "#8A7AE6"
                             title: "App 版本"
-                            badge: "0.1.18"
+                            badge: "0.1.19"
                             isDarkMode: profilePage.isDarkMode
                             textPrimary: profilePage.textPrimary
                             textSecondary: profilePage.textSecondary

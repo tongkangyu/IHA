@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(IHA VERSION 0.1.18 LANGUAGES CXX)
+project(IHA VERSION 0.1.19 LANGUAGES CXX)
 
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -27,6 +27,13 @@ qt_add_qml_module(appIHA
         qml/pages/AssistantPage.qml
         qml/pages/DevicePage.qml
         qml/pages/ProfilePage.qml
+        qml/pages/MyActivitiesPage.qml
+        qml/pages/MyCoursesPage.qml
+        qml/pages/MyOrdersPage.qml
+        qml/pages/HabitsPage.qml
+        qml/pages/HealthReportPage.qml
+        qml/pages/MyBadgesPage.qml
+        qml/pages/MyFamilyFriendsPage.qml
         qml/pages/details/StepsDetailPage.qml
         qml/pages/details/SleepDetailPage.qml
         qml/pages/details/HeartRateDetailPage.qml
@@ -36,6 +43,8 @@ qt_add_qml_module(appIHA
         qml/pages/settings/AppSettingsPage.qml
         qml/pages/settings/AboutPage.qml
         qml/pages/settings/ProfileInfoPage.qml
+        qml/pages/settings/SystemPermissionsPage.qml
+        qml/pages/settings/HelpFeedbackPage.qml
 )
 
 set_target_properties(appIHA PROPERTIES
