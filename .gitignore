@@ -10,6 +10,25 @@
 *.dll
 *.dylib
 
+# 敏感配置文件（包含API密钥）
+config.h
+
+# 构建目录
+build/
+build_test/
+out/
+
+# IDE 配置
+.vs/
+.idea/
+*.user
+*.suo
+*.sln
+*.vcxproj*
+
+# 构建错误日志
+build_error.txt
+
 # Qt-es
 object_script.*.Release
 object_script.*.Debug

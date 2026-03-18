@@ -49,6 +49,54 @@ Window {
     // 是否正在动画中
     property bool isAnimating: false
     
+    // 全局助理消息模型（持久化对话记录）
+    ListModel {
+        id: assistantMessageModel
+    }
+    
+    // 启动时加载对话记录
+    Connections {
+        target: typeof aiService !== 'undefined' ? aiService : null
+        
+        function onConversationLoaded() {
+            console.log("Main: Conversation loaded signal received")
+            
+            // 清空现有消息
+            assistantMessageModel.clear()
+            
+            // 从AI服务获取对话记录
+            var messages = aiService.getConversationForQML()
+            
+            console.log("Main: Messages count from service:", messages.length)
+            
+            if (messages.length === 0) {
+                // 如果没有历史记录，添加欢迎消息
+                assistantMessageModel.append({ type: "ai", content: "您好！我是您的健康助理。我可以帮您分析健康数据、提供运动建议、解答健康相关问题。请问有什么可以帮您的？" })
+            } else {
+                // 恢复历史对话
+                for (var i = 0; i < messages.length; i++) {
+                    assistantMessageModel.append({
+                        type: messages[i].type,
+                        content: messages[i].content
+                    })
+                }
+            }
+        }
+    }
+    
+    // 延迟加载对话记录（确保 aiService 已初始化）
+    Timer {
+        interval: 100
+        running: true
+        repeat: false
+        onTriggered: {
+            if (typeof aiService !== 'undefined') {
+                console.log("Main: Loading conversation...")
+                aiService.loadConversation()
+            }
+        }
+    }
+    
     // 是否正在切换一级页面
     property bool isTabAnimating: false
     
@@ -60,6 +108,12 @@ Window {
         "qrc:/qt/qml/IHA/qml/pages/ProfilePage.qml"
     ]
     
+    // 保存卡片位置信息（用于返回动画）
+    property real savedCardX: 0
+    property real savedCardY: 0
+    property real savedCardW: 0
+    property real savedCardH: 0
+    
     // 导航对象
     QtObject {
         id: navigationStack
@@ -70,35 +124,43 @@ Window {
             
             pageStack.push(pageUrl)
             
+            // 保存卡片位置供返回使用
+            savedCardX = cardX
+            savedCardY = cardY
+            savedCardW = cardW
+            savedCardH = cardH
+            
             // 计算缩放比例
-            var scaleX = Math.max(0.1, cardW / width)
-            var scaleY = Math.max(0.1, cardH / height)
+            var scaleX = Math.max(0.05, cardW / width)
+            var scaleY = Math.max(0.05, cardH / height)
             
-            // 计算起始位置（卡片中心相对于屏幕中心）
-            var startX = cardX + cardW / 2 - width / 2
-            var startY = cardY + cardH / 2 - height / 2
-            
-            // 保存动画参数供返回动画使用
-            popAnimation.targetX = startX
-            popAnimation.targetY = startY
-            popAnimation.targetScaleX = scaleX
-            popAnimation.targetScaleY = scaleY
+            // 计算起始位置（卡片左上角相对于屏幕）
+            var startX = cardX
+            var startY = cardY
             
             // 设置初始状态
             detailContainer.x = startX
             detailContainer.y = startY
+            detailScale.origin.x = 0  // 从左上角开始缩放
+            detailScale.origin.y = 0
             detailScale.xScale = scaleX
             detailScale.yScale = scaleY
             detailLoader.opacity = 0
             
+            // 显示遮罩
+            overlayRect.visible = true
+            overlayRect.opacity = 0
+            
             // 显示容器
             detailContainer.visible = true
-            mainPageLoader.visible = false
-            navBar.visible = false
+            detailContainer.z = 20
             
             // 加载页面
             detailLoader.source = pageUrl
             detailLoader.visible = true
+            
+            // 隐藏底部导航
+            navBar.visible = false
             
             // 启动动画
             pushAnimation.start()
@@ -122,14 +184,20 @@ Window {
             detailScale.yScale = 1.0
             detailLoader.opacity = 1
             
+            // 显示遮罩
+            overlayRect.visible = true
+            overlayRect.opacity = 0
+            
             // 显示容器
             detailContainer.visible = true
-            mainPageLoader.visible = false
-            navBar.visible = false
+            detailContainer.z = 20
             
             // 加载页面
             detailLoader.source = pageUrl
             detailLoader.visible = true
+            
+            // 隐藏底部导航
+            navBar.visible = false
             
             // 启动滑动动画
             slideInAnimation.start()
@@ -159,6 +227,7 @@ Window {
             detailContainer.visible = false
             detailLoader.visible = false
             detailLoader.source = ""
+            overlayRect.visible = false
             mainPageLoader.visible = true
             mainPageLoader.source = mainPages[currentTabIndex]
             navBar.visible = true
@@ -197,52 +266,71 @@ Window {
         }
     }
     
-    // Push 动画 - 流畅的物理感动画
+    // Push 动画 - 从卡片展开
     ParallelAnimation {
         id: pushAnimation
         
+        // X位置动画
         NumberAnimation {
             target: detailContainer
             property: "x"
             to: 0
-            duration: 320
-            easing.type: Easing.OutBack
-            easing.overshoot: 0.5
+            duration: 350
+            easing.type: Easing.OutQuart
         }
         
+        // Y位置动画
         NumberAnimation {
             target: detailContainer
             property: "y"
             to: 0
-            duration: 320
-            easing.type: Easing.OutBack
-            easing.overshoot: 0.5
+            duration: 350
+            easing.type: Easing.OutQuart
         }
         
+        // X缩放动画
         NumberAnimation {
             target: detailScale
             property: "xScale"
             to: 1.0
-            duration: 320
-            easing.type: Easing.OutBack
-            easing.overshoot: 0.5
+            duration: 350
+            easing.type: Easing.OutQuart
         }
         
+        // Y缩放动画
         NumberAnimation {
             target: detailScale
             property: "yScale"
             to: 1.0
-            duration: 320
-            easing.type: Easing.OutBack
-            easing.overshoot: 0.5
+            duration: 350
+            easing.type: Easing.OutQuart
         }
         
+        // 内容淡入
         NumberAnimation {
             target: detailLoader
             property: "opacity"
             to: 1.0
-            duration: 250
+            duration: 200
             easing.type: Easing.OutCubic
+        }
+        
+        // 遮罩淡入后快速淡出
+        SequentialAnimation {
+            NumberAnimation {
+                target: overlayRect
+                property: "opacity"
+                to: 0.3
+                duration: 150
+                easing.type: Easing.OutCubic
+            }
+            NumberAnimation {
+                target: overlayRect
+                property: "opacity"
+                to: 0
+                duration: 150
+                easing.type: Easing.InQuad
+            }
         }
         
         onFinished: {
@@ -250,56 +338,52 @@ Window {
             detailContainer.y = 0
             detailScale.xScale = 1.0
             detailScale.yScale = 1.0
+            overlayRect.visible = false
             isAnimating = false
-            navBar.visible = false
         }
     }
     
-    // Pop 动画 - 流畅的物理感动画
+    // Pop 动画 - 收缩回卡片
     ParallelAnimation {
         id: popAnimation
         
-        property real targetX: 0
-        property real targetY: 0
-        property real targetScaleX: 0.3
-        property real targetScaleY: 0.3
-        
+        // X位置动画 - 收缩到卡片位置
         NumberAnimation {
             target: detailContainer
             property: "x"
-            to: popAnimation.targetX
-            duration: 280
-            easing.type: Easing.InBack
-            easing.overshoot: 0.3
+            to: savedCardX
+            duration: 300
+            easing.type: Easing.InQuart
         }
         
+        // Y位置动画
         NumberAnimation {
             target: detailContainer
             property: "y"
-            to: popAnimation.targetY
-            duration: 280
-            easing.type: Easing.InBack
-            easing.overshoot: 0.3
+            to: savedCardY
+            duration: 300
+            easing.type: Easing.InQuart
         }
         
+        // X缩放动画 - 收缩到卡片大小
         NumberAnimation {
             target: detailScale
             property: "xScale"
-            to: popAnimation.targetScaleX
-            duration: 280
-            easing.type: Easing.InBack
-            easing.overshoot: 0.3
+            to: Math.max(0.05, savedCardW / width)
+            duration: 300
+            easing.type: Easing.InQuart
         }
         
+        // Y缩放动画
         NumberAnimation {
             target: detailScale
             property: "yScale"
-            to: popAnimation.targetScaleY
-            duration: 280
-            easing.type: Easing.InBack
-            easing.overshoot: 0.3
+            to: Math.max(0.05, savedCardH / height)
+            duration: 300
+            easing.type: Easing.InQuart
         }
         
+        // 内容淡出
         NumberAnimation {
             target: detailLoader
             property: "opacity"
@@ -308,14 +392,20 @@ Window {
             easing.type: Easing.InQuad
         }
         
-        onStarted: {
-            mainPageLoader.visible = true
+        // 遮罩淡出
+        NumberAnimation {
+            target: overlayRect
+            property: "opacity"
+            to: 0
+            duration: 200
+            easing.type: Easing.InQuad
         }
         
         onFinished: {
             detailContainer.visible = false
             detailLoader.visible = false
             detailLoader.source = ""
+            overlayRect.visible = false
             detailContainer.x = 0
             detailContainer.y = 0
             detailScale.xScale = 1
@@ -327,41 +417,71 @@ Window {
     }
     
     // 设置页面滑入动画（从右边滑入）
-    NumberAnimation {
+    ParallelAnimation {
         id: slideInAnimation
-        target: detailContainer
-        property: "x"
-        from: width
-        to: 0
-        duration: 300
-        easing.type: Easing.OutCubic
+        
+        NumberAnimation {
+            target: detailContainer
+            property: "x"
+            from: width
+            to: 0
+            duration: 300
+            easing.type: Easing.OutCubic
+        }
+        
+        // 遮罩快速淡入淡出
+        SequentialAnimation {
+            NumberAnimation {
+                target: overlayRect
+                property: "opacity"
+                to: 0.3
+                duration: 100
+                easing.type: Easing.OutCubic
+            }
+            NumberAnimation {
+                target: overlayRect
+                property: "opacity"
+                to: 0
+                duration: 150
+                easing.type: Easing.InQuad
+            }
+        }
         
         onFinished: {
+            overlayRect.visible = false
             isAnimating = false
         }
     }
     
     // 设置页面滑出动画（向右滑出）
-    NumberAnimation {
+    ParallelAnimation {
         id: slideOutAnimation
-        target: detailContainer
-        property: "x"
-        from: 0
-        to: width
-        duration: 300
-        easing.type: Easing.OutCubic
         
-        onStarted: {
-            mainPageLoader.visible = true
-            navBar.visible = true
+        NumberAnimation {
+            target: detailContainer
+            property: "x"
+            from: 0
+            to: width
+            duration: 300
+            easing.type: Easing.OutCubic
+        }
+        
+        NumberAnimation {
+            target: overlayRect
+            property: "opacity"
+            to: 0
+            duration: 200
+            easing.type: Easing.InQuad
         }
         
         onFinished: {
             detailContainer.visible = false
             detailLoader.visible = false
             detailLoader.source = ""
+            overlayRect.visible = false
             detailContainer.x = 0
             isAnimating = false
+            navBar.visible = true
         }
     }
     
@@ -453,6 +573,30 @@ Window {
                 if (item && item.hasOwnProperty('navigationStack')) {
                     item.navigationStack = navigationStack
                 }
+                // 传递全局消息模型给助理页面
+                if (item && item.hasOwnProperty('messageModel')) {
+                    item.messageModel = assistantMessageModel
+                }
+            }
+        }
+        
+        // 遮罩层（在主页面和二级页面之间）
+        Rectangle {
+            id: overlayRect
+            anchors.fill: parent
+            color: "#000000"
+            opacity: 0
+            visible: false
+            z: 10  // 在主页面上方，二级页面下方
+            
+            // 点击遮罩不响应
+            MouseArea {
+                anchors.fill: parent
+                enabled: false
+            }
+            
+            Behavior on opacity {
+                NumberAnimation { duration: 200; easing.type: Easing.OutCubic }
             }
         }
         
@@ -461,15 +605,15 @@ Window {
             id: detailContainer
             width: parent.width
             height: parent.height
-            visible: false  // 直接控制，不绑定
+            visible: false
             clip: true
-            z: 10  // 确保在主页面上方
+            z: 20
             
-            // 使用 transform 实现缩放，以容器中心为原点
+            // 使用 transform 实现缩放
             transform: Scale {
                 id: detailScale
-                origin.x: detailContainer.width / 2
-                origin.y: detailContainer.height / 2
+                origin.x: 0  // 从左上角缩放
+                origin.y: 0
                 xScale: 1
                 yScale: 1
             }
@@ -504,7 +648,7 @@ Window {
         anchors.left: parent.left
         anchors.right: parent.right
         height: 56
-        color: darkMode ? "#CC121214" : "#EFFFF5F7"
+        color: darkMode ? "#121214" : "#F5F5F7"
         visible: true
         z: 5
         

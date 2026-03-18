@@ -4,6 +4,8 @@ import QtQuick.Controls
 Item {
     id: profilePage
     
+    property var navigationStack: null
+    
     // 使用全局主题
     readonly property bool isDarkMode: typeof window !== 'undefined' ? window.darkMode : true
     readonly property color bgColor: isDarkMode ? "#0D0D0F" : "#F5F5F7"
@@ -36,29 +38,6 @@ Item {
                     font.weight: Font.Bold
                     color: textPrimary
                     anchors.verticalCenter: parent.verticalCenter
-                }
-            }
-            
-            // 右上角添加按钮
-            Rectangle {
-                width: 36
-                height: 36
-                radius: 18
-                color: addMouseArea.pressed ? pressedColor : btnColor
-                anchors.right: parent.right
-                anchors.rightMargin: 16
-                anchors.verticalCenter: parent.verticalCenter
-                
-                Text {
-                    anchors.centerIn: parent
-                    text: "+"
-                    font.pixelSize: 20
-                    color: textPrimary
-                }
-                
-                MouseArea {
-                    id: addMouseArea
-                    anchors.fill: parent
                 }
             }
         }
@@ -140,7 +119,9 @@ Item {
                         id: userCardMouseArea
                         anchors.fill: parent
                         onClicked: {
-                            navigationStack.pushFromRight("qrc:/qt/qml/IHA/qml/pages/settings/ProfileInfoPage.qml")
+                            if (profilePage.navigationStack) {
+                                profilePage.navigationStack.pushFromRight("qrc:/qt/qml/IHA/qml/pages/settings/ProfileInfoPage.qml")
+                            }
                         }
                     }
                 }
@@ -164,7 +145,7 @@ Item {
                             Text { text: "🏃"; font.pixelSize: 24; anchors.horizontalCenter: parent.horizontalCenter }
                             Text { text: "我的活动"; font.pixelSize: 12; color: textSecondary; anchors.horizontalCenter: parent.horizontalCenter }
                         }
-                        MouseArea { id: activitiesMA; anchors.fill: parent; onClicked: navigationStack.pushFromRight("qrc:/qt/qml/IHA/qml/pages/MyActivitiesPage.qml") }
+                        MouseArea { id: activitiesMA; anchors.fill: parent; onClicked: { if (profilePage.navigationStack) profilePage.navigationStack.pushFromRight("qrc:/qt/qml/IHA/qml/pages/MyActivitiesPage.qml") } }
                     }
                     
                     // 我的课程
@@ -180,7 +161,7 @@ Item {
                             Text { text: "📚"; font.pixelSize: 24; anchors.horizontalCenter: parent.horizontalCenter }
                             Text { text: "我的课程"; font.pixelSize: 12; color: textSecondary; anchors.horizontalCenter: parent.horizontalCenter }
                         }
-                        MouseArea { id: coursesMA; anchors.fill: parent; onClicked: navigationStack.pushFromRight("qrc:/qt/qml/IHA/qml/pages/MyCoursesPage.qml") }
+                        MouseArea { id: coursesMA; anchors.fill: parent; onClicked: { if (profilePage.navigationStack) profilePage.navigationStack.pushFromRight("qrc:/qt/qml/IHA/qml/pages/MyCoursesPage.qml") } }
                     }
                     
                     // 我的订单
@@ -196,7 +177,7 @@ Item {
                             Text { text: "📄"; font.pixelSize: 24; anchors.horizontalCenter: parent.horizontalCenter }
                             Text { text: "我的订单"; font.pixelSize: 12; color: textSecondary; anchors.horizontalCenter: parent.horizontalCenter }
                         }
-                        MouseArea { id: ordersMA; anchors.fill: parent; onClicked: navigationStack.pushFromRight("qrc:/qt/qml/IHA/qml/pages/MyOrdersPage.qml") }
+                        MouseArea { id: ordersMA; anchors.fill: parent; onClicked: { if (profilePage.navigationStack) profilePage.navigationStack.pushFromRight("qrc:/qt/qml/IHA/qml/pages/MyOrdersPage.qml") } }
                     }
                     
                     // 我的亲友
@@ -212,7 +193,7 @@ Item {
                             Text { text: "❤️"; font.pixelSize: 24; anchors.horizontalCenter: parent.horizontalCenter }
                             Text { text: "我的亲友"; font.pixelSize: 12; color: textSecondary; anchors.horizontalCenter: parent.horizontalCenter }
                         }
-                        MouseArea { id: familyMA; anchors.fill: parent; onClicked: navigationStack.pushFromRight("qrc:/qt/qml/IHA/qml/pages/MyFamilyFriendsPage.qml") }
+                        MouseArea { id: familyMA; anchors.fill: parent; onClicked: { if (profilePage.navigationStack) profilePage.navigationStack.pushFromRight("qrc:/qt/qml/IHA/qml/pages/MyFamilyFriendsPage.qml") } }
                     }
                 }
                 
@@ -275,7 +256,7 @@ Item {
                             }
                         }
                         
-                        MouseArea { anchors.fill: parent; onClicked: navigationStack.pushFromRight("qrc:/qt/qml/IHA/qml/pages/HabitsPage.qml") }
+                        MouseArea { anchors.fill: parent; onClicked: { if (profilePage.navigationStack) profilePage.navigationStack.pushFromRight("qrc:/qt/qml/IHA/qml/pages/HabitsPage.qml") } }
                     }
                     
                     // 运动健康周报
@@ -333,7 +314,7 @@ Item {
                             }
                         }
                         
-                        MouseArea { anchors.fill: parent; onClicked: navigationStack.pushFromRight("qrc:/qt/qml/IHA/qml/pages/HealthReportPage.qml") }
+                        MouseArea { anchors.fill: parent; onClicked: { if (profilePage.navigationStack) profilePage.navigationStack.pushFromRight("qrc:/qt/qml/IHA/qml/pages/HealthReportPage.qml") } }
                     }
                 }
                 
@@ -413,7 +394,7 @@ Item {
                         }
                     }
                     
-                    MouseArea { anchors.fill: parent; onClicked: navigationStack.pushFromRight("qrc:/qt/qml/IHA/qml/pages/MyBadgesPage.qml") }
+                    MouseArea { anchors.fill: parent; onClicked: { if (profilePage.navigationStack) profilePage.navigationStack.pushFromRight("qrc:/qt/qml/IHA/qml/pages/MyBadgesPage.qml") } }
                 }
                 
                 // 功能菜单（参考图片风格）
@@ -442,8 +423,8 @@ Item {
                             pressedColor: profilePage.pressedColor
                             arrowColor: profilePage.arrowColor
                             onClicked: {
-                                if (navigationStack) {
-                                    navigationStack.pushFromRight("qrc:/qt/qml/IHA/qml/pages/settings/AppSettingsPage.qml")
+                                if (profilePage.navigationStack) {
+                                    profilePage.navigationStack.pushFromRight("qrc:/qt/qml/IHA/qml/pages/settings/AppSettingsPage.qml")
                                 }
                             }
                         }
@@ -462,7 +443,11 @@ Item {
                             textPrimary: profilePage.textPrimary
                             pressedColor: profilePage.pressedColor
                             arrowColor: profilePage.arrowColor
-                            onClicked: navigationStack.pushFromRight("qrc:/qt/qml/IHA/qml/pages/settings/SystemPermissionsPage.qml")
+                            onClicked: {
+                                if (profilePage.navigationStack) {
+                                    profilePage.navigationStack.pushFromRight("qrc:/qt/qml/IHA/qml/pages/settings/SystemPermissionsPage.qml")
+                                }
+                            }
                         }
                         
                         MenuSeparator {
@@ -479,7 +464,11 @@ Item {
                             textPrimary: profilePage.textPrimary
                             pressedColor: profilePage.pressedColor
                             arrowColor: profilePage.arrowColor
-                            onClicked: navigationStack.pushFromRight("qrc:/qt/qml/IHA/qml/pages/settings/HelpFeedbackPage.qml")
+                            onClicked: {
+                                if (profilePage.navigationStack) {
+                                    profilePage.navigationStack.pushFromRight("qrc:/qt/qml/IHA/qml/pages/settings/HelpFeedbackPage.qml")
+                                }
+                            }
                         }
                         
                         MenuSeparator {
@@ -492,7 +481,7 @@ Item {
                             icon: "☁"
                             iconColor: "#8A7AE6"
                             title: "App 版本"
-                            badge: "0.1.19"
+                            badge: typeof appVersion !== 'undefined' ? appVersion : "0.2.0"
                             isDarkMode: profilePage.isDarkMode
                             textPrimary: profilePage.textPrimary
                             textSecondary: profilePage.textSecondary
@@ -514,7 +503,9 @@ Item {
                             pressedColor: profilePage.pressedColor
                             arrowColor: profilePage.arrowColor
                             onClicked: {
-                                navigationStack.pushFromRight("qrc:/qt/qml/IHA/qml/pages/settings/AboutPage.qml")
+                                if (profilePage.navigationStack) {
+                                    profilePage.navigationStack.pushFromRight("qrc:/qt/qml/IHA/qml/pages/settings/AboutPage.qml")
+                                }
                             }
                         }
                     }

@@ -1,16 +1,20 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(IHA VERSION 0.1.19 LANGUAGES CXX)
+project(IHA VERSION 0.2.0 LANGUAGES CXX)
 
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 REQUIRED COMPONENTS Quick QuickControls2)
+find_package(Qt6 REQUIRED COMPONENTS Quick QuickControls2 Network)
 
 qt_policy(SET QTP0001 NEW)
 
 qt_add_executable(appIHA
     main.cpp
+    AIService.h
+    AIService.cpp
+    HealthDataManager.h
+    HealthDataManager.cpp
 )
 
 qt_add_qml_module(appIHA
@@ -54,7 +58,12 @@ set_target_properties(appIHA PROPERTIES
 )
 
 target_link_libraries(appIHA
-    PRIVATE Qt6::Quick Qt6::QuickControls2
+    PRIVATE Qt6::Quick Qt6::QuickControls2 Qt6::Network
+)
+
+# 定义版本号宏，供代码中使用
+target_compile_definitions(appIHA PRIVATE
+    APP_VERSION="${PROJECT_VERSION}"
 )
 
 include(GNUInstallDirs)

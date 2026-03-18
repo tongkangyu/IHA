@@ -97,7 +97,7 @@ Item {
             }
             
             Text {
-                text: "版本 0.1.19"
+                text: "版本 " + (typeof appVersion !== 'undefined' ? appVersion : "0.2.0")
                 font.pixelSize: 16
                 color: textSecondary
                 anchors.horizontalCenter: parent.horizontalCenter

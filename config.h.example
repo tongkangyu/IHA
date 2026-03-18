@@ -1,0 +1,12 @@
+#ifndef CONFIG_H_EXAMPLE
+#define CONFIG_H_EXAMPLE
+
+// 复制此文件为 config.h 并填入你的实际密钥
+// config.h 不会被提交到 git
+
+// AI 服务配置
+#define AI_API_URL "https://apis.iflow.cn/v1/chat/completions"
+#define AI_API_KEY "your-api-key-here"
+#define AI_MODEL "deepseek-v3.2"
+
+#endif // CONFIG_H_EXAMPLE
