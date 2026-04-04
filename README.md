@@ -28,7 +28,7 @@
 
 ## 技术栈
 
-- **框架**: Qt 6.9.2 + QML
+- **框架**: Qt 6.11.0 + QML
 - **构建系统**: CMake
 - **编译器**: MSVC 2022
 - **网络**: Qt Network (HTTP 请求)
@@ -70,7 +70,7 @@ IHA/
 
 ### 环境要求
 
-- Qt 6.9.2 或更高版本
+- Qt 6.11.0 或更高版本
 - CMake 3.16+
 - MSVC 2022 (Windows) 或其他兼容编译器
 
@@ -92,7 +92,7 @@ IHA/
 
 #### 使用 Qt Creator
 1. 打开 `CMakeLists.txt`
-2. 选择构建套件 (Desktop Qt 6.9.2 MSVC2022 64bit)
+2. 选择构建套件 (Desktop Qt 6.11.0 MSVC2022 64bit)
 3. 点击构建
 
 #### 使用命令行

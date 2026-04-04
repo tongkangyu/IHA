@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
 
+set(CMAKE_PREFIX_PATH "C:/Qt/6.11.0/msvc2022_64")
+
 project(IHA VERSION 0.2.0 LANGUAGES CXX)
 
 set(CMAKE_AUTOMOC ON)
