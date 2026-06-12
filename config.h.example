@@ -9,4 +9,10 @@
 #define AI_API_KEY ""
 #define AI_MODEL ""
 
+// 用户认证服务配置
+#define USER_API_URL "https://your-api-server.com/api"
+
+// 医疗服务配置
+#define MEDICAL_API_URL "https://your-medical-server.com/api"
+
 #endif // CONFIG_H_EXAMPLE

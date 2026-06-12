@@ -1,29 +1,41 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
+#include <QSettings>
 #include "AIService.h"
 #include "HealthDataManager.h"
+#include "UserService.h"
+#include "DeviceManager.h"
+#include "HealthCircleManager.h"
+#include "MedicalService.h"
 
 int main(int argc, char *argv[])
 {
-    // 使用系统默认输入法
-    // qputenv("QT_IM_MODULE", QByteArray("qtvirtualkeyboard"));
-
     QGuiApplication app(argc, argv);
+    app.setOrganizationName("IHA");
+    app.setApplicationName("SmartHealth");
+
+    QSettings settings;
+    bool savedDarkMode = settings.value("darkMode", true).toBool();
 
     QQmlApplicationEngine engine;
-    
-    // 创建服务实例（在engine之后）
+
     AIService *aiService = new AIService(&app);
     HealthDataManager *healthDataManager = new HealthDataManager(&app);
-    
-    // 注册服务到QML上下文
+    UserService *userService = new UserService(&app);
+    DeviceManager *deviceManager = new DeviceManager(&app);
+    HealthCircleManager *healthCircleManager = new HealthCircleManager(&app);
+    MedicalService *medicalService = new MedicalService(&app);
+
     engine.rootContext()->setContextProperty("aiService", aiService);
     engine.rootContext()->setContextProperty("healthDataManager", healthDataManager);
-    
-    // 注册版本号到QML
+    engine.rootContext()->setContextProperty("userService", userService);
+    engine.rootContext()->setContextProperty("deviceManager", deviceManager);
+    engine.rootContext()->setContextProperty("healthCircleManager", healthCircleManager);
+    engine.rootContext()->setContextProperty("medicalService", medicalService);
     engine.rootContext()->setContextProperty("appVersion", QStringLiteral(APP_VERSION));
-    
+    engine.rootContext()->setContextProperty("savedDarkMode", savedDarkMode);
+
     const QUrl url(QStringLiteral("qrc:/qt/qml/IHA/Main.qml"));
     QObject::connect(
         &engine,

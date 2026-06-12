@@ -1,8 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-set(CMAKE_PREFIX_PATH "C:/Qt/6.11.0/msvc2022_64")
-
-project(IHA VERSION 0.2.0 LANGUAGES CXX)
+project(IHA VERSION 0.3.0 LANGUAGES CXX)
 
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -17,6 +15,14 @@ qt_add_executable(appIHA
     AIService.cpp
     HealthDataManager.h
     HealthDataManager.cpp
+    UserService.h
+    UserService.cpp
+    DeviceManager.h
+    DeviceManager.cpp
+    HealthCircleManager.h
+    HealthCircleManager.cpp
+    MedicalService.h
+    MedicalService.cpp
 )
 
 qt_add_qml_module(appIHA
@@ -33,6 +39,7 @@ qt_add_qml_module(appIHA
         qml/pages/AssistantPage.qml
         qml/pages/DevicePage.qml
         qml/pages/ProfilePage.qml
+        qml/pages/LoginPage.qml
         qml/pages/MyActivitiesPage.qml
         qml/pages/MyCoursesPage.qml
         qml/pages/MyOrdersPage.qml
@@ -40,6 +47,12 @@ qt_add_qml_module(appIHA
         qml/pages/HealthReportPage.qml
         qml/pages/MyBadgesPage.qml
         qml/pages/MyFamilyFriendsPage.qml
+        qml/pages/HealthCirclePage.qml
+        qml/pages/DataAuthorizationPage.qml
+        qml/pages/OnlineConsultationPage.qml
+        qml/pages/DeviceDetailPage.qml
+        qml/pages/AddDevicePage.qml
+        qml/pages/EnvironmentPage.qml
         qml/pages/details/StepsDetailPage.qml
         qml/pages/details/SleepDetailPage.qml
         qml/pages/details/HeartRateDetailPage.qml
@@ -63,7 +76,6 @@ target_link_libraries(appIHA
     PRIVATE Qt6::Quick Qt6::QuickControls2 Qt6::Network
 )
 
-# 定义版本号宏，供代码中使用
 target_compile_definitions(appIHA PRIVATE
     APP_VERSION="${PROJECT_VERSION}"
 )

@@ -45,7 +45,7 @@ Rectangle {
                     anchors.fill: parent
                     onClicked: {
                         if (typeof navigationStack !== 'undefined') {
-                            navigationStack.popToRight()
+                            navigationStack.goBack()
                         }
                     }
                 }

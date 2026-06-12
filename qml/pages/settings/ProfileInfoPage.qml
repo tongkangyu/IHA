@@ -612,7 +612,7 @@ Rectangle {
             MouseArea {
                 id: backArea
                 anchors.fill: parent
-                onClicked: { if (navigationStack) navigationStack.popToRight() }
+                onClicked: { if (navigationStack) navigationStack.goBack() }
             }
         }
         

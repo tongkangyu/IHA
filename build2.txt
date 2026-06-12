@@ -1,0 +1,10 @@
+﻿cmake.exe : ninja: fatal: GetOverlappedResult: The operation completed successfully.
+所在位置 行:1 字符: 5
++ & { & "C:\Qt\Tools\CMake_64\bin\cmake.exe" --build "c:\personal\code\ ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (ninja: fatal: G...d successfully.:String) [], Remot 
+   eException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+

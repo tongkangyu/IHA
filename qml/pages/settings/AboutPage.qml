@@ -47,7 +47,7 @@ Item {
                     cursorShape: Qt.PointingHandCursor
                     onClicked: {
                         if (navigationStack) {
-                            navigationStack.popToRight()
+                            navigationStack.goBack()
                         }
                     }
                 }

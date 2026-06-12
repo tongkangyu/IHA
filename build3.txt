@@ -1,0 +1,46 @@
+﻿[  1%] Copying appIHA qml sources into build dir
+[  1%] Built target appIHA_copy_qml
+[  1%] Copying appIHA qml resources into build dir
+[  1%] Built target appIHA_copy_res
+[  2%] Running qmlimportscanner for appIHA
+[  2%] Built target appIHA_qmlimportscan
+[  4%] Populating .qmlls.ini file at C:/personal/code/cpp/project/IHA/out/build/debug/.qt/.qmlls.build.ini
+[  4%] Built target generate_qmlls_build_ini_file
+[  4%] Built target appIHA_autogen_timestamp_deps
+[  5%] Automatic MOC for target appIHA
+[  5%] Built target appIHA_autogen
+[  7%] Running AUTOMOC file extraction for target appIHA
+[  8%] Running moc --collect-json for target appIHA
+[ 10%] Running rcc for resource appIHA_raw_qml_0
+[ 10%] Running rcc for resource qmake_IHA
+[ 11%] Automatic QML type registration for target appIHA
+[ 13%] Generating .rcc/qmlcache/appIHA_Main_qml.cpp, .rcc/qmlcache/appIHA_Main_qml.cpp.aotstats
+[ 14%] Generating .rcc/qmlcache/appIHA_qml/Theme_qml.cpp, .rcc/qmlcache/appIHA_qml/Theme_qml.cpp.aotstats
+[ 15%] Generating .rcc/qmlcache/appIHA_qml/components/AnimatedListItem_qml.cpp, .rcc/qmlcache/appIHA_qml/components/AnimatedListItem_qml.cpp.aotstats
+[ 17%] Generating .rcc/qmlcache/appIHA_qml/components/AnimatedProgressBar_qml.cpp, .rcc/qmlcache/appIHA_qml/components/AnimatedProgressBar_qml.cpp.aotstats
+[ 18%] Generating .rcc/qmlcache/appIHA_qml/components/Button_qml.cpp, .rcc/qmlcache/appIHA_qml/components/Button_qml.cpp.aotstats
+[ 18%] Generating .rcc/qmlcache/appIHA_qml/components/Card_qml.cpp, .rcc/qmlcache/appIHA_qml/components/Card_qml.cpp.aotstats
+[ 20%] Generating .rcc/qmlcache/appIHA_qml/pages/AddDevicePage_qml.cpp, .rcc/qmlcache/appIHA_qml/pages/AddDevicePage_qml.cpp.aotstats
+[ 21%] Generating .rcc/qmlcache/appIHA_qml/pages/AssistantPage_qml.cpp, .rcc/qmlcache/appIHA_qml/pages/AssistantPage_qml.cpp.aotstats
+[ 23%] Generating .rcc/qmlcache/appIHA_qml/pages/DataAuthorizationPage_qml.cpp, .rcc/qmlcache/appIHA_qml/pages/DataAuthorizationPage_qml.cpp.aotstats
+[ 24%] Generating .rcc/qmlcache/appIHA_qml/pages/DeviceDetailPage_qml.cpp, .rcc/qmlcache/appIHA_qml/pages/DeviceDetailPage_qml.cpp.aotstats
+[ 26%] Generating .rcc/qmlcache/appIHA_qml/pages/DevicePage_qml.cpp, .rcc/qmlcache/appIHA_qml/pages/DevicePage_qml.cpp.aotstats
+cmake.exe : Error compiling qml file: C:/personal/code/cpp/project/IHA/qml/pages/DevicePage.qml:2
+38:94: error: Property value set multiple times
+所在位置 行:1 字符: 88
++ ...  $env:PATH; & "C:\Qt\Tools\CMake_64\bin\cmake.exe" --build "c:\person ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Error compiling... multiple times:String) [], Remot 
+   eException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+C:/personal/code/cpp/project/IHA/qml/pages/DevicePage.qml:251:94: error: Property value set multi
+ple times
+C:/personal/code/cpp/project/IHA/qml/pages/DevicePage.qml:264:94: error: Property value set multi
+ple times
+C:/personal/code/cpp/project/IHA/qml/pages/DevicePage.qml:277:94: error: Property value set multi
+ple times
+mingw32-make.exe[2]: *** [CMakeFiles\appIHA.dir\build.make:220: .rcc/qmlcache/appIHA_qml/pages/De
+vicePage_qml.cpp] Error 1
+mingw32-make.exe[1]: *** [CMakeFiles\Makefile2:104: CMakeFiles/appIHA.dir/all] Error 2
+mingw32-make.exe: *** [Makefile:135: all] Error 2
