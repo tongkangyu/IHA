@@ -142,6 +142,16 @@ cd out\build\release
 C:\Qt\6.11.0\mingw_64\bin\windeployqt.exe appIHA.exe --qmldir ..\..\..\qml
 ```
 
+在发布目录创建 `qt.conf`，固定 Qt 插件和 QML 查找路径，避免运行时报 `Could not find the Qt platform plugin "windows"`：
+
+```ini
+[Paths]
+Prefix=.
+Plugins=.
+Qml2Imports=qml
+Translations=translations
+```
+
 把 `out/build/release` 目录压缩为客户端发布包即可。用户解压后运行 `appIHA.exe`。
 
 客户端可以独立启动，但登录、健康数据同步、习惯、徽章、课程、订单和周报等功能需要后端服务在线。
@@ -282,7 +292,7 @@ cp ../config.json .
 
 建议前后端分开发布：
 
-- `IHA-Windows-x64-v0.3.0.zip`：客户端 Release 构建目录，已执行 `windeployqt`。
+- `IHA-Windows-x64-v0.3.1.zip`：客户端 Release 构建目录，已执行 `windeployqt` 并包含 `qt.conf`。
 - `IHA-backend-docker-v0.3.0.zip`：`backend/` 目录，包含 Dockerfile、Compose、SQL、源码、依赖压缩包和模板配置。
 
 发布包不要包含：
