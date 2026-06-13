@@ -1,0 +1,23 @@
+{
+    "server": {
+        "port": 8080,
+        "threads": 4
+    },
+    "database": {
+        "host": "127.0.0.1",
+        "port": 3306,
+        "user": "root",
+        "password": "",
+        "schema": "health_db",
+        "pool_size": 10
+    },
+    "jwt": {
+        "secret": "CHANGE_ME_RANDOM_JWT_SECRET",
+        "expire_hours": 24
+    },
+    "ai": {
+        "api_url": "https://api.deepseek.com/v1/chat/completions",
+        "api_key": "",
+        "model": "deepseek-v4-flash"
+    }
+}

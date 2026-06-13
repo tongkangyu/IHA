@@ -10,15 +10,24 @@
 *.dll
 *.dylib
 
-# 敏感配置文件（包含API密钥）
-config.h
+# Local secrets and machine-specific config
+/config.h
+/backend/config.json
+/.env
+/backend/.env
+*.local.json
+*.local.h
+CMakeUserPresets.json
 
 # 构建目录
 build/
 build_test/
 out/
+/release/
+/dist/
 
 # IDE 配置
+.qtcreator/
 .vs/
 .idea/
 *.user
@@ -28,6 +37,16 @@ out/
 
 # 构建错误日志
 build_error.txt
+build*.txt
+error.txt
+verbose_build.txt
+
+# Release packages
+*.zip
+*.7z
+*.tar
+*.tar.gz
+!backend/deps/*.tar.gz
 
 # Qt-es
 object_script.*.Release
