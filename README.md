@@ -50,7 +50,8 @@ IHA/
 | 文件 | 是否提交 | 说明 |
 |------|----------|------|
 | `config.h.example` | 是 | 客户端配置模板 |
-| `config.h` | 否 | 客户端真实配置，包含 AI Key 和后端地址 |
+| `config.h` | 否 | 客户端本地配置，包含后端地址 |
+| `ai_config.json` | 否 | 客户端运行时 AI 配置，包含 AI Key |
 | `backend/config.example.json` | 是 | 后端手动部署模板 |
 | `backend/config.docker.json` | 是 | 后端 Docker 部署模板，含占位值 |
 | `backend/config.json` | 否 | 后端真实配置，包含数据库密码、JWT secret、AI Key |
@@ -89,10 +90,6 @@ copy config.h.example config.h
 #ifndef CONFIG_H
 #define CONFIG_H
 
-#define AI_API_URL "https://api.deepseek.com/v1/chat/completions"
-#define AI_API_KEY "你的 AI API Key"
-#define AI_MODEL "deepseek-v4-flash"
-
 #define USER_API_URL "http://localhost:8080/api"
 #define MEDICAL_API_URL "http://localhost:8080/api"
 
@@ -100,6 +97,24 @@ copy config.h.example config.h
 ```
 
 如果后端部署在服务器，把 `USER_API_URL` 和 `MEDICAL_API_URL` 改成服务器地址，例如 `http://服务器IP:8080/api`。
+
+AI 对话模型不再从 `config.h` 编译进客户端。需要启用 AI 对话时，在 `appIHA.exe` 同目录创建 `ai_config.json`：
+
+```json
+{
+  "api_url": "https://api.deepseek.com/v1/chat/completions",
+  "api_key": "你的 AI API Key",
+  "model": "deepseek-v4-flash"
+}
+```
+
+也可以用环境变量配置：
+
+```bat
+set IHA_AI_API_URL=https://api.deepseek.com/v1/chat/completions
+set IHA_AI_API_KEY=你的 AI API Key
+set IHA_AI_MODEL=deepseek-v4-flash
+```
 
 ### 命令行构建
 
@@ -298,6 +313,7 @@ cp ../config.json .
 发布包不要包含：
 
 - `config.h`
+- `ai_config.json`
 - `backend/config.json`
 - `backend/.env`
 - `out/`
@@ -310,7 +326,7 @@ cp ../config.json .
 - 客户端的后端地址是编译期配置，改服务器地址后需要重新构建客户端。
 - Docker 部署时 `.env` 的 `DB_PASSWORD` 必须和 `config.json` 的 `database.password` 一致。
 - `jwt.secret` 必须换成随机长字符串，不能使用模板占位值。
-- `ai.api_key` 和客户端 `AI_API_KEY` 都属于私密信息，不要提交到 git，不要放进公开 release 包。
+- `ai.api_key`、`ai_config.json`、`IHA_AI_API_KEY` 都属于私密信息，不要提交到 git，不要放进公开 release 包。
 - MySQL 数据保存在 Docker volume `backend_db_data` 中，执行 `docker compose down -v` 会删除数据。
 - QML 文件保持 UTF-8 编码，避免用 PowerShell `Set-Content` 重写 QML 文件。
 

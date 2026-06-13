@@ -19,9 +19,10 @@ cmake --build build
 
 ## 安全
 
-- `config.h` 含真实 API 密钥，已在 `.gitignore` 中，**绝不提交**
+- `config.h` 含本地后端地址配置，已在 `.gitignore` 中，**绝不提交**
+- AI API Key 只能放运行时 `ai_config.json` 或环境变量，不能编译进客户端
 - 首次使用：`copy config.h.example config.h` 后填入实际值
-- 宏：`AI_API_URL`、`AI_API_KEY`、`AI_MODEL`、`USER_API_URL`、`MEDICAL_API_URL`
+- 宏：`USER_API_URL`、`MEDICAL_API_URL`
 
 ## 架构
 

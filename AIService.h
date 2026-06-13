@@ -47,6 +47,7 @@ private:
     QString m_apiKey;
     QString m_model;
 
+    void loadRuntimeConfig();
     void setIsLoading(bool loading);
     void setLastError(const QString &error);
     QJsonObject createMessage(const QString &role, const QString &content);

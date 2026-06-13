@@ -12,6 +12,7 @@
 
 # Local secrets and machine-specific config
 /config.h
+/ai_config.json
 /backend/config.json
 /.env
 /backend/.env

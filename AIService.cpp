@@ -1,5 +1,4 @@
 #include "AIService.h"
-#include "config.h"
 #include <QNetworkRequest>
 #include <QNetworkReply>
 #include <QJsonDocument>
@@ -10,15 +9,15 @@
 #include <QStandardPaths>
 #include <QDir>
 #include <QFile>
+#include <QCoreApplication>
+#include <QProcessEnvironment>
 
 AIService::AIService(QObject *parent)
     : QObject(parent)
     , m_networkManager(new QNetworkAccessManager(this))
     , m_isLoading(false)
-    , m_apiUrl(AI_API_URL)
-    , m_apiKey(AI_API_KEY)
-    , m_model(AI_MODEL)
 {
+    loadRuntimeConfig();
 }
 
 AIService::~AIService()
@@ -29,6 +28,13 @@ void AIService::sendMessage(const QString &userMessage, const QString &healthCon
 {
     if (m_isLoading) {
         qDebug() << "AIService: Already loading, skipping request";
+        return;
+    }
+
+    if (m_apiUrl.trimmed().isEmpty() || m_apiKey.trimmed().isEmpty()) {
+        const QString error = QStringLiteral("AI 服务未配置。请在程序目录创建 ai_config.json，或设置 IHA_AI_API_KEY 环境变量。");
+        setLastError(error);
+        emit errorOccurred(error);
         return;
     }
 
@@ -297,4 +303,31 @@ QVariantList AIService::getConversationForQML()
     
     qDebug() << "AIService: Returning" << messages.count() << "messages for QML";
     return messages;
+}
+
+void AIService::loadRuntimeConfig()
+{
+    m_apiUrl = QStringLiteral("https://api.deepseek.com/v1/chat/completions");
+    m_model = QStringLiteral("deepseek-v4-flash");
+
+    const QStringList configPaths = {
+        QCoreApplication::applicationDirPath() + QStringLiteral("/ai_config.json"),
+        QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation) + QStringLiteral("/ai_config.json")
+    };
+
+    for (const QString &path : configPaths) {
+        QFile file(path);
+        if (!file.open(QIODevice::ReadOnly)) continue;
+
+        const QJsonObject root = QJsonDocument::fromJson(file.readAll()).object();
+        m_apiUrl = root.value(QStringLiteral("api_url")).toString(m_apiUrl);
+        m_apiKey = root.value(QStringLiteral("api_key")).toString(m_apiKey);
+        m_model = root.value(QStringLiteral("model")).toString(m_model);
+        break;
+    }
+
+    const QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
+    m_apiUrl = env.value(QStringLiteral("IHA_AI_API_URL"), m_apiUrl);
+    m_apiKey = env.value(QStringLiteral("IHA_AI_API_KEY"), m_apiKey);
+    m_model = env.value(QStringLiteral("IHA_AI_MODEL"), m_model);
 }
