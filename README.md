@@ -139,7 +139,7 @@ cmake --build out/build/release -j8
 
 ```bat
 cd out\build\release
-C:\Qt\6.11.0\mingw_64\bin\windeployqt.exe appIHA.exe --qmldir ..\..\..\qml
+C:\Qt\6.11.0\mingw_64\bin\windeployqt.exe appIHA.exe --qmldir ..\..\..
 ```
 
 在发布目录创建 `qt.conf`，固定 Qt 插件和 QML 查找路径，避免运行时报 `Could not find the Qt platform plugin "windows"`：
