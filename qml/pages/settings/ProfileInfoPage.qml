@@ -32,6 +32,13 @@ Rectangle {
     property int tempMonth: 4
     property int tempDay: 11
     
+    function syncToBackend() {
+        if (typeof userService !== 'undefined' && userService.isLoggedIn) {
+            var bd = localBirthday ? Qt.formatDate(localBirthday, "yyyy-MM-dd") : ""
+            userService.updateProfile(typeof window !== 'undefined' ? window.userName : "", localGender, bd, localHeight, 0)
+        }
+    }
+
     color: bgColor
     
     Component.onCompleted: {
@@ -189,6 +196,7 @@ Rectangle {
                                 localGender = tempGender
                                 if (typeof window !== 'undefined') window.userGender = tempGender
                                 modalVisible = false
+                                syncToBackend()
                             }
                         }
                     }
@@ -287,6 +295,7 @@ Rectangle {
                                 localHeight = tempHeight
                                 if (typeof window !== 'undefined') window.userHeight = tempHeight
                                 modalVisible = false
+                                syncToBackend()
                             }
                         }
                     }
@@ -382,6 +391,7 @@ Rectangle {
                                 localHeartRate = tempHeartRate
                                 if (typeof window !== 'undefined') window.userMaxHeartRate = tempHeartRate
                                 modalVisible = false
+                                syncToBackend()
                             }
                         }
                     }
@@ -565,6 +575,7 @@ Rectangle {
                                 localBirthday = new Date(tempYear, tempMonth - 1, tempDay)
                                 if (typeof window !== 'undefined') window.userBirthday = localBirthday
                                 modalVisible = false
+                                syncToBackend()
                             }
                         }
                     }

@@ -1,4 +1,5 @@
 #include "HealthDataManager.h"
+#include "config.h"
 #include <QDebug>
 #include <QStandardPaths>
 #include <QDir>
@@ -6,11 +7,15 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QJsonArray>
+#include <QNetworkRequest>
+#include <QDateTime>
 
 HealthDataManager::HealthDataManager(QObject *parent)
     : QObject(parent)
     , m_currentDate(QDate::currentDate())
     , m_lastSavedDate(QDate::currentDate())
+    , m_networkManager(new QNetworkAccessManager(this))
+    , m_apiBaseUrl(USER_API_URL)
 {
     // 先尝试加载已保存的数据
     loadData();
@@ -405,4 +410,146 @@ QVariantList HealthDataManager::getWeeklyHeartRate()
         return QVariantList() << 68 << 72 << 65 << 70 << 72 << 69 << 67;
     }
     return m_weeklyHeartRate;
+}
+
+void HealthDataManager::fetchFromBackend(const QString &token)
+{
+    if (token.isEmpty() || m_apiBaseUrl.isEmpty()) return;
+
+    QUrl url(m_apiBaseUrl + "/health/dashboard");
+    QNetworkRequest request(url);
+    request.setRawHeader("Authorization", QString("Bearer %1").arg(token).toUtf8());
+
+    QNetworkReply *reply = m_networkManager->get(request);
+    connect(reply, &QNetworkReply::finished, this, [this, reply]() {
+        onDashboardReply(reply);
+    });
+}
+
+void HealthDataManager::onDashboardReply(QNetworkReply *reply)
+{
+    reply->deleteLater();
+    QByteArray data = reply->readAll();
+    QJsonDocument doc = QJsonDocument::fromJson(data);
+    if (doc.isNull() || !doc.isObject()) return;
+
+    QJsonObject obj = doc.object();
+    if (obj["code"].toInt() != 200) return;
+
+    QJsonObject d = obj["data"].toObject();
+    int score = d["health_score"].toInt(100);
+    if (m_healthScore != score) {
+        m_healthScore = score;
+        emit healthScoreChanged();
+    }
+
+    QJsonArray records = d["health_records"].toArray();
+
+    int steps = 0, calories = 0, sleepMin = 0, heartRate = 0, activity = 0;
+    QString today = QDate::currentDate().toString("yyyy-MM-dd");
+
+    for (const QJsonValue &v : records) {
+        QJsonObject r = v.toObject();
+        QString type = r["metric_type"].toString();
+        double value = r["metric_value"].toDouble();
+        QString time = r["collect_time"].toString();
+
+        if (!time.startsWith(today)) continue;
+
+        if (type == "STEPS") steps += (int)value;
+        else if (type == "HEART_RATE") heartRate = (int)value;
+        else if (type == "SLEEP") sleepMin = (int)value;
+        else if (type == "CALORIES") calories += (int)value;
+        else if (type == "ACTIVITY") activity += (int)value;
+    }
+
+    if (steps > 0) setTodaySteps(steps);
+    if (calories > 0) setTodayCalories(calories);
+    if (sleepMin > 0) setTodaySleepMinutes(sleepMin);
+    if (heartRate > 0) setTodayHeartRate(heartRate);
+    if (activity > 0) setTodayActivity(activity);
+
+    saveData();
+    emit dataLoaded();
+    qDebug() << "HealthDataManager: Data fetched from backend";
+}
+
+void HealthDataManager::uploadToBackend(const QString &token)
+{
+    if (token.isEmpty() || m_apiBaseUrl.isEmpty()) return;
+
+    QUrl url(m_apiBaseUrl + "/health/data");
+    QNetworkRequest request(url);
+    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+    request.setRawHeader("Authorization", QString("Bearer %1").arg(token).toUtf8());
+
+    QString now = QDateTime::currentDateTime().toString("yyyy-MM-dd HH:mm:ss");
+    QJsonArray records;
+
+    if (m_todaySteps > 0) {
+        QJsonObject r;
+        r["metric_type"] = "STEPS";
+        r["metric_value"] = m_todaySteps;
+        r["metric_unit"] = "steps";
+        r["collect_time"] = now;
+        records.append(r);
+    }
+    if (m_todayCalories > 0) {
+        QJsonObject r;
+        r["metric_type"] = "CALORIES";
+        r["metric_value"] = m_todayCalories;
+        r["metric_unit"] = "kcal";
+        r["collect_time"] = now;
+        records.append(r);
+    }
+    if (m_todayHeartRate > 0) {
+        QJsonObject r;
+        r["metric_type"] = "HEART_RATE";
+        r["metric_value"] = m_todayHeartRate;
+        r["metric_unit"] = "bpm";
+        r["collect_time"] = now;
+        records.append(r);
+    }
+    if (m_todaySleepMinutes > 0) {
+        QJsonObject r;
+        r["metric_type"] = "SLEEP";
+        r["metric_value"] = m_todaySleepMinutes;
+        r["metric_unit"] = "minutes";
+        r["collect_time"] = now;
+        records.append(r);
+    }
+
+    if (records.isEmpty()) return;
+
+    QJsonObject body;
+    body["records"] = records;
+    QJsonDocument doc(body);
+
+    m_networkManager->post(request, doc.toJson(QJsonDocument::Compact));
+    qDebug() << "HealthDataManager: Uploading" << records.size() << "records to backend";
+}
+
+void HealthDataManager::fetchWeeklyReport(const QString &token)
+{
+    if (token.isEmpty() || m_apiBaseUrl.isEmpty()) return;
+
+    QUrl url(m_apiBaseUrl + "/report/weekly");
+    QNetworkRequest request(url);
+    request.setRawHeader("Authorization", QString("Bearer %1").arg(token).toUtf8());
+
+    QNetworkReply *reply = m_networkManager->get(request);
+    connect(reply, &QNetworkReply::finished, this, [this, reply]() {
+        reply->deleteLater();
+        QByteArray data = reply->readAll();
+        QJsonDocument doc = QJsonDocument::fromJson(data);
+        if (doc.isNull() || !doc.isObject()) return;
+
+        QJsonObject obj = doc.object();
+        if (obj["code"].toInt() != 200) return;
+
+        QJsonObject d = obj["data"].toObject();
+        m_weeklyReportText = d["insight_text"].toString();
+        emit weeklyReportReady(m_weeklyReportText);
+        qDebug() << "HealthDataManager: Weekly report received";
+    });
 }

@@ -18,7 +18,7 @@ Item {
     readonly property color progressBg: isDarkMode ? "#27272A" : "#E5E5EA"
     
     // 模拟数据
-    property int currentHeartRate: 72
+    property int currentHeartRate: (typeof healthDataManager !== 'undefined') ? healthDataManager.todayHeartRate : 72
     property int minHeartRate: 52
     property int maxHeartRate: 142
     property int avgHeartRate: 75

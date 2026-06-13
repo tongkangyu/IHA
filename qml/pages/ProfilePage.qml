@@ -16,6 +16,11 @@ Item {
     readonly property color pressedColor: isDarkMode ? "#2A2A2C" : "#D1D1D6"
     readonly property color dividerColor: isDarkMode ? "#27272A" : "#E5E5EA"
     readonly property color arrowColor: isDarkMode ? "#707070" : "#C7C7CC"
+    readonly property string weekDateRange: {
+        var e = new Date()
+        var s = new Date(e.getTime() - 6 * 86400000)
+        return Qt.formatDate(s, "MM.dd") + " ~ " + Qt.formatDate(e, "MM.dd")
+    }
 
     Column {
         anchors.fill: parent
@@ -135,7 +140,7 @@ Item {
                                 Text { text: "运动健康周报"; font.pixelSize: 15; font.weight: Font.DemiBold; color: textPrimary }
                                 Item { width: parent.width - 120; height: 1 }
                                 Rectangle { width: 8; height: 8; radius: 4; color: "#EF4444"; anchors.verticalCenter: parent.verticalCenter } }
-                            Text { text: "02.23 ~ 03.01"; font.pixelSize: 12; color: textSecondary }
+                            Text { text: weekDateRange; font.pixelSize: 12; color: textSecondary }
                             Rectangle {
                                 width: parent.width; height: 40; radius: 10; color: isDarkMode ? "#2A4A5A" : "#D4E8ED"
                                 Text { text: "W"; font.pixelSize: 20; font.weight: Font.Bold; color: "#3B82F6"; anchors.centerIn: parent } } }

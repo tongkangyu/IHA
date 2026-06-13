@@ -12,7 +12,7 @@ Window {
     color: darkMode ? "#0D0D0F" : "#F5F5F7"
 
     property bool darkMode: typeof savedDarkMode !== 'undefined' ? savedDarkMode : true
-    property bool isLoggedIn: true
+    property bool isLoggedIn: typeof userService !== 'undefined' ? userService.isLoggedIn : false
 
     Settings {
         category: "Appearance"
@@ -62,6 +62,27 @@ Window {
     property real savedCardY: 0
     property real savedCardW: 0
     property real savedCardH: 0
+
+    Connections {
+        target: typeof userService !== 'undefined' ? userService : null
+        function onLoginStatusChanged() {
+            window.userName = userService.isLoggedIn ? (userService.userName || "用户") : "用户"
+        }
+        function onUserInfoChanged() {
+            window.userName = userService.userName || "用户"
+            window.userGender = userService.userGender || "男"
+            if (userService.userBirthday !== "") {
+                var parts = userService.userBirthday.split("-")
+                window.userBirthday = new Date(parseInt(parts[0]), parseInt(parts[1]) - 1, parseInt(parts[2]))
+            }
+            if (userService.userHeight > 0) window.userHeight = userService.userHeight
+        }
+        function onLoginSuccess() {
+            if (typeof healthDataManager !== 'undefined') {
+                healthDataManager.fetchFromBackend(userService.getToken())
+            }
+        }
+    }
 
     QtObject {
         id: navigationStack

@@ -15,6 +15,11 @@ Item {
     readonly property color deviceBg: isDarkMode ? "#2A2A2C" : "#E5E5EA"
     readonly property color pressedColor: isDarkMode ? "#303032" : "#F0F0F5"
     readonly property color dividerColor: isDarkMode ? "#27272A" : "#E5E5EA"
+    property var envData: ({})
+
+    Component.onCompleted: {
+        if (typeof deviceManager !== 'undefined') envData = deviceManager.getEnvironmentData()
+    }
 
     Rectangle { anchors.fill: parent; color: bgColor }
 
@@ -57,19 +62,19 @@ Item {
                     Rectangle {
                         width: (parent.width - 16) / 3; height: 80; radius: 16; color: cardColor
                         Column { anchors.centerIn: parent; spacing: 4
-                            Text { text: "24.5\u00B0C"; font.pixelSize: 18; font.weight: Font.Bold; color: "#FF6B35" }
+                            Text { text: (envData.temperature || "24.5") + "\u00B0C"; font.pixelSize: 18; font.weight: Font.Bold; color: "#FF6B35" }
                             Text { text: "温度"; font.pixelSize: 12; color: textSecondary } }
                     }
                     Rectangle {
                         width: (parent.width - 16) / 3; height: 80; radius: 16; color: cardColor
                         Column { anchors.centerIn: parent; spacing: 4
-                            Text { text: "55%"; font.pixelSize: 18; font.weight: Font.Bold; color: "#3B82F6" }
+                            Text { text: (envData.humidity || "55") + "%"; font.pixelSize: 18; font.weight: Font.Bold; color: "#3B82F6" }
                             Text { text: "湿度"; font.pixelSize: 12; color: textSecondary } }
                     }
                     Rectangle {
                         width: (parent.width - 16) / 3; height: 80; radius: 16; color: cardColor
                         Column { anchors.centerIn: parent; spacing: 4
-                            Text { text: "35"; font.pixelSize: 18; font.weight: Font.Bold; color: "#22C55E" }
+                            Text { text: envData.pm25 || "35"; font.pixelSize: 18; font.weight: Font.Bold; color: "#22C55E" }
                             Text { text: "PM2.5"; font.pixelSize: 12; color: textSecondary } }
                     }
                 }
@@ -79,19 +84,19 @@ Item {
                     Rectangle {
                         width: (parent.width - 16) / 3; height: 80; radius: 16; color: cardColor
                         Column { anchors.centerIn: parent; spacing: 4
-                            Text { text: "420 ppm"; font.pixelSize: 18; font.weight: Font.Bold; color: "#22C55E" }
+                            Text { text: (envData.co2 || "420") + " ppm"; font.pixelSize: 18; font.weight: Font.Bold; color: "#22C55E" }
                             Text { text: "CO2"; font.pixelSize: 12; color: textSecondary } }
                     }
                     Rectangle {
                         width: (parent.width - 16) / 3; height: 80; radius: 16; color: cardColor
                         Column { anchors.centerIn: parent; spacing: 4
-                            Text { text: "0.03 mg/m3"; font.pixelSize: 16; font.weight: Font.Bold; color: "#22C55E" }
+                            Text { text: (envData.formaldehyde || "0.03") + " mg/m3"; font.pixelSize: 16; font.weight: Font.Bold; color: "#22C55E" }
                             Text { text: "甲醛"; font.pixelSize: 12; color: textSecondary } }
                     }
                     Rectangle {
                         width: (parent.width - 16) / 3; height: 80; radius: 16; color: cardColor
                         Column { anchors.centerIn: parent; spacing: 4
-                            Text { text: "800 lux"; font.pixelSize: 18; font.weight: Font.Bold; color: "#FBBF24" }
+                            Text { text: (envData.light || "800") + " lux"; font.pixelSize: 18; font.weight: Font.Bold; color: "#FBBF24" }
                             Text { text: "光照"; font.pixelSize: 12; color: textSecondary } }
                     }
                 }

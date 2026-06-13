@@ -13,6 +13,7 @@ Item {
     readonly property color inputBg: isDarkMode ? "#2A2A2C" : "#E5E5EA"
     readonly property color headerColor: isDarkMode ? "#121214" : "#F5F5F7"
     readonly property color pressedColor: isDarkMode ? "#303032" : "#F0F0F5"
+    property string errorMessage: ""
 
     property bool isRegisterMode: false
 
@@ -126,6 +127,14 @@ Item {
                 }
             }
 
+            Text {
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: loginPage.errorMessage
+                font.pixelSize: 13
+                color: "#EF4444"
+                visible: loginPage.errorMessage !== ""
+            }
+
             Row {
                 anchors.horizontalCenter: parent.horizontalCenter; spacing: 4
                 Text { text: isRegisterMode ? "已有账号？" : "没有账号？"; font.pixelSize: 14; color: textSecondary }
@@ -159,6 +168,24 @@ Item {
             }
 
             Item { width: 1; height: 24 }
+        }
+    }
+
+    Connections {
+        target: typeof userService !== 'undefined' ? userService : null
+        function onLoginSuccess() {
+            loginPage.errorMessage = ""
+            if (typeof navigationStack !== 'undefined') navigationStack.goBack()
+        }
+        function onLoginFailed(error) {
+            loginPage.errorMessage = error
+        }
+        function onRegisterSuccess() {
+            loginPage.errorMessage = ""
+            if (typeof navigationStack !== 'undefined') navigationStack.goBack()
+        }
+        function onRegisterFailed(error) {
+            loginPage.errorMessage = error
         }
     }
 }

@@ -4,6 +4,8 @@ import QtQuick.Controls
 Rectangle {
     id: coursesPage
     
+    property var dataList: []
+    
     color: typeof window !== 'undefined' && window.darkMode ? "#0D0D0F" : "#F5F5F7"
     
     readonly property color cardColor: typeof window !== 'undefined' && window.darkMode ? "#1E1E20" : "#FFFFFF"
@@ -15,10 +17,36 @@ Rectangle {
     readonly property color warningColor: "#FF9500"
     readonly property bool isDarkMode: typeof window !== 'undefined' ? window.darkMode : true
     
+    readonly property var inProgressCourses: {
+        var arr = []
+        for (var i = 0; i < dataList.length; i++)
+            if (dataList[i].status !== "COMPLETED") arr.push(dataList[i])
+        return arr
+    }
+    readonly property var completedCourses: {
+        var arr = []
+        for (var i = 0; i < dataList.length; i++)
+            if (dataList[i].status === "COMPLETED") arr.push(dataList[i])
+        return arr
+    }
+    
+    Component.onCompleted: {
+        if (typeof userService === 'undefined' || !userService.isLoggedIn) return
+        var xhr = new XMLHttpRequest()
+        xhr.open("GET", (typeof apiBaseUrl !== 'undefined' ? apiBaseUrl : "http://localhost:8080/api") + "/courses")
+        xhr.setRequestHeader("Authorization", "Bearer " + userService.getToken())
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                var res = JSON.parse(xhr.responseText)
+                if (res.code === 200) dataList = res.data
+            }
+        }
+        xhr.send()
+    }
+    
     Column {
         anchors.fill: parent
         
-        // 顶部导航栏
         Rectangle {
             width: parent.width
             height: 56
@@ -34,7 +62,7 @@ Rectangle {
                 
                 Text {
                     anchors.centerIn: parent
-                    text: "‹"
+                    text: "\u2039"
                     font.pixelSize: 28
                     font.weight: Font.Bold
                     color: textPrimary
@@ -74,7 +102,6 @@ Rectangle {
                 
                 Item { width: 1; height: 8 }
                 
-                // 课程统计
                 Rectangle {
                     width: parent.width - 32
                     height: 100
@@ -90,27 +117,31 @@ Rectangle {
                         Column {
                             spacing: 4
                             anchors.verticalCenter: parent.verticalCenter
-                            Text { text: "6"; font.pixelSize: 24; font.weight: Font.Bold; color: accentColor }
+                            Text { text: dataList.length.toString(); font.pixelSize: 24; font.weight: Font.Bold; color: accentColor }
                             Text { text: "已学课程"; font.pixelSize: 13; color: textSecondary }
                         }
                         
                         Column {
                             spacing: 4
                             anchors.verticalCenter: parent.verticalCenter
-                            Text { text: "12"; font.pixelSize: 24; font.weight: Font.Bold; color: successColor }
-                            Text { text: "学习小时"; font.pixelSize: 13; color: textSecondary }
+                            property int totalCompleted: {
+                                var t = 0
+                                for (var i = 0; i < dataList.length; i++) t += dataList[i].completed_lessons
+                                return t
+                            }
+                            Text { text: parent.totalCompleted.toString(); font.pixelSize: 24; font.weight: Font.Bold; color: successColor }
+                            Text { text: "已学课时"; font.pixelSize: 13; color: textSecondary }
                         }
                         
                         Column {
                             spacing: 4
                             anchors.verticalCenter: parent.verticalCenter
-                            Text { text: "3"; font.pixelSize: 24; font.weight: Font.Bold; color: warningColor }
+                            Text { text: completedCourses.length.toString(); font.pixelSize: 24; font.weight: Font.Bold; color: warningColor }
                             Text { text: "获得证书"; font.pixelSize: 13; color: textSecondary }
                         }
                     }
                 }
                 
-                // 正在学习
                 Text {
                     text: "正在学习"
                     font.pixelSize: 18
@@ -120,117 +151,71 @@ Rectangle {
                     anchors.leftMargin: 24
                 }
                 
-                // 课程1
-                Rectangle {
-                    width: parent.width - 32
-                    height: 120
-                    radius: 16
-                    color: cardColor
-                    anchors.horizontalCenter: parent.horizontalCenter
+                Column {
+                    width: parent.width
+                    spacing: 12
                     
-                    Row {
-                        anchors.fill: parent
-                        anchors.margins: 16
-                        spacing: 16
+                    Repeater {
+                        model: inProgressCourses
                         
                         Rectangle {
-                            width: 80
-                            height: 88
-                            radius: 12
-                            color: isDarkMode ? "#3D2D6B" : "#E8E0F5"
-                            anchors.verticalCenter: parent.verticalCenter
+                            width: coursesPage.width - 32
+                            height: 120
+                            radius: 16
+                            color: cardColor
+                            anchors.horizontalCenter: parent.horizontalCenter
                             
-                            Text {
-                                anchors.centerIn: parent
-                                text: "🧘"
-                                font.pixelSize: 36
-                            }
-                        }
-                        
-                        Column {
-                            spacing: 8
-                            anchors.verticalCenter: parent.verticalCenter
-                            width: parent.width - 120
-                            
-                            Text { text: "瑜伽入门课程"; font.pixelSize: 16; font.weight: Font.Medium; color: textPrimary }
-                            Text { text: "共12节课 · 已学8节"; font.pixelSize: 13; color: textSecondary }
-                            
-                            Rectangle {
-                                width: parent.width
-                                height: 6
-                                radius: 3
-                                color: isDarkMode ? "#2A2A2C" : "#E5E5EA"
+                            Row {
+                                anchors.fill: parent
+                                anchors.margins: 16
+                                spacing: 16
                                 
                                 Rectangle {
-                                    width: parent.width * 0.67
-                                    height: 6
-                                    radius: 3
-                                    color: accentColor
+                                    width: 80
+                                    height: 88
+                                    radius: 12
+                                    color: isDarkMode ? "#3D2D6B" : "#E8E0F5"
+                                    anchors.verticalCenter: parent.verticalCenter
+                                    
+                                    Text {
+                                        anchors.centerIn: parent
+                                        text: modelData.category ? modelData.category.charAt(0) : "课"
+                                        font.pixelSize: 36
+                                        color: accentColor
+                                    }
                                 }
-                            }
-                            
-                            Text { text: "进度 67%"; font.pixelSize: 12; color: textSecondary }
-                        }
-                    }
-                }
-                
-                // 课程2
-                Rectangle {
-                    width: parent.width - 32
-                    height: 120
-                    radius: 16
-                    color: cardColor
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    
-                    Row {
-                        anchors.fill: parent
-                        anchors.margins: 16
-                        spacing: 16
-                        
-                        Rectangle {
-                            width: 80
-                            height: 88
-                            radius: 12
-                            color: isDarkMode ? "#2A4A5A" : "#D4E8ED"
-                            anchors.verticalCenter: parent.verticalCenter
-                            
-                            Text {
-                                anchors.centerIn: parent
-                                text: "💪"
-                                font.pixelSize: 36
-                            }
-                        }
-                        
-                        Column {
-                            spacing: 8
-                            anchors.verticalCenter: parent.verticalCenter
-                            width: parent.width - 120
-                            
-                            Text { text: "居家健身计划"; font.pixelSize: 16; font.weight: Font.Medium; color: textPrimary }
-                            Text { text: "共20节课 · 已学5节"; font.pixelSize: 13; color: textSecondary }
-                            
-                            Rectangle {
-                                width: parent.width
-                                height: 6
-                                radius: 3
-                                color: isDarkMode ? "#2A2A2C" : "#E5E5EA"
                                 
-                                Rectangle {
-                                    width: parent.width * 0.25
-                                    height: 6
-                                    radius: 3
-                                    color: successColor
+                                Column {
+                                    spacing: 8
+                                    anchors.verticalCenter: parent.verticalCenter
+                                    width: parent.width - 120
+                                    
+                                    Text { text: modelData.name; font.pixelSize: 16; font.weight: Font.Medium; color: textPrimary }
+                                    Text { text: "共" + modelData.total_lessons + "节课 · 已学" + modelData.completed_lessons + "节"; font.pixelSize: 13; color: textSecondary }
+                                    
+                                    Rectangle {
+                                        width: parent.width
+                                        height: 6
+                                        radius: 3
+                                        color: isDarkMode ? "#2A2A2C" : "#E5E5EA"
+                                        
+                                        Rectangle {
+                                            width: modelData.total_lessons > 0 ? parent.width * (modelData.completed_lessons / modelData.total_lessons) : 0
+                                            height: 6
+                                            radius: 3
+                                            color: accentColor
+                                        }
+                                    }
+                                    
+                                    Text { text: "进度 " + (modelData.total_lessons > 0 ? Math.round(modelData.completed_lessons / modelData.total_lessons * 100) : 0) + "%"; font.pixelSize: 12; color: textSecondary }
                                 }
                             }
-                            
-                            Text { text: "进度 25%"; font.pixelSize: 12; color: textSecondary }
                         }
                     }
                 }
                 
                 Item { width: 1; height: 8 }
                 
-                // 已完成课程
                 Text {
                     text: "已完成"
                     font.pixelSize: 18
@@ -240,116 +225,49 @@ Rectangle {
                     anchors.leftMargin: 24
                 }
                 
-                // 已完成课程1
-                Rectangle {
-                    width: parent.width - 32
-                    height: 80
-                    radius: 16
-                    color: cardColor
-                    anchors.horizontalCenter: parent.horizontalCenter
+                Column {
+                    width: parent.width
+                    spacing: 12
                     
-                    Row {
-                        anchors.fill: parent
-                        anchors.margins: 16
-                        spacing: 12
+                    Repeater {
+                        model: completedCourses
                         
                         Rectangle {
-                            width: 48
-                            height: 48
-                            radius: 12
-                            color: isDarkMode ? "#3A3A3C" : "#E5E5EA"
-                            anchors.verticalCenter: parent.verticalCenter
+                            width: coursesPage.width - 32
+                            height: 80
+                            radius: 16
+                            color: cardColor
+                            anchors.horizontalCenter: parent.horizontalCenter
                             
-                            Text {
-                                anchors.centerIn: parent
-                                text: "🏃"
-                                font.pixelSize: 24
+                            Row {
+                                anchors.fill: parent
+                                anchors.margins: 16
+                                spacing: 12
+                                
+                                Rectangle {
+                                    width: 48
+                                    height: 48
+                                    radius: 12
+                                    color: isDarkMode ? "#3A3A3C" : "#E5E5EA"
+                                    anchors.verticalCenter: parent.verticalCenter
+                                    
+                                    Text {
+                                        anchors.centerIn: parent
+                                        text: modelData.category ? modelData.category.charAt(0) : "课"
+                                        font.pixelSize: 24
+                                        color: successColor
+                                    }
+                                }
+                                
+                                Column {
+                                    spacing: 4
+                                    anchors.verticalCenter: parent.verticalCenter
+                                    width: parent.width - 90
+                                    
+                                    Text { text: modelData.name; font.pixelSize: 15; font.weight: Font.Medium; color: textPrimary }
+                                    Text { text: "已获得证书"; font.pixelSize: 13; color: successColor }
+                                }
                             }
-                        }
-                        
-                        Column {
-                            spacing: 4
-                            anchors.verticalCenter: parent.verticalCenter
-                            width: parent.width - 90
-                            
-                            Text { text: "跑步基础训练"; font.pixelSize: 15; font.weight: Font.Medium; color: textPrimary }
-                            Text { text: "已获得证书"; font.pixelSize: 13; color: successColor }
-                        }
-                    }
-                }
-                
-                // 已完成课程2
-                Rectangle {
-                    width: parent.width - 32
-                    height: 80
-                    radius: 16
-                    color: cardColor
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    
-                    Row {
-                        anchors.fill: parent
-                        anchors.margins: 16
-                        spacing: 12
-                        
-                        Rectangle {
-                            width: 48
-                            height: 48
-                            radius: 12
-                            color: isDarkMode ? "#3A3A3C" : "#E5E5EA"
-                            anchors.verticalCenter: parent.verticalCenter
-                            
-                            Text {
-                                anchors.centerIn: parent
-                                text: "🧠"
-                                font.pixelSize: 24
-                            }
-                        }
-                        
-                        Column {
-                            spacing: 4
-                            anchors.verticalCenter: parent.verticalCenter
-                            width: parent.width - 90
-                            
-                            Text { text: "冥想入门"; font.pixelSize: 15; font.weight: Font.Medium; color: textPrimary }
-                            Text { text: "已获得证书"; font.pixelSize: 13; color: successColor }
-                        }
-                    }
-                }
-                
-                // 已完成课程3
-                Rectangle {
-                    width: parent.width - 32
-                    height: 80
-                    radius: 16
-                    color: cardColor
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    
-                    Row {
-                        anchors.fill: parent
-                        anchors.margins: 16
-                        spacing: 12
-                        
-                        Rectangle {
-                            width: 48
-                            height: 48
-                            radius: 12
-                            color: isDarkMode ? "#3A3A3C" : "#E5E5EA"
-                            anchors.verticalCenter: parent.verticalCenter
-                            
-                            Text {
-                                anchors.centerIn: parent
-                                text: "🥗"
-                                font.pixelSize: 24
-                            }
-                        }
-                        
-                        Column {
-                            spacing: 4
-                            anchors.verticalCenter: parent.verticalCenter
-                            width: parent.width - 90
-                            
-                            Text { text: "健康饮食指南"; font.pixelSize: 15; font.weight: Font.Medium; color: textPrimary }
-                            Text { text: "已获得证书"; font.pixelSize: 13; color: successColor }
                         }
                     }
                 }

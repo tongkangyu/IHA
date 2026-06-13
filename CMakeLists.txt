@@ -1,9 +1,27 @@
 cmake_minimum_required(VERSION 3.16)
 
+if(CMAKE_HOST_WIN32)
+    set(IHA_QT_PREFIX "C:/Qt/6.11.0/mingw_64")
+    set(IHA_MINGW_PREFIX "C:/Qt/Tools/mingw1310_64")
+
+    if(NOT CMAKE_PREFIX_PATH AND EXISTS "${IHA_QT_PREFIX}/lib/cmake/Qt6/Qt6Config.cmake")
+        set(CMAKE_PREFIX_PATH "${IHA_QT_PREFIX}" CACHE PATH "Qt installation prefix" FORCE)
+    endif()
+
+    if(CMAKE_CXX_COMPILER MATCHES "[/\\\\]cl\\.exe$" AND EXISTS "${IHA_MINGW_PREFIX}/bin/g++.exe")
+        set(CMAKE_C_COMPILER "${IHA_MINGW_PREFIX}/bin/gcc.exe" CACHE FILEPATH "C compiler" FORCE)
+        set(CMAKE_CXX_COMPILER "${IHA_MINGW_PREFIX}/bin/g++.exe" CACHE FILEPATH "C++ compiler" FORCE)
+    endif()
+endif()
+
 project(IHA VERSION 0.3.0 LANGUAGES CXX)
 
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+if(WIN32 AND CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+    message(FATAL_ERROR "This project uses Qt 6.11 MinGW. Select the 'Desktop Qt 6.11.0 MinGW 64bit' kit in Qt Creator, not an MSVC/Ninja kit.")
+endif()
 
 find_package(Qt6 REQUIRED COMPONENTS Quick QuickControls2 Network)
 
@@ -64,6 +82,7 @@ qt_add_qml_module(appIHA
         qml/pages/settings/ProfileInfoPage.qml
         qml/pages/settings/SystemPermissionsPage.qml
         qml/pages/settings/HelpFeedbackPage.qml
+        qml/pages/settings/PrivacyPolicyPage.qml
 )
 
 set_target_properties(appIHA PROPERTIES

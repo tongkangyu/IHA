@@ -15,7 +15,33 @@ Rectangle {
     readonly property color warningColor: "#FF9500"
     readonly property color dangerColor: "#FF3B30"
     readonly property bool isDarkMode: typeof window !== 'undefined' ? window.darkMode : true
-    
+    property string reportInsight: ""
+    property var weekSteps: []
+    property var weekSleep: []
+    property var weekHR: []
+    property int totalSteps: { var s=0; for(var i=0;i<weekSteps.length;i++) s+=weekSteps[i]; return s }
+    property string totalKm: (totalSteps * 0.0007).toFixed(1)
+    property int avgSleepMin: { if(!weekSleep.length) return 0; var s=0; for(var i=0;i<weekSleep.length;i++) s+=weekSleep[i]; return Math.round(s/weekSleep.length) }
+    property int avgHR: { if(!weekHR.length) return 0; var s=0; for(var i=0;i<weekHR.length;i++) s+=weekHR[i]; return Math.round(s/weekHR.length) }
+    property int minHR: { if(!weekHR.length) return 0; var m=999; for(var i=0;i<weekHR.length;i++) if(weekHR[i]<m) m=weekHR[i]; return m }
+    property int maxHR: { if(!weekHR.length) return 0; var m=0; for(var i=0;i<weekHR.length;i++) if(weekHR[i]>m) m=weekHR[i]; return m }
+
+    Component.onCompleted: {
+        if (typeof healthDataManager !== 'undefined' && typeof userService !== 'undefined' && userService.isLoggedIn) {
+            healthDataManager.fetchWeeklyReport(userService.getToken())
+            weekSteps = healthDataManager.getWeeklySteps()
+            weekSleep = healthDataManager.getWeeklySleep()
+            weekHR = healthDataManager.getWeeklyHeartRate()
+        }
+    }
+
+    Connections {
+        target: typeof healthDataManager !== 'undefined' ? healthDataManager : null
+        function onWeeklyReportReady(reportText) {
+            healthReportPage.reportInsight = reportText
+        }
+    }
+
     Column {
         anchors.fill: parent
         
@@ -96,11 +122,15 @@ Rectangle {
                         }
                         
                         Text {
-                            text: "2026.03.03 ~ 2026.03.09"
+                            text: {
+                                var end = new Date()
+                                var start = new Date(end.getTime() - 6*24*60*60*1000)
+                                return Qt.formatDate(start,"yyyy.MM.dd") + " ~ " + Qt.formatDate(end,"yyyy.MM.dd")
+                            }
                             font.pixelSize: 15
                             font.weight: Font.Medium
                             color: textPrimary
-                            anchors.verticalCenter: parent.horizontalCenter
+                            anchors.verticalCenter: parent.verticalCenter
                         }
                         
                         Text {
@@ -138,19 +168,19 @@ Rectangle {
                             
                             Column {
                                 spacing: 4
-                                Text { text: "52,340"; font.pixelSize: 24; font.weight: Font.Bold; color: accentColor }
+                                Text { text: totalSteps.toLocaleString(); font.pixelSize: 24; font.weight: Font.Bold; color: accentColor }
                                 Text { text: "总步数"; font.pixelSize: 13; color: textSecondary }
                             }
                             
                             Column {
                                 spacing: 4
-                                Text { text: "38.5"; font.pixelSize: 24; font.weight: Font.Bold; color: successColor }
+                                Text { text: totalKm; font.pixelSize: 24; font.weight: Font.Bold; color: successColor }
                                 Text { text: "公里"; font.pixelSize: 13; color: textSecondary }
                             }
                             
                             Column {
                                 spacing: 4
-                                Text { text: "1,850"; font.pixelSize: 24; font.weight: Font.Bold; color: warningColor }
+                                Text { text: Math.round(totalSteps * 0.04).toLocaleString(); font.pixelSize: 24; font.weight: Font.Bold; color: warningColor }
                                 Text { text: "卡路里"; font.pixelSize: 13; color: textSecondary }
                             }
                         }
@@ -205,15 +235,17 @@ Rectangle {
                             spacing: 8
                             
                             Repeater {
-                                model: [
-                                    { day: "一", value: 0.6 },
-                                    { day: "二", value: 0.8 },
-                                    { day: "三", value: 0.5 },
-                                    { day: "四", value: 0.9 },
-                                    { day: "五", value: 0.7 },
-                                    { day: "六", value: 1.0 },
-                                    { day: "日", value: 0.4 }
-                                ]
+                                model: {
+                                    var days = ["一","二","三","四","五","六","日"]
+                                    var maxV = 1
+                                    for (var i = 0; i < weekSteps.length; i++) if (weekSteps[i] > maxV) maxV = weekSteps[i]
+                                    var arr = []
+                                    for (var j = 0; j < 7; j++) {
+                                        var v = j < weekSteps.length ? weekSteps[j] / maxV : 0.5
+                                        arr.push({day: days[j], value: v})
+                                    }
+                                    return arr
+                                }
                                 
                                 Column {
                                     width: (parent.width - 48) / 7
@@ -269,7 +301,7 @@ Rectangle {
                             
                             Column {
                                 spacing: 4
-                                Text { text: "7.2"; font.pixelSize: 24; font.weight: Font.Bold; color: "#A78BFA" }
+                                Text { text: (avgSleepMin / 60.0).toFixed(1); font.pixelSize: 24; font.weight: Font.Bold; color: "#A78BFA" }
                                 Text { text: "平均时长(h)"; font.pixelSize: 13; color: textSecondary }
                             }
                             
@@ -314,19 +346,19 @@ Rectangle {
                             
                             Column {
                                 spacing: 4
-                                Text { text: "72"; font.pixelSize: 24; font.weight: Font.Bold; color: dangerColor }
+                                Text { text: avgHR > 0 ? "" + avgHR : "72"; font.pixelSize: 24; font.weight: Font.Bold; color: dangerColor }
                                 Text { text: "平均心率"; font.pixelSize: 13; color: textSecondary }
                             }
                             
                             Column {
                                 spacing: 4
-                                Text { text: "58"; font.pixelSize: 24; font.weight: Font.Bold; color: successColor }
+                                Text { text: minHR > 0 ? "" + minHR : "58"; font.pixelSize: 24; font.weight: Font.Bold; color: successColor }
                                 Text { text: "最低心率"; font.pixelSize: 13; color: textSecondary }
                             }
                             
                             Column {
                                 spacing: 4
-                                Text { text: "145"; font.pixelSize: 24; font.weight: Font.Bold; color: warningColor }
+                                Text { text: maxHR > 0 ? "" + maxHR : "145"; font.pixelSize: 24; font.weight: Font.Bold; color: warningColor }
                                 Text { text: "最高心率"; font.pixelSize: 13; color: textSecondary }
                             }
                         }
@@ -335,18 +367,23 @@ Rectangle {
                 
                 // 周总结
                 Rectangle {
+                    id: summaryCard
                     width: parent.width - 32
-                    height: 100
+                    height: summaryCol.height + 32
                     radius: 16
                     color: isDarkMode ? "#1A1A1C" : "#F0F0F0"
                     anchors.horizontalCenter: parent.horizontalCenter
                     
                     Column {
-                        anchors.centerIn: parent
+                        id: summaryCol
+                        anchors.left: parent.left
+                        anchors.right: parent.right
+                        anchors.margins: 16
+                        anchors.verticalCenter: parent.verticalCenter
                         spacing: 8
                         
                         Text {
-                            text: "🎯 本周表现良好！"
+                            text: healthReportPage.reportInsight !== "" ? "AI 健康洞察" : "本周表现良好"
                             font.pixelSize: 16
                             font.weight: Font.Bold
                             color: textPrimary
@@ -354,10 +391,12 @@ Rectangle {
                         }
                         
                         Text {
-                            text: "比上周多走了 8,234 步，继续保持！"
+                            text: healthReportPage.reportInsight !== "" ? healthReportPage.reportInsight : "登录后可生成 AI 健康周报分析"
                             font.pixelSize: 13
                             color: textSecondary
-                            anchors.horizontalCenter: parent.horizontalCenter
+                            width: parent.width
+                            wrapMode: Text.Wrap
+                            lineHeight: 1.5
                         }
                     }
                 }

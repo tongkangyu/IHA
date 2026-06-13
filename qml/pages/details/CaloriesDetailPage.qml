@@ -18,8 +18,8 @@ Item {
     readonly property color progressBg: isDarkMode ? "#27272A" : "#E5E5EA"
     
     // 模拟数据
-    property int todayCalories: 568
-    property int caloriesGoal: 600
+    property int todayCalories: (typeof healthDataManager !== 'undefined') ? healthDataManager.todayCalories : 0
+    property int caloriesGoal: (typeof healthDataManager !== 'undefined') ? healthDataManager.caloriesGoal : 600
     property var hourlyData: [15, 28, 12, 35, 45, 22, 18, 55, 42, 38, 25, 30, 48, 52, 35, 28, 22, 45, 38, 32, 25, 18, 12, 8]
     property var weeklyData: [520, 580, 490, 620, 450, 568, 540]
     property var weekDays: ["周一", "周二", "周三", "周四", "周五", "周六", "周日"]

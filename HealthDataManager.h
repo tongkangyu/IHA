@@ -4,6 +4,8 @@
 #include <QObject>
 #include <QVariantMap>
 #include <QDate>
+#include <QNetworkAccessManager>
+#include <QNetworkReply>
 
 class HealthDataManager : public QObject
 {
@@ -20,6 +22,8 @@ class HealthDataManager : public QObject
     Q_PROPERTY(int todayHeartRate READ todayHeartRate WRITE setTodayHeartRate NOTIFY todayHeartRateChanged)
     Q_PROPERTY(int moderateActivityMinutes READ moderateActivityMinutes WRITE setModerateActivityMinutes NOTIFY moderateActivityMinutesChanged)
     
+    Q_PROPERTY(int healthScore READ healthScore NOTIFY healthScoreChanged)
+
     // 周平均数据
     Q_PROPERTY(int weekAvgSteps READ weekAvgSteps NOTIFY weekAvgStepsChanged)
     Q_PROPERTY(int weekAvgSleepMinutes READ weekAvgSleepMinutes NOTIFY weekAvgSleepMinutesChanged)
@@ -58,6 +62,7 @@ public:
     int moderateActivityMinutes() const { return m_moderateActivityMinutes; }
     void setModerateActivityMinutes(int value);
     
+    int healthScore() const { return m_healthScore; }
     int weekAvgSteps() const { return m_weekAvgSteps; }
     int weekAvgSleepMinutes() const { return m_weekAvgSleepMinutes; }
     int weekAvgHeartRate() const { return m_weekAvgHeartRate; }
@@ -81,6 +86,12 @@ public:
     Q_INVOKABLE void loadData();
     Q_INVOKABLE void resetTodayData();
 
+    // 后端同步
+    Q_INVOKABLE void fetchFromBackend(const QString &token);
+    Q_INVOKABLE void uploadToBackend(const QString &token);
+    Q_INVOKABLE void fetchWeeklyReport(const QString &token);
+    Q_INVOKABLE QString weeklyReportText() const { return m_weeklyReportText; }
+
 signals:
     void todayStepsChanged();
     void stepsGoalChanged();
@@ -97,6 +108,8 @@ signals:
     void weekAvgCaloriesChanged();
     void dataChanged();
     void dataLoaded();
+    void healthScoreChanged();
+    void weeklyReportReady(const QString &reportText);
 
 private:
     // 今日数据
@@ -110,6 +123,8 @@ private:
     int m_todayHeartRate = 72;
     int m_moderateActivityMinutes = 0;
     
+    int m_healthScore = 100;
+
     // 周平均数据
     int m_weekAvgSteps = 0;
     int m_weekAvgSleepMinutes = 0;
@@ -123,9 +138,14 @@ private:
     
     QDate m_currentDate;
     QDate m_lastSavedDate;
+
+    QNetworkAccessManager *m_networkManager;
+    QString m_apiBaseUrl;
+    QString m_weeklyReportText;
     
     QString getDataFilePath();
     void checkAndResetForNewDay();
+    void onDashboardReply(QNetworkReply *reply);
 };
 
 #endif // HEALTHDATAMANAGER_H

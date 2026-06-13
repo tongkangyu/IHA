@@ -18,7 +18,7 @@ Item {
     readonly property color progressBg: isDarkMode ? "#27272A" : "#E5E5EA"
     
     // 模拟数据
-    property int todayActivityCount: 4
+    property int todayActivityCount: (typeof healthDataManager !== 'undefined') ? healthDataManager.todayActivity : 0
     property int activityCountGoal: 12
     property var activityList: [
         { type: "快走", time: "08:30", duration: "15分钟", icon: "W" },

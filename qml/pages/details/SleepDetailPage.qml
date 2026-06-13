@@ -18,9 +18,9 @@ Item {
     readonly property color progressBg: isDarkMode ? "#27272A" : "#E5E5EA"
     
     // 模拟数据
-    property int sleepScore: 85
-    property int sleepHours: 7
-    property int sleepMinutes: 7
+    property int sleepScore: (typeof healthDataManager !== 'undefined') ? healthDataManager.healthScore : 0
+    property int sleepHours: (typeof healthDataManager !== 'undefined') ? Math.floor(healthDataManager.todaySleepMinutes / 60) : 0
+    property int sleepMinutes: (typeof healthDataManager !== 'undefined') ? healthDataManager.todaySleepMinutes % 60 : 0
     property string sleepQuality: "良好"
     
     Column {

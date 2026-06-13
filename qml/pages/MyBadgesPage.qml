@@ -4,6 +4,8 @@ import QtQuick.Controls
 Rectangle {
     id: badgesPage
     
+    property var dataList: []
+    
     color: typeof window !== 'undefined' && window.darkMode ? "#0D0D0F" : "#F5F5F7"
     
     readonly property color cardColor: typeof window !== 'undefined' && window.darkMode ? "#1E1E20" : "#FFFFFF"
@@ -15,10 +17,42 @@ Rectangle {
     readonly property color warningColor: "#FF9500"
     readonly property bool isDarkMode: typeof window !== 'undefined' ? window.darkMode : true
     
+    readonly property var earnedBadges: {
+        var arr = []
+        for (var i = 0; i < dataList.length; i++)
+            if (dataList[i].status === "EARNED") arr.push(dataList[i])
+        return arr
+    }
+    readonly property var inProgressBadges: {
+        var arr = []
+        for (var i = 0; i < dataList.length; i++)
+            if (dataList[i].status === "IN_PROGRESS") arr.push(dataList[i])
+        return arr
+    }
+    readonly property var lockedBadges: {
+        var arr = []
+        for (var i = 0; i < dataList.length; i++)
+            if (dataList[i].status === "LOCKED") arr.push(dataList[i])
+        return arr
+    }
+    
+    Component.onCompleted: {
+        if (typeof userService === 'undefined' || !userService.isLoggedIn) return
+        var xhr = new XMLHttpRequest()
+        xhr.open("GET", (typeof apiBaseUrl !== 'undefined' ? apiBaseUrl : "http://localhost:8080/api") + "/badges")
+        xhr.setRequestHeader("Authorization", "Bearer " + userService.getToken())
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                var res = JSON.parse(xhr.responseText)
+                if (res.code === 200) dataList = res.data
+            }
+        }
+        xhr.send()
+    }
+    
     Column {
         anchors.fill: parent
         
-        // 顶部导航栏
         Rectangle {
             width: parent.width
             height: 56
@@ -34,7 +68,7 @@ Rectangle {
                 
                 Text {
                     anchors.centerIn: parent
-                    text: "‹"
+                    text: "\u2039"
                     font.pixelSize: 28
                     font.weight: Font.Bold
                     color: textPrimary
@@ -74,7 +108,6 @@ Rectangle {
                 
                 Item { width: 1; height: 8 }
                 
-                // 勋章统计
                 Rectangle {
                     width: parent.width - 32
                     height: 100
@@ -90,27 +123,26 @@ Rectangle {
                         Column {
                             spacing: 4
                             anchors.verticalCenter: parent.verticalCenter
-                            Text { text: "12"; font.pixelSize: 24; font.weight: Font.Bold; color: accentColor }
+                            Text { text: earnedBadges.length.toString(); font.pixelSize: 24; font.weight: Font.Bold; color: accentColor }
                             Text { text: "已获勋章"; font.pixelSize: 13; color: textSecondary }
                         }
                         
                         Column {
                             spacing: 4
                             anchors.verticalCenter: parent.verticalCenter
-                            Text { text: "3"; font.pixelSize: 24; font.weight: Font.Bold; color: warningColor }
+                            Text { text: inProgressBadges.length.toString(); font.pixelSize: 24; font.weight: Font.Bold; color: warningColor }
                             Text { text: "进行中"; font.pixelSize: 13; color: textSecondary }
                         }
                         
                         Column {
                             spacing: 4
                             anchors.verticalCenter: parent.verticalCenter
-                            Text { text: "8"; font.pixelSize: 24; font.weight: Font.Bold; color: textSecondary }
+                            Text { text: lockedBadges.length.toString(); font.pixelSize: 24; font.weight: Font.Bold; color: textSecondary }
                             Text { text: "未解锁"; font.pixelSize: 13; color: textSecondary }
                         }
                     }
                 }
                 
-                // 已获得勋章
                 Text {
                     text: "已获得勋章"
                     font.pixelSize: 18
@@ -120,277 +152,48 @@ Rectangle {
                     anchors.leftMargin: 24
                 }
                 
-                // 勋章网格
                 Grid {
                     width: parent.width - 32
                     anchors.horizontalCenter: parent.horizontalCenter
                     columns: 4
                     spacing: 12
                     
-                    // 勋章 1
-                    Rectangle {
-                        width: (parent.width - 36) / 4
-                        height: (parent.width - 36) / 4 + 24
-                        color: "transparent"
+                    Repeater {
+                        model: earnedBadges
                         
-                        Column {
-                            anchors.fill: parent
-                            spacing: 4
+                        Rectangle {
+                            width: (parent.width - 36) / 4
+                            height: (parent.width - 36) / 4 + 24
+                            color: "transparent"
                             
-                            Rectangle {
-                                width: parent.width
-                                height: parent.width
-                                radius: parent.width / 2
-                                color: isDarkMode ? "#3D2D6B" : "#E8E0F5"
+                            Column {
+                                anchors.fill: parent
+                                spacing: 4
+                                
+                                Rectangle {
+                                    width: parent.width
+                                    height: parent.width
+                                    radius: parent.width / 2
+                                    color: isDarkMode ? "#3D2D6B" : "#E8E0F5"
+                                    
+                                    Text {
+                                        anchors.centerIn: parent
+                                        text: modelData.icon
+                                        font.pixelSize: 14
+                                        font.weight: Font.Bold
+                                        color: textPrimary
+                                    }
+                                }
                                 
                                 Text {
-                                    anchors.centerIn: parent
-                                    text: "500"
-                                    font.pixelSize: 14
-                                    font.weight: Font.Bold
-                                    color: textPrimary
+                                    text: modelData.name
+                                    font.pixelSize: 10
+                                    color: textSecondary
+                                    anchors.horizontalCenter: parent.horizontalCenter
+                                    elide: Text.ElideRight
+                                    width: parent.width
+                                    horizontalAlignment: Text.AlignHCenter
                                 }
-                            }
-                            
-                            Text {
-                                text: "500步"
-                                font.pixelSize: 10
-                                color: textSecondary
-                                anchors.horizontalCenter: parent.horizontalCenter
-                            }
-                        }
-                    }
-                    
-                    // 勋章 2
-                    Rectangle {
-                        width: (parent.width - 36) / 4
-                        height: (parent.width - 36) / 4 + 24
-                        color: "transparent"
-                        
-                        Column {
-                            anchors.fill: parent
-                            spacing: 4
-                            
-                            Rectangle {
-                                width: parent.width
-                                height: parent.width
-                                radius: parent.width / 2
-                                color: isDarkMode ? "#2A4A5A" : "#D4E8ED"
-                                
-                                Text {
-                                    anchors.centerIn: parent
-                                    text: "🏃"
-                                    font.pixelSize: 24
-                                    color: textPrimary
-                                }
-                            }
-                            
-                            Text {
-                                text: "首次运动"
-                                font.pixelSize: 10
-                                color: textSecondary
-                                anchors.horizontalCenter: parent.horizontalCenter
-                            }
-                        }
-                    }
-                    
-                    // 勋章 3
-                    Rectangle {
-                        width: (parent.width - 36) / 4
-                        height: (parent.width - 36) / 4 + 24
-                        color: "transparent"
-                        
-                        Column {
-                            anchors.fill: parent
-                            spacing: 4
-                            
-                            Rectangle {
-                                width: parent.width
-                                height: parent.width
-                                radius: parent.width / 2
-                                color: isDarkMode ? "#5A2A3D" : "#F5E0E8"
-                                
-                                Text {
-                                    anchors.centerIn: parent
-                                    text: "365"
-                                    font.pixelSize: 14
-                                    font.weight: Font.Bold
-                                    color: textPrimary
-                                }
-                            }
-                            
-                            Text {
-                                text: "365天"
-                                font.pixelSize: 10
-                                color: textSecondary
-                                anchors.horizontalCenter: parent.horizontalCenter
-                            }
-                        }
-                    }
-                    
-                    // 勋章 4
-                    Rectangle {
-                        width: (parent.width - 36) / 4
-                        height: (parent.width - 36) / 4 + 24
-                        color: "transparent"
-                        
-                        Column {
-                            anchors.fill: parent
-                            spacing: 4
-                            
-                            Rectangle {
-                                width: parent.width
-                                height: parent.width
-                                radius: parent.width / 2
-                                color: isDarkMode ? "#2A5A3D" : "#E0F5E8"
-                                
-                                Text {
-                                    anchors.centerIn: parent
-                                    text: "5K"
-                                    font.pixelSize: 14
-                                    font.weight: Font.Bold
-                                    color: textPrimary
-                                }
-                            }
-                            
-                            Text {
-                                text: "运动达人"
-                                font.pixelSize: 10
-                                color: textSecondary
-                                anchors.horizontalCenter: parent.horizontalCenter
-                            }
-                        }
-                    }
-                    
-                    // 勋章 5
-                    Rectangle {
-                        width: (parent.width - 36) / 4
-                        height: (parent.width - 36) / 4 + 24
-                        color: "transparent"
-                        
-                        Column {
-                            anchors.fill: parent
-                            spacing: 4
-                            
-                            Rectangle {
-                                width: parent.width
-                                height: parent.width
-                                radius: parent.width / 2
-                                color: isDarkMode ? "#1A3A5A" : "#E0E8F5"
-                                
-                                Text {
-                                    anchors.centerIn: parent
-                                    text: "💤"
-                                    font.pixelSize: 24
-                                    color: textPrimary
-                                }
-                            }
-                            
-                            Text {
-                                text: "早睡早起"
-                                font.pixelSize: 10
-                                color: textSecondary
-                                anchors.horizontalCenter: parent.horizontalCenter
-                            }
-                        }
-                    }
-                    
-                    // 勋章 6
-                    Rectangle {
-                        width: (parent.width - 36) / 4
-                        height: (parent.width - 36) / 4 + 24
-                        color: "transparent"
-                        
-                        Column {
-                            anchors.fill: parent
-                            spacing: 4
-                            
-                            Rectangle {
-                                width: parent.width
-                                height: parent.width
-                                radius: parent.width / 2
-                                color: isDarkMode ? "#4A2A5A" : "#E8E0F5"
-                                
-                                Text {
-                                    anchors.centerIn: parent
-                                    text: "30"
-                                    font.pixelSize: 14
-                                    font.weight: Font.Bold
-                                    color: textPrimary
-                                }
-                            }
-                            
-                            Text {
-                                text: "30天打卡"
-                                font.pixelSize: 10
-                                color: textSecondary
-                                anchors.horizontalCenter: parent.horizontalCenter
-                            }
-                        }
-                    }
-                    
-                    // 勋章 7
-                    Rectangle {
-                        width: (parent.width - 36) / 4
-                        height: (parent.width - 36) / 4 + 24
-                        color: "transparent"
-                        
-                        Column {
-                            anchors.fill: parent
-                            spacing: 4
-                            
-                            Rectangle {
-                                width: parent.width
-                                height: parent.width
-                                radius: parent.width / 2
-                                color: isDarkMode ? "#5A4A2A" : "#F5EDE0"
-                                
-                                Text {
-                                    anchors.centerIn: parent
-                                    text: "🏆"
-                                    font.pixelSize: 24
-                                    color: textPrimary
-                                }
-                            }
-                            
-                            Text {
-                                text: "冠军"
-                                font.pixelSize: 10
-                                color: textSecondary
-                                anchors.horizontalCenter: parent.horizontalCenter
-                            }
-                        }
-                    }
-                    
-                    // 勋章 8
-                    Rectangle {
-                        width: (parent.width - 36) / 4
-                        height: (parent.width - 36) / 4 + 24
-                        color: "transparent"
-                        
-                        Column {
-                            anchors.fill: parent
-                            spacing: 4
-                            
-                            Rectangle {
-                                width: parent.width
-                                height: parent.width
-                                radius: parent.width / 2
-                                color: isDarkMode ? "#2A4A4A" : "#E0F5F5"
-                                
-                                Text {
-                                    anchors.centerIn: parent
-                                    text: "🏊"
-                                    font.pixelSize: 24
-                                    color: textPrimary
-                                }
-                            }
-                            
-                            Text {
-                                text: "首次游泳"
-                                font.pixelSize: 10
-                                color: textSecondary
-                                anchors.horizontalCenter: parent.horizontalCenter
                             }
                         }
                     }
@@ -398,7 +201,6 @@ Rectangle {
                 
                 Item { width: 1; height: 8 }
                 
-                // 进行中
                 Text {
                     text: "进行中"
                     font.pixelSize: 18
@@ -408,166 +210,62 @@ Rectangle {
                     anchors.leftMargin: 24
                 }
                 
-                // 进行中的勋章
                 Column {
                     width: parent.width
                     spacing: 12
                     
-                    // 进行中 1
-                    Rectangle {
-                        width: parent.width - 32
-                        height: 80
-                        radius: 16
-                        color: cardColor
-                        anchors.horizontalCenter: parent.horizontalCenter
+                    Repeater {
+                        model: inProgressBadges
                         
-                        Row {
-                            anchors.fill: parent
-                            anchors.margins: 16
-                            spacing: 16
+                        Rectangle {
+                            width: parent.width - 32
+                            height: 80
+                            radius: 16
+                            color: cardColor
+                            anchors.horizontalCenter: parent.horizontalCenter
                             
-                            Rectangle {
-                                width: 48
-                                height: 48
-                                radius: 24
-                                color: isDarkMode ? "#3A3A3C" : "#E5E5EA"
-                                anchors.verticalCenter: parent.verticalCenter
-                                
-                                Text {
-                                    anchors.centerIn: parent
-                                    text: "🎯"
-                                    font.pixelSize: 24
-                                }
-                            }
-                            
-                            Column {
-                                spacing: 4
-                                anchors.verticalCenter: parent.verticalCenter
-                                width: parent.width - 130
-                                
-                                Text { text: "100天打卡"; font.pixelSize: 16; font.weight: Font.Medium; color: textPrimary }
+                            Row {
+                                anchors.fill: parent
+                                anchors.margins: 16
+                                spacing: 16
                                 
                                 Rectangle {
-                                    width: parent.width
-                                    height: 6
-                                    radius: 3
-                                    color: isDarkMode ? "#2A2A2C" : "#E5E5EA"
+                                    width: 48
+                                    height: 48
+                                    radius: 24
+                                    color: isDarkMode ? "#3A3A3C" : "#E5E5EA"
+                                    anchors.verticalCenter: parent.verticalCenter
                                     
-                                    Rectangle {
-                                        width: parent.width * 0.85
-                                        height: 6
-                                        radius: 3
-                                        color: accentColor
+                                    Text {
+                                        anchors.centerIn: parent
+                                        text: modelData.icon
+                                        font.pixelSize: 24
                                     }
                                 }
                                 
-                                Text { text: "85/100"; font.pixelSize: 12; color: textSecondary }
-                            }
-                        }
-                    }
-                    
-                    // 进行中 2
-                    Rectangle {
-                        width: parent.width - 32
-                        height: 80
-                        radius: 16
-                        color: cardColor
-                        anchors.horizontalCenter: parent.horizontalCenter
-                        
-                        Row {
-                            anchors.fill: parent
-                            anchors.margins: 16
-                            spacing: 16
-                            
-                            Rectangle {
-                                width: 48
-                                height: 48
-                                radius: 24
-                                color: isDarkMode ? "#3A3A3C" : "#E5E5EA"
-                                anchors.verticalCenter: parent.verticalCenter
-                                
-                                Text {
-                                    anchors.centerIn: parent
-                                    text: "📏"
-                                    font.pixelSize: 24
-                                }
-                            }
-                            
-                            Column {
-                                spacing: 4
-                                anchors.verticalCenter: parent.verticalCenter
-                                width: parent.width - 130
-                                
-                                Text { text: "步行100公里"; font.pixelSize: 16; font.weight: Font.Medium; color: textPrimary }
-                                
-                                Rectangle {
-                                    width: parent.width
-                                    height: 6
-                                    radius: 3
-                                    color: isDarkMode ? "#2A2A2C" : "#E5E5EA"
+                                Column {
+                                    spacing: 4
+                                    anchors.verticalCenter: parent.verticalCenter
+                                    width: parent.width - 130
+                                    
+                                    Text { text: modelData.name; font.pixelSize: 16; font.weight: Font.Medium; color: textPrimary }
                                     
                                     Rectangle {
-                                        width: parent.width * 0.62
+                                        width: parent.width
                                         height: 6
                                         radius: 3
-                                        color: successColor
+                                        color: isDarkMode ? "#2A2A2C" : "#E5E5EA"
+                                        
+                                        Rectangle {
+                                            width: modelData.target > 0 ? parent.width * (modelData.progress / modelData.target) : 0
+                                            height: 6
+                                            radius: 3
+                                            color: accentColor
+                                        }
                                     }
-                                }
-                                
-                                Text { text: "62/100 公里"; font.pixelSize: 12; color: textSecondary }
-                            }
-                        }
-                    }
-                    
-                    // 进行中 3
-                    Rectangle {
-                        width: parent.width - 32
-                        height: 80
-                        radius: 16
-                        color: cardColor
-                        anchors.horizontalCenter: parent.horizontalCenter
-                        
-                        Row {
-                            anchors.fill: parent
-                            anchors.margins: 16
-                            spacing: 16
-                            
-                            Rectangle {
-                                width: 48
-                                height: 48
-                                radius: 24
-                                color: isDarkMode ? "#3A3A3C" : "#E5E5EA"
-                                anchors.verticalCenter: parent.verticalCenter
-                                
-                                Text {
-                                    anchors.centerIn: parent
-                                    text: "🔥"
-                                    font.pixelSize: 24
-                                }
-                            }
-                            
-                            Column {
-                                spacing: 4
-                                anchors.verticalCenter: parent.verticalCenter
-                                width: parent.width - 130
-                                
-                                Text { text: "燃烧10000卡路里"; font.pixelSize: 16; font.weight: Font.Medium; color: textPrimary }
-                                
-                                Rectangle {
-                                    width: parent.width
-                                    height: 6
-                                    radius: 3
-                                    color: isDarkMode ? "#2A2A2C" : "#E5E5EA"
                                     
-                                    Rectangle {
-                                        width: parent.width * 0.45
-                                        height: 6
-                                        radius: 3
-                                        color: warningColor
-                                    }
+                                    Text { text: modelData.progress + "/" + modelData.target; font.pixelSize: 12; color: textSecondary }
                                 }
-                                
-                                Text { text: "4,500/10,000 卡路里"; font.pixelSize: 12; color: textSecondary }
                             }
                         }
                     }

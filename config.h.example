@@ -1,5 +1,5 @@
-#ifndef CONFIG_H_EXAMPLE
-#define CONFIG_H_EXAMPLE
+#ifndef CONFIG_H
+#define CONFIG_H
 
 // 复制此文件为 config.h 并填入你的实际配置
 // config.h 不会被提交到 git
@@ -9,10 +9,10 @@
 #define AI_API_KEY ""
 #define AI_MODEL ""
 
-// 用户认证服务配置
-#define USER_API_URL "https://your-api-server.com/api"
+// 后端 API 地址（本地开发用 http://localhost:8080/api，部署用实际地址）
+#define USER_API_URL "http://localhost:8080/api"
 
-// 医疗服务配置
-#define MEDICAL_API_URL "https://your-medical-server.com/api"
+// 医疗服务配置（暂未实现）
+#define MEDICAL_API_URL "http://localhost:8080/api"
 
-#endif // CONFIG_H_EXAMPLE
+#endif // CONFIG_H

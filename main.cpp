@@ -8,6 +8,7 @@
 #include "DeviceManager.h"
 #include "HealthCircleManager.h"
 #include "MedicalService.h"
+#include "config.h"
 
 int main(int argc, char *argv[])
 {
@@ -35,6 +36,7 @@ int main(int argc, char *argv[])
     engine.rootContext()->setContextProperty("medicalService", medicalService);
     engine.rootContext()->setContextProperty("appVersion", QStringLiteral(APP_VERSION));
     engine.rootContext()->setContextProperty("savedDarkMode", savedDarkMode);
+    engine.rootContext()->setContextProperty("apiBaseUrl", QStringLiteral(USER_API_URL));
 
     const QUrl url(QStringLiteral("qrc:/qt/qml/IHA/Main.qml"));
     QObject::connect(

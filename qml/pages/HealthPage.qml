@@ -29,7 +29,13 @@ Item {
     property int todaySleepMinutes: (typeof healthDataManager !== 'undefined') ? healthDataManager.todaySleepMinutes : 420
     property int todayHeartRate: (typeof healthDataManager !== 'undefined') ? healthDataManager.todayHeartRate : 72
     property int moderateActivityMinutes: (typeof healthDataManager !== 'undefined') ? healthDataManager.moderateActivityMinutes : 0
-    
+
+    Component.onCompleted: {
+        if (typeof healthDataManager !== 'undefined' && typeof userService !== 'undefined' && userService.isLoggedIn) {
+            healthDataManager.fetchFromBackend(userService.getToken())
+        }
+    }
+
     Column {
         anchors.fill: parent
         
@@ -85,7 +91,7 @@ Item {
                         width: 160
                         height: 160
                         
-                        property real progress: stepsGoal > 0 ? todaySteps / stepsGoal : 0
+                        property real progress: (typeof healthDataManager !== 'undefined') ? healthDataManager.healthScore / 100.0 : 0
                         property int lineWidth: 14
                         property real ringRadius: (width - lineWidth) / 2
                         
@@ -147,7 +153,7 @@ Item {
                                 font.weight: Font.Bold
                                 color: textPrimary
                                 anchors.horizontalCenter: parent.horizontalCenter
-                                text: Math.round((stepsGoal > 0 ? todaySteps / stepsGoal : 0) * 100) + "%"
+                                text: (typeof healthDataManager !== 'undefined' ? healthDataManager.healthScore : 0) + "%"
                             }
                             
                             Text {

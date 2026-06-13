@@ -44,8 +44,8 @@ void UserService::login(const QString &phone, const QString &password)
     setLastError(QString());
 
     QJsonObject requestBody;
-    requestBody["phone"] = phone;
-    requestBody["password"] = hashPassword(password);
+    requestBody["mobile"] = phone;
+    requestBody["password"] = password;
 
     QJsonDocument doc(requestBody);
     QByteArray data = doc.toJson(QJsonDocument::Compact);
@@ -65,9 +65,9 @@ void UserService::registerUser(const QString &phone, const QString &password, co
     setLastError(QString());
 
     QJsonObject requestBody;
-    requestBody["phone"] = phone;
-    requestBody["password"] = hashPassword(password);
-    requestBody["name"] = name;
+    requestBody["mobile"] = phone;
+    requestBody["password"] = password;
+    requestBody["nickname"] = name;
 
     QJsonDocument doc(requestBody);
     QByteArray data = doc.toJson(QJsonDocument::Compact);
@@ -104,16 +104,15 @@ void UserService::updateProfile(const QString &name, const QString &gender, cons
     setIsLoading(true);
 
     QJsonObject requestBody;
-    requestBody["name"] = name;
+    requestBody["nickname"] = name;
     requestBody["gender"] = gender;
     requestBody["birthday"] = birthday;
     requestBody["height"] = height;
-    requestBody["weight"] = weight;
 
     QJsonDocument doc(requestBody);
     QByteArray data = doc.toJson(QJsonDocument::Compact);
 
-    QUrl url(m_apiBaseUrl + "/user/profile");
+    QUrl url(m_apiBaseUrl + "/user/info");
     QNetworkRequest request = createAuthenticatedRequest(url);
 
     QNetworkReply *reply = m_networkManager->put(request, data);
@@ -217,6 +216,7 @@ void UserService::loadLocalSession()
                 m_isLoggedIn = true;
                 emit loginStatusChanged();
                 emit userInfoChanged();
+                fetchUserInfo();
                 qDebug() << "UserService: Session restored for" << m_userName;
             }
         }
@@ -345,44 +345,36 @@ void UserService::onLoginReply(QNetworkReply *reply)
     reply->deleteLater();
     setIsLoading(false);
 
-    if (reply->error() != QNetworkReply::NoError) {
-        QString error = reply->errorString();
+    QByteArray responseData = reply->readAll();
+    QJsonDocument doc = QJsonDocument::fromJson(responseData);
+
+    if (doc.isNull() || !doc.isObject()) {
+        QString error = reply->error() != QNetworkReply::NoError ?
+            reply->errorString() : "Invalid response";
         setLastError(error);
         emit loginFailed(error);
         return;
     }
 
-    QByteArray responseData = reply->readAll();
-    QJsonDocument doc = QJsonDocument::fromJson(responseData);
-
-    if (doc.isNull() || !doc.isObject()) {
-        setLastError("Invalid response");
-        emit loginFailed("Invalid response");
-        return;
-    }
-
     QJsonObject obj = doc.object();
+    int code = obj["code"].toInt();
 
-    if (obj.contains("error")) {
-        QString errorMsg = obj["error"].toObject()["message"].toString();
+    if (code != 200) {
+        QString errorMsg = obj["message"].toString();
         setLastError(errorMsg);
         emit loginFailed(errorMsg);
         return;
     }
 
-    m_sessionToken = obj["token"].toString();
-    QJsonObject user = obj["user"].toObject();
-    m_userId = user["id"].toString();
-    m_userName = user["name"].toString();
-    m_userGender = user["gender"].toString();
-    m_userBirthday = user["birthday"].toString();
-    m_userHeight = user["height"].toInt();
-    m_userWeight = user["weight"].toInt();
-    m_avatarUrl = user["avatarUrl"].toString();
-    m_phoneNumber = user["phone"].toString();
+    QJsonObject data = obj["data"].toObject();
+    m_sessionToken = data["token"].toString();
+    m_userId = data["user_id"].toString();
+    m_userName = data["nickname"].toString();
+    m_phoneNumber = data["mobile"].toString();
 
     setIsLoggedIn(true);
     saveLocalSession();
+    fetchUserInfo();
 
     emit loginSuccess();
     emit userInfoChanged();
@@ -393,39 +385,36 @@ void UserService::onRegisterReply(QNetworkReply *reply)
     reply->deleteLater();
     setIsLoading(false);
 
-    if (reply->error() != QNetworkReply::NoError) {
-        QString error = reply->errorString();
+    QByteArray responseData = reply->readAll();
+    QJsonDocument doc = QJsonDocument::fromJson(responseData);
+
+    if (doc.isNull() || !doc.isObject()) {
+        QString error = reply->error() != QNetworkReply::NoError ?
+            reply->errorString() : "Invalid response";
         setLastError(error);
         emit registerFailed(error);
         return;
     }
 
-    QByteArray responseData = reply->readAll();
-    QJsonDocument doc = QJsonDocument::fromJson(responseData);
-
-    if (doc.isNull() || !doc.isObject()) {
-        setLastError("Invalid response");
-        emit registerFailed("Invalid response");
-        return;
-    }
-
     QJsonObject obj = doc.object();
+    int code = obj["code"].toInt();
 
-    if (obj.contains("error")) {
-        QString errorMsg = obj["error"].toObject()["message"].toString();
+    if (code != 200) {
+        QString errorMsg = obj["message"].toString();
         setLastError(errorMsg);
         emit registerFailed(errorMsg);
         return;
     }
 
-    m_sessionToken = obj["token"].toString();
-    QJsonObject user = obj["user"].toObject();
-    m_userId = user["id"].toString();
-    m_userName = user["name"].toString();
-    m_phoneNumber = user["phone"].toString();
+    QJsonObject data = obj["data"].toObject();
+    m_sessionToken = data["token"].toString();
+    m_userId = data["user_id"].toString();
+    m_userName = data["nickname"].toString();
+    m_phoneNumber = data["mobile"].toString();
 
     setIsLoggedIn(true);
     saveLocalSession();
+    fetchUserInfo();
 
     emit registerSuccess();
     emit userInfoChanged();
@@ -481,4 +470,37 @@ void UserService::onResetPasswordReply(QNetworkReply *reply)
         setLastError(reply->errorString());
         return;
     }
+}
+
+void UserService::fetchUserInfo()
+{
+    if (m_sessionToken.isEmpty()) return;
+
+    QUrl url(m_apiBaseUrl + "/user/info");
+    QNetworkRequest request = createAuthenticatedRequest(url);
+
+    QNetworkReply *reply = m_networkManager->get(request);
+    connect(reply, &QNetworkReply::finished, this, [this, reply]() {
+        reply->deleteLater();
+        QByteArray responseData = reply->readAll();
+        QJsonDocument doc = QJsonDocument::fromJson(responseData);
+        if (doc.isNull() || !doc.isObject()) return;
+
+        QJsonObject obj = doc.object();
+        if (obj["code"].toInt() == 401) { logout(); return; }
+        if (obj["code"].toInt() != 200) return;
+
+        QJsonObject data = obj["data"].toObject();
+        if (data.contains("nickname") && !data["nickname"].toString().isEmpty())
+            m_userName = data["nickname"].toString();
+        if (data.contains("gender") && !data["gender"].toString().isEmpty())
+            m_userGender = data["gender"].toString();
+        if (data.contains("birthday") && !data["birthday"].toString().isEmpty())
+            m_userBirthday = data["birthday"].toString();
+        if (data.contains("height") && data["height"].toInt() > 0)
+            m_userHeight = data["height"].toInt();
+
+        saveLocalSession();
+        emit userInfoChanged();
+    });
 }

@@ -2,15 +2,24 @@
   "version": 3,
   "configurePresets": [
     {
-      "hidden": true,
-      "name": "Qt",
+      "name": "Qt-Debug",
+      "displayName": "Qt Debug (MinGW)",
+      "generator": "MinGW Makefiles",
+      "binaryDir": "${sourceDir}/out/build/debug",
       "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_CXX_FLAGS": "-DQT_QML_DEBUG",
         "CMAKE_PREFIX_PATH": "$env{QTDIR}"
-      },
-      "vendor": {
-        "qt-project.org/Qt": {
-          "checksum": "wVa86FgEkvdCTVp1/nxvrkaemJc="
-        }
+      }
+    },
+    {
+      "name": "Qt-Release",
+      "displayName": "Qt Release (MinGW)",
+      "generator": "MinGW Makefiles",
+      "binaryDir": "${sourceDir}/out/build/release",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_PREFIX_PATH": "$env{QTDIR}"
       }
     }
   ],

@@ -4,6 +4,8 @@ import QtQuick.Controls
 Rectangle {
     id: ordersPage
     
+    property var dataList: []
+    
     color: typeof window !== 'undefined' && window.darkMode ? "#0D0D0F" : "#F5F5F7"
     
     readonly property color cardColor: typeof window !== 'undefined' && window.darkMode ? "#1E1E20" : "#FFFFFF"
@@ -16,10 +18,42 @@ Rectangle {
     readonly property color dangerColor: "#FF3B30"
     readonly property bool isDarkMode: typeof window !== 'undefined' ? window.darkMode : true
     
+    readonly property var pendingOrders: {
+        var arr = []
+        for (var i = 0; i < dataList.length; i++)
+            if (dataList[i].status === "PENDING") arr.push(dataList[i])
+        return arr
+    }
+    readonly property var shippedOrders: {
+        var arr = []
+        for (var i = 0; i < dataList.length; i++)
+            if (dataList[i].status === "SHIPPED") arr.push(dataList[i])
+        return arr
+    }
+    readonly property var completedOrders: {
+        var arr = []
+        for (var i = 0; i < dataList.length; i++)
+            if (dataList[i].status === "COMPLETED") arr.push(dataList[i])
+        return arr
+    }
+    
+    Component.onCompleted: {
+        if (typeof userService === 'undefined' || !userService.isLoggedIn) return
+        var xhr = new XMLHttpRequest()
+        xhr.open("GET", (typeof apiBaseUrl !== 'undefined' ? apiBaseUrl : "http://localhost:8080/api") + "/orders")
+        xhr.setRequestHeader("Authorization", "Bearer " + userService.getToken())
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                var res = JSON.parse(xhr.responseText)
+                if (res.code === 200) dataList = res.data
+            }
+        }
+        xhr.send()
+    }
+    
     Column {
         anchors.fill: parent
         
-        // 顶部导航栏
         Rectangle {
             width: parent.width
             height: 56
@@ -35,7 +69,7 @@ Rectangle {
                 
                 Text {
                     anchors.centerIn: parent
-                    text: "‹"
+                    text: "\u2039"
                     font.pixelSize: 28
                     font.weight: Font.Bold
                     color: textPrimary
@@ -75,7 +109,6 @@ Rectangle {
                 
                 Item { width: 1; height: 8 }
                 
-                // 待付款订单
                 Text {
                     text: "待付款"
                     font.pixelSize: 18
@@ -83,92 +116,103 @@ Rectangle {
                     color: textPrimary
                     anchors.left: parent.left
                     anchors.leftMargin: 24
+                    visible: pendingOrders.length > 0
                 }
                 
-                Rectangle {
-                    width: parent.width - 32
-                    height: 140
-                    radius: 16
-                    color: cardColor
-                    anchors.horizontalCenter: parent.horizontalCenter
+                Column {
+                    width: parent.width
+                    spacing: 12
+                    visible: pendingOrders.length > 0
                     
-                    Column {
-                        anchors.fill: parent
-                        anchors.margins: 16
-                        spacing: 10
-                        
-                        Row {
-                            width: parent.width
-                            spacing: 12
-                            
-                            Rectangle {
-                                width: 60
-                                height: 60
-                                radius: 10
-                                color: isDarkMode ? "#2A4A5A" : "#D4E8ED"
-                                
-                                Text {
-                                    anchors.centerIn: parent
-                                    text: "⌚"
-                                    font.pixelSize: 28
-                                }
-                            }
-                            
-                            Column {
-                                spacing: 4
-                                anchors.verticalCenter: parent.verticalCenter
-                                width: parent.width - 90
-                                
-                                Text { text: "智能运动手表 Pro"; font.pixelSize: 15; font.weight: Font.Medium; color: textPrimary }
-                                Text { text: "颜色: 星空黑"; font.pixelSize: 13; color: textSecondary }
-                            }
-                        }
+                    Repeater {
+                        model: pendingOrders
                         
                         Rectangle {
-                            width: parent.width
-                            height: 1
-                            color: isDarkMode ? "#2A2A2C" : "#E5E5EA"
-                        }
-                        
-                        Item {
-                            width: parent.width
-                            height: 40
+                            width: ordersPage.width - 32
+                            height: 140
+                            radius: 16
+                            color: cardColor
+                            anchors.horizontalCenter: parent.horizontalCenter
                             
-                            Text {
-                                text: "¥1,299.00"
-                                font.pixelSize: 18
-                                font.weight: Font.Bold
-                                color: dangerColor
-                                anchors.left: parent.left
-                                anchors.verticalCenter: parent.verticalCenter
-                            }
-                            
-                            Rectangle {
-                                width: 80
-                                height: 32
-                                radius: 16
-                                color: dangerColor
-                                anchors.right: parent.right
-                                anchors.verticalCenter: parent.verticalCenter
+                            Column {
+                                anchors.fill: parent
+                                anchors.margins: 16
+                                spacing: 10
                                 
-                                Text {
-                                    anchors.centerIn: parent
-                                    text: "去付款"
-                                    font.pixelSize: 13
-                                    color: "#FFFFFF"
+                                Row {
+                                    width: parent.width
+                                    spacing: 12
+                                    
+                                    Rectangle {
+                                        width: 60
+                                        height: 60
+                                        radius: 10
+                                        color: isDarkMode ? "#2A4A5A" : "#D4E8ED"
+                                        
+                                        Text {
+                                            anchors.centerIn: parent
+                                            text: "购"
+                                            font.pixelSize: 28
+                                            color: accentColor
+                                        }
+                                    }
+                                    
+                                    Column {
+                                        spacing: 4
+                                        anchors.verticalCenter: parent.verticalCenter
+                                        width: parent.width - 90
+                                        
+                                        Text { text: modelData.product_name; font.pixelSize: 15; font.weight: Font.Medium; color: textPrimary }
+                                        Text { text: modelData.create_time; font.pixelSize: 13; color: textSecondary }
+                                    }
                                 }
                                 
-                                MouseArea {
-                                    anchors.fill: parent
+                                Rectangle {
+                                    width: parent.width
+                                    height: 1
+                                    color: isDarkMode ? "#2A2A2C" : "#E5E5EA"
+                                }
+                                
+                                Item {
+                                    width: parent.width
+                                    height: 40
+                                    
+                                    Text {
+                                        text: "\u00A5" + modelData.price.toFixed(2)
+                                        font.pixelSize: 18
+                                        font.weight: Font.Bold
+                                        color: dangerColor
+                                        anchors.left: parent.left
+                                        anchors.verticalCenter: parent.verticalCenter
+                                    }
+                                    
+                                    Rectangle {
+                                        width: 80
+                                        height: 32
+                                        radius: 16
+                                        color: dangerColor
+                                        anchors.right: parent.right
+                                        anchors.verticalCenter: parent.verticalCenter
+                                        
+                                        Text {
+                                            anchors.centerIn: parent
+                                            text: "去付款"
+                                            font.pixelSize: 13
+                                            color: "#FFFFFF"
+                                        }
+                                        
+                                        MouseArea {
+                                            anchors.fill: parent
+                                        }
+                                    }
                                 }
                             }
                         }
                     }
                 }
                 
-                Item { width: 1; height: 8 }
+                Item { width: 1; height: 8; visible: pendingOrders.length > 0 }
                 
-                // 待收货订单
                 Text {
                     text: "待收货"
                     font.pixelSize: 18
@@ -176,92 +220,103 @@ Rectangle {
                     color: textPrimary
                     anchors.left: parent.left
                     anchors.leftMargin: 24
+                    visible: shippedOrders.length > 0
                 }
                 
-                Rectangle {
-                    width: parent.width - 32
-                    height: 140
-                    radius: 16
-                    color: cardColor
-                    anchors.horizontalCenter: parent.horizontalCenter
+                Column {
+                    width: parent.width
+                    spacing: 12
+                    visible: shippedOrders.length > 0
                     
-                    Column {
-                        anchors.fill: parent
-                        anchors.margins: 16
-                        spacing: 10
-                        
-                        Row {
-                            width: parent.width
-                            spacing: 12
-                            
-                            Rectangle {
-                                width: 60
-                                height: 60
-                                radius: 10
-                                color: isDarkMode ? "#3D2D6B" : "#E8E0F5"
-                                
-                                Text {
-                                    anchors.centerIn: parent
-                                    text: "🎧"
-                                    font.pixelSize: 28
-                                }
-                            }
-                            
-                            Column {
-                                spacing: 4
-                                anchors.verticalCenter: parent.verticalCenter
-                                width: parent.width - 90
-                                
-                                Text { text: "运动蓝牙耳机"; font.pixelSize: 15; font.weight: Font.Medium; color: textPrimary }
-                                Text { text: "颜色: 活力橙"; font.pixelSize: 13; color: textSecondary }
-                            }
-                        }
+                    Repeater {
+                        model: shippedOrders
                         
                         Rectangle {
-                            width: parent.width
-                            height: 1
-                            color: isDarkMode ? "#2A2A2C" : "#E5E5EA"
-                        }
-                        
-                        Item {
-                            width: parent.width
-                            height: 40
+                            width: ordersPage.width - 32
+                            height: 140
+                            radius: 16
+                            color: cardColor
+                            anchors.horizontalCenter: parent.horizontalCenter
                             
-                            Text {
-                                text: "¥299.00"
-                                font.pixelSize: 18
-                                font.weight: Font.Bold
-                                color: warningColor
-                                anchors.left: parent.left
-                                anchors.verticalCenter: parent.verticalCenter
-                            }
-                            
-                            Rectangle {
-                                width: 80
-                                height: 32
-                                radius: 16
-                                color: warningColor
-                                anchors.right: parent.right
-                                anchors.verticalCenter: parent.verticalCenter
+                            Column {
+                                anchors.fill: parent
+                                anchors.margins: 16
+                                spacing: 10
                                 
-                                Text {
-                                    anchors.centerIn: parent
-                                    text: "确认收货"
-                                    font.pixelSize: 13
-                                    color: "#FFFFFF"
+                                Row {
+                                    width: parent.width
+                                    spacing: 12
+                                    
+                                    Rectangle {
+                                        width: 60
+                                        height: 60
+                                        radius: 10
+                                        color: isDarkMode ? "#3D2D6B" : "#E8E0F5"
+                                        
+                                        Text {
+                                            anchors.centerIn: parent
+                                            text: "运"
+                                            font.pixelSize: 28
+                                            color: warningColor
+                                        }
+                                    }
+                                    
+                                    Column {
+                                        spacing: 4
+                                        anchors.verticalCenter: parent.verticalCenter
+                                        width: parent.width - 90
+                                        
+                                        Text { text: modelData.product_name; font.pixelSize: 15; font.weight: Font.Medium; color: textPrimary }
+                                        Text { text: modelData.create_time; font.pixelSize: 13; color: textSecondary }
+                                    }
                                 }
                                 
-                                MouseArea {
-                                    anchors.fill: parent
+                                Rectangle {
+                                    width: parent.width
+                                    height: 1
+                                    color: isDarkMode ? "#2A2A2C" : "#E5E5EA"
+                                }
+                                
+                                Item {
+                                    width: parent.width
+                                    height: 40
+                                    
+                                    Text {
+                                        text: "\u00A5" + modelData.price.toFixed(2)
+                                        font.pixelSize: 18
+                                        font.weight: Font.Bold
+                                        color: warningColor
+                                        anchors.left: parent.left
+                                        anchors.verticalCenter: parent.verticalCenter
+                                    }
+                                    
+                                    Rectangle {
+                                        width: 80
+                                        height: 32
+                                        radius: 16
+                                        color: warningColor
+                                        anchors.right: parent.right
+                                        anchors.verticalCenter: parent.verticalCenter
+                                        
+                                        Text {
+                                            anchors.centerIn: parent
+                                            text: "确认收货"
+                                            font.pixelSize: 13
+                                            color: "#FFFFFF"
+                                        }
+                                        
+                                        MouseArea {
+                                            anchors.fill: parent
+                                        }
+                                    }
                                 }
                             }
                         }
                     }
                 }
                 
-                Item { width: 1; height: 8 }
+                Item { width: 1; height: 8; visible: shippedOrders.length > 0 }
                 
-                // 已完成订单
                 Text {
                     text: "已完成"
                     font.pixelSize: 18
@@ -269,151 +324,64 @@ Rectangle {
                     color: textPrimary
                     anchors.left: parent.left
                     anchors.leftMargin: 24
+                    visible: completedOrders.length > 0
                 }
                 
-                // 已完成订单1
-                Rectangle {
-                    width: parent.width - 32
-                    height: 100
-                    radius: 16
-                    color: cardColor
-                    anchors.horizontalCenter: parent.horizontalCenter
+                Column {
+                    width: parent.width
+                    spacing: 12
+                    visible: completedOrders.length > 0
                     
-                    Column {
-                        anchors.fill: parent
-                        anchors.margins: 16
-                        spacing: 8
+                    Repeater {
+                        model: completedOrders
                         
-                        Row {
-                            width: parent.width
-                            spacing: 12
-                            
-                            Rectangle {
-                                width: 48
-                                height: 48
-                                radius: 10
-                                color: isDarkMode ? "#3A3A3C" : "#E5E5EA"
-                                
-                                Text {
-                                    anchors.centerIn: parent
-                                    text: "👕"
-                                    font.pixelSize: 24
-                                }
-                            }
+                        Rectangle {
+                            width: ordersPage.width - 32
+                            height: 100
+                            radius: 16
+                            color: cardColor
+                            anchors.horizontalCenter: parent.horizontalCenter
                             
                             Column {
-                                spacing: 4
-                                anchors.verticalCenter: parent.verticalCenter
-                                width: parent.width - 80
+                                anchors.fill: parent
+                                anchors.margins: 16
+                                spacing: 8
                                 
-                                Text { text: "运动速干T恤"; font.pixelSize: 15; font.weight: Font.Medium; color: textPrimary }
-                                Text { text: "¥99.00 · 2026-02-15"; font.pixelSize: 13; color: textSecondary }
-                            }
-                        }
-                        
-                        Text {
-                            text: "交易完成"
-                            font.pixelSize: 12
-                            color: successColor
-                            anchors.right: parent.right
-                        }
-                    }
-                }
-                
-                // 已完成订单2
-                Rectangle {
-                    width: parent.width - 32
-                    height: 100
-                    radius: 16
-                    color: cardColor
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    
-                    Column {
-                        anchors.fill: parent
-                        anchors.margins: 16
-                        spacing: 8
-                        
-                        Row {
-                            width: parent.width
-                            spacing: 12
-                            
-                            Rectangle {
-                                width: 48
-                                height: 48
-                                radius: 10
-                                color: isDarkMode ? "#3A3A3C" : "#E5E5EA"
+                                Row {
+                                    width: parent.width
+                                    spacing: 12
+                                    
+                                    Rectangle {
+                                        width: 48
+                                        height: 48
+                                        radius: 10
+                                        color: isDarkMode ? "#3A3A3C" : "#E5E5EA"
+                                        
+                                        Text {
+                                            anchors.centerIn: parent
+                                            text: "完"
+                                            font.pixelSize: 24
+                                            color: successColor
+                                        }
+                                    }
+                                    
+                                    Column {
+                                        spacing: 4
+                                        anchors.verticalCenter: parent.verticalCenter
+                                        width: parent.width - 80
+                                        
+                                        Text { text: modelData.product_name; font.pixelSize: 15; font.weight: Font.Medium; color: textPrimary }
+                                        Text { text: "\u00A5" + modelData.price.toFixed(2) + " · " + modelData.create_time; font.pixelSize: 13; color: textSecondary }
+                                    }
+                                }
                                 
                                 Text {
-                                    anchors.centerIn: parent
-                                    text: "👟"
-                                    font.pixelSize: 24
+                                    text: "交易完成"
+                                    font.pixelSize: 12
+                                    color: successColor
+                                    anchors.right: parent.right
                                 }
                             }
-                            
-                            Column {
-                                spacing: 4
-                                anchors.verticalCenter: parent.verticalCenter
-                                width: parent.width - 80
-                                
-                                Text { text: "专业跑步鞋"; font.pixelSize: 15; font.weight: Font.Medium; color: textPrimary }
-                                Text { text: "¥599.00 · 2026-01-20"; font.pixelSize: 13; color: textSecondary }
-                            }
-                        }
-                        
-                        Text {
-                            text: "交易完成"
-                            font.pixelSize: 12
-                            color: successColor
-                            anchors.right: parent.right
-                        }
-                    }
-                }
-                
-                // 已完成订单3
-                Rectangle {
-                    width: parent.width - 32
-                    height: 100
-                    radius: 16
-                    color: cardColor
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    
-                    Column {
-                        anchors.fill: parent
-                        anchors.margins: 16
-                        spacing: 8
-                        
-                        Row {
-                            width: parent.width
-                            spacing: 12
-                            
-                            Rectangle {
-                                width: 48
-                                height: 48
-                                radius: 10
-                                color: isDarkMode ? "#3A3A3C" : "#E5E5EA"
-                                
-                                Text {
-                                    anchors.centerIn: parent
-                                    text: "🧴"
-                                    font.pixelSize: 24
-                                }
-                            }
-                            
-                            Column {
-                                spacing: 4
-                                anchors.verticalCenter: parent.verticalCenter
-                                width: parent.width - 80
-                                
-                                Text { text: "运动水壶"; font.pixelSize: 15; font.weight: Font.Medium; color: textPrimary }
-                                Text { text: "¥49.00 · 2026-01-05"; font.pixelSize: 13; color: textSecondary }
-                            }
-                        }
-                        
-                        Text {
-                            text: "交易完成"
-                            font.pixelSize: 12
-                            color: successColor
-                            anchors.right: parent.right
                         }
                     }
                 }

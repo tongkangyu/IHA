@@ -58,6 +58,8 @@ public:
     Q_INVOKABLE void resetPassword(const QString &phone, const QString &verifyCode, const QString &newPassword);
     Q_INVOKABLE void loadLocalSession();
     Q_INVOKABLE int getUserAge() const;
+    Q_INVOKABLE QString getToken() const { return m_sessionToken; }
+    Q_INVOKABLE void fetchUserInfo();
 
 signals:
     void loginStatusChanged();

@@ -18,9 +18,9 @@ Item {
     readonly property color progressBg: isDarkMode ? "#27272A" : "#E5E5EA"
     
     // 模拟数据
-    property int activityMinutes: 85
-    property int activityGoal: 120
-    property int todayActivity: 4
+    property int activityMinutes: (typeof healthDataManager !== 'undefined') ? healthDataManager.moderateActivityMinutes : 0
+    property int activityGoal: (typeof healthDataManager !== 'undefined') ? healthDataManager.activityGoal : 12
+    property int todayActivity: (typeof healthDataManager !== 'undefined') ? healthDataManager.todayActivity : 0
     property int activityGoalCount: 12
     property var weeklyData: [45, 62, 78, 55, 90, 85, 72]
     property var weekDays: ["周一", "周二", "周三", "周四", "周五", "周六", "周日"]

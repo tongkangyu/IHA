@@ -18,10 +18,14 @@ Item {
     readonly property color progressBg: isDarkMode ? "#27272A" : "#E5E5EA"
     
     // 模拟数据
-    property int todaySteps: 9580
-    property int stepsGoal: 10000
-    property var weeklyData: [8500, 9200, 7800, 10500, 6800, 9580, 8900]
+    property int todaySteps: (typeof healthDataManager !== 'undefined') ? healthDataManager.todaySteps : 0
+    property int stepsGoal: (typeof healthDataManager !== 'undefined') ? healthDataManager.stepsGoal : 10000
+    property var weeklyData: []
     property var weekDays: ["周一", "周二", "周三", "周四", "周五", "周六", "周日"]
+
+    Component.onCompleted: {
+        if (typeof healthDataManager !== 'undefined') weeklyData = healthDataManager.getWeeklySteps()
+    }
     
     Column {
         anchors.fill: parent
